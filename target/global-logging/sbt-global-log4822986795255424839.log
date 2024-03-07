@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec($ sbt new http4s/http4s.g8 --branch 0.23-scala3, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mExpected symbol[0m
+[0m[[0m[31merror[0m] [0m[0mNot a valid command: $[0m
+[0m[[0m[31merror[0m] [0m[0m$ sbt new http4s/http4s.g8 --branch 0.23-scala3[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m
