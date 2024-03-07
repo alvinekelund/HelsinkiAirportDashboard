@@ -40,7 +40,7 @@ object Dashboard extends JFXApp3:
 
     button.onAction = (e: ActionEvent) => {
       val selected = listView.selectionModel.apply().getSelectedItems
-      listView.items = listView.items.apply().dif(selected)
+      listView.items = listView.items.apply().diff(selected)
       println("Button clicked")
     }
 
@@ -52,5 +52,5 @@ object Dashboard extends JFXApp3:
 
   end start
 
-end Main
+end Dashboard
 
