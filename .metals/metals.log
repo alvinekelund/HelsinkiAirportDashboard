@@ -13159,3 +13159,6 @@ INFO: compiler crashed due to an error in the Scala compiler, retrying with new 
 2024.03.08 13:08:22 INFO  Attaching to debuggee VM succeeded.
 2024.03.08 13:08:31 INFO  Trying to attach to remote debuggee VM localhost:58812 .
 2024.03.08 13:08:31 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 13:20:29 INFO  compiling root (1 scala source)
+2024.03.08 13:20:34 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 13:20:34 INFO  time: compiled root in 6.08s
