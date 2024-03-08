@@ -8,9 +8,10 @@ import sttp.client3.circe._
 import scala.xml.{Elem, XML}
 import finaviaAPI.APIClient.getFlightData
 import java.io.StringReader
+import scalafx.collections.ObservableBuffer
 
 object APIClient {
-  def getFlightData(): Unit = {
+  def getFlightData(): ObservableBuffer[Flight] = {
     apiCallCounter()
     val request =
       basicRequest
@@ -26,9 +27,18 @@ object APIClient {
 
     val xmlReader = new StringReader(xmlContent)
     val xmlElem: Elem = XML.load(xmlReader)
-    val flights: Seq[Flight] = (xmlElem \\ "flight").map(Flight.fromXml)
 
-    flights.foreach { flight =>
+    val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
+    (xmlElem \\ "flight").foreach {flightElem =>
+      val flight = Flight.fromXml(flightElem)
+      flights.add(flight)
+    }
+    
+    flights
+
+
+
+    /*flights.foreach { flight =>
       println(s"Flight Number: ${flight.fltnr}")
       println(s"Departure Time: ${flight.sdt}")
       println(s"Date: ${flight.sdate}")
@@ -40,6 +50,6 @@ object APIClient {
       println(s"Callsign: ${flight.callsign}")
       println(s"Bltarea: ${flight.bltarea}")
       println("-----") 
-    }
+    }*/
   }
 }

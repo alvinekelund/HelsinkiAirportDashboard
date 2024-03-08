@@ -12747,3 +12747,415 @@ Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be
 2024.03.08 11:33:54 INFO  Loaded all sources and classes in 4 seconds
 2024.03.08 11:33:56 INFO  Trying to attach to remote debuggee VM localhost:57973 .
 2024.03.08 11:33:56 INFO  Attaching to debuggee VM succeeded.
+Mar 08, 2024 11:46:44 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6260
+2024.03.08 11:46:56 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 14h 26m 14.68s)
+2024.03.08 11:46:56 INFO  compiling root (1 scala source)
+2024.03.08 11:46:56 INFO  compiling root (1 scala source)
+2024.03.08 11:47:04 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 11:47:04 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 11:47:04 INFO  time: compiled root in 8.45s
+2024.03.08 11:47:04 INFO  compiling root (1 scala source)
+2024.03.08 11:47:06 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 11:47:06 INFO  time: compiled root in 1.15s
+2024.03.08 11:47:06 INFO  {
+  "jsonrpc": "2.0",
+  "id": "247",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.08 11:47:06 ERROR failed: Starting debug server
+scala.meta.internal.metals.MetalsBspException: BSP connection failed in the attempt to get: DebugSessionAddress
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.$anonfun$applyOrElse$9(BuildServerConnection.scala:494)
+	at scala.Option.getOrElse(Option.scala:201)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:494)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:469)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:358)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:317)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 11:52:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6524
+Mar 08, 2024 11:52:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6525
+Mar 08, 2024 11:52:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6527
+2024.03.08 11:52:35 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/DataParser.scala
+scala.meta.tokenizers.TokenizeException: <input>:33: error: unclosed comment
+    /*flights.foreach { flight =>
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 11:52:37 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/DataParser.scala
+scala.meta.tokenizers.TokenizeException: <input>:33: error: unclosed comment
+    /*flights.foreach { flight =>
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 11:53:02 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 11:53:02 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 14h 32m 20.922s)
+2024.03.08 11:53:02 INFO  compiling root (2 scala sources)
+2024.03.08 11:53:02 INFO  compiling root (2 scala sources)
+2024.03.08 11:53:05 INFO  time: compiled root in 3.35s
+2024.03.08 11:53:05 INFO  compiling root (2 scala sources)
+2024.03.08 11:53:08 INFO  time: compiled root in 2.22s
+2024.03.08 11:53:08 INFO  {
+  "jsonrpc": "2.0",
+  "id": "259",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.08 11:53:15 INFO  compiling root (2 scala sources)
+2024.03.08 11:53:17 INFO  time: compiled root in 1.54s
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:33 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:55:34 AM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type akka.util.type.ByteString
+the classfile defining the type might be missing from the classpath
+
+Mar 08, 2024 11:56:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7469
+2024.03.08 11:58:26 INFO  compiling root (2 scala sources)
+2024.03.08 11:58:28 INFO  time: compiled root in 2.15s
+2024.03.08 11:58:58 INFO  compiling root (2 scala sources)
+2024.03.08 11:59:00 INFO  time: compiled root in 2.25s
+2024.03.08 11:59:15 INFO  compiling root (2 scala sources)
+2024.03.08 11:59:17 INFO  time: compiled root in 1.84s
+Mar 08, 2024 11:59:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7874
+2024.03.08 11:59:36 INFO  compiling root (2 scala sources)
+2024.03.08 11:59:38 INFO  time: compiled root in 1.83s
+Mar 08, 2024 11:59:58 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7906
+2024.03.08 12:00:46 INFO  compiling root (2 scala sources)
+2024.03.08 12:00:48 INFO  time: compiled root in 2s
+Mar 08, 2024 12:00:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8076
+Mar 08, 2024 12:01:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8097
+2024.03.08 12:02:09 INFO  compiling root (2 scala sources)
+2024.03.08 12:02:11 INFO  time: compiled root in 1.67s
+2024.03.08 12:04:13 INFO  compiling root (2 scala sources)
+2024.03.08 12:04:15 INFO  time: compiled root in 1.97s
+2024.03.08 12:05:53 INFO  compiling root (2 scala sources)
+2024.03.08 12:05:55 INFO  time: compiled root in 1.86s
+2024.03.08 12:06:07 INFO  compiling root (2 scala sources)
+2024.03.08 12:06:08 INFO  time: compiled root in 1.93s
+2024.03.08 12:06:08 INFO  compiling root (2 scala sources)
+Mar 08, 2024 12:06:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8964
+2024.03.08 12:06:11 INFO  time: compiled root in 2.02s
+2024.03.08 12:07:24 INFO  compiling root (2 scala sources)
+2024.03.08 12:07:26 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 12:07:26 INFO  time: compiled root in 1.77s
+2024.03.08 12:07:27 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 12:07:27 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 12:07:28 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 12:07:28 INFO  Loaded expression compiler in 9 milliseconds
+2024.03.08 12:07:28 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 12:07:28 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 12:07:33 INFO  Loaded all sources and classes in 5 seconds
+2024.03.08 12:07:34 INFO  Trying to attach to remote debuggee VM localhost:58451 .
+2024.03.08 12:07:34 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 12:10:51 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 14h 50m 9.519s)
+2024.03.08 12:10:51 INFO  compiling root (1 scala source)
+2024.03.08 12:10:51 INFO  compiling root (1 scala source)
+2024.03.08 12:10:57 INFO  time: compiled root in 6.63s
+2024.03.08 12:10:57 INFO  compiling root (1 scala source)
+2024.03.08 12:11:03 INFO  time: compiled root in 4.75s
+2024.03.08 12:11:03 INFO  {
+  "jsonrpc": "2.0",
+  "id": "339",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.08 12:11:03 ERROR failed: Starting debug server
+scala.meta.internal.metals.MetalsBspException: BSP connection failed in the attempt to get: DebugSessionAddress
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.$anonfun$applyOrElse$9(BuildServerConnection.scala:494)
+	at scala.Option.getOrElse(Option.scala:201)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:494)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:469)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:358)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:317)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 12:54:45 INFO  compiling root (1 scala source)
+2024.03.08 12:54:49 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 12:54:49 INFO  time: compiled root in 4.89s
+2024.03.08 12:54:51 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 34m 10.457s)
+2024.03.08 12:54:52 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 12:54:52 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 12:54:52 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 12:54:51 INFO  Loaded expression compiler in 31 milliseconds
+2024.03.08 12:54:51 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 12:54:51 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 12:54:57 INFO  Loaded all sources and classes in 4 seconds
+2024.03.08 12:55:01 INFO  Trying to attach to remote debuggee VM localhost:58692 .
+2024.03.08 12:55:01 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 12:55:11 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 12:55:11 INFO  Closing debug server tcp://0.0.0.0:58688
+2024.03.08 12:55:14 INFO  Closing debug server tcp://0.0.0.0:58447
+2024.03.08 12:55:14 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 12:55:26 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 34m 44.675s)
+2024.03.08 12:55:26 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 12:55:26 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 12:55:26 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 12:55:26 INFO  Loaded expression compiler in 7 milliseconds
+2024.03.08 12:55:26 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 12:55:26 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 12:55:32 INFO  Loaded all sources and classes in 5 seconds
+2024.03.08 12:55:33 INFO  Trying to attach to remote debuggee VM localhost:58703 .
+2024.03.08 12:55:33 INFO  Attaching to debuggee VM succeeded.
+Mar 08, 2024 12:56:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9799
+Mar 08, 2024 12:59:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10370
+Mar 08, 2024 12:59:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10372
+Mar 08, 2024 1:00:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10539
+Mar 08, 2024 1:00:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10540
+Mar 08, 2024 1:00:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10543
+Mar 08, 2024 1:01:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10776
+Mar 08, 2024 1:02:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10969
+2024.03.08 13:02:13 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:93: error: can't use unescaped LF in character literals
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.callsign)'
+                                                                       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:383)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 13:02:14 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:92: error: unclosed character literal
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.callsign)''
+                                                                      ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 13:03:03 INFO  compiling root (1 scala source)
+2024.03.08 13:03:06 INFO  time: compiled root in 2.62s
+2024.03.08 13:03:10 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 13:03:10 INFO  Closing debug server tcp://0.0.0.0:58699
+2024.03.08 13:03:15 INFO  compiling root (1 scala source)
+2024.03.08 13:03:16 INFO  time: compiled root in 1.5s
+2024.03.08 13:03:28 INFO  compiling root (1 scala source)
+2024.03.08 13:03:29 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 13:03:29 INFO  time: compiled root in 1.93s
+2024.03.08 13:03:35 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 42m 54.214s)
+2024.03.08 13:03:35 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 13:03:35 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 13:03:36 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 13:03:35 INFO  Loaded expression compiler in 7 milliseconds
+2024.03.08 13:03:35 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 13:03:35 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 13:03:39 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 13:03:41 INFO  Trying to attach to remote debuggee VM localhost:58751 .
+2024.03.08 13:03:41 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 13:03:49 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 43m 7.873s)
+2024.03.08 13:03:49 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 13:03:49 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 13:03:49 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 13:03:49 INFO  Loaded expression compiler in 2 milliseconds
+2024.03.08 13:03:49 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 13:03:49 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 13:03:54 INFO  Loaded all sources and classes in 4 seconds
+2024.03.08 13:03:55 INFO  Trying to attach to remote debuggee VM localhost:58760 .
+2024.03.08 13:03:55 INFO  Attaching to debuggee VM succeeded.
+Mar 08, 2024 1:07:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11571
+Mar 08, 2024 1:07:50 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2024.03.08 13:07:52 INFO  time: code lens generation in 2.07s
+2024.03.08 13:07:52 INFO  time: code lens generation in 2.47s
+2024.03.08 13:07:53 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 47m 11.605s)
+2024.03.08 13:07:53 INFO  compiling root (1 scala source)
+2024.03.08 13:07:53 INFO  compiling root (1 scala source)
+2024.03.08 13:07:55 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 13:07:55 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 13:07:55 INFO  time: compiled root in 2.6s
+2024.03.08 13:07:56 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 13:07:56 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 13:07:56 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 13:07:55 INFO  Loaded expression compiler in 54 milliseconds
+2024.03.08 13:07:55 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 13:07:55 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 13:08:10 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 13:08:10 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 13:08:11 INFO  Closing debug server tcp://0.0.0.0:58757
+2024.03.08 13:08:11 INFO  Closing debug server tcp://0.0.0.0:58748
+2024.03.08 13:08:16 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 47m 35.241s)
+2024.03.08 13:08:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 13:08:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 13:08:17 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 13:08:16 INFO  Loaded expression compiler in 20 milliseconds
+2024.03.08 13:08:16 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 13:08:16 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 13:08:16 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.08 13:08:18 INFO  Loaded all sources and classes in 22 seconds
+2024.03.08 13:08:20 INFO  Loaded all sources and classes in 2 seconds
+2024.03.08 13:08:22 INFO  Trying to attach to remote debuggee VM localhost:58798 .
+2024.03.08 13:08:22 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 13:08:31 INFO  Trying to attach to remote debuggee VM localhost:58812 .
+2024.03.08 13:08:31 INFO  Attaching to debuggee VM succeeded.

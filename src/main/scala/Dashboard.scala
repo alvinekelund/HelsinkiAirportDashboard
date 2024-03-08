@@ -11,6 +11,10 @@ import javafx.scene.layout.VBox
 import java.awt.Graphics
 import scalafx.stage.StageStyle.Unified
 import javafx.stage.StageStyle
+import scalafx.beans.property.StringProperty
+import scalafx.collections.ObservableBuffer
+import scalafx.beans.property.{StringProperty}
+import finaviaAPI.Flight
 
 
 object Dashboard extends JFXApp3:
@@ -51,6 +55,36 @@ object Dashboard extends JFXApp3:
     tabPane.layoutY = 30
     tabPane.minWidth = 1500
     tabPane.tabs = List(homeTab, dataTab)
+ 
+    val tableView = new TableView(getFlightData())
+    tableView.minHeight = 900
+    val col1 = new TableColumn[Flight, String]("Flight Number")
+    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+    val col2 = new TableColumn[Flight, String]("Departure Time")
+    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+    val col3 = new TableColumn[Flight, String]("Date")    
+    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+    val col4 = new TableColumn[Flight, String]("Route")
+    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+    val col5 = new TableColumn[Flight, String]("Route")
+    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+    val col7 = new TableColumn[Flight, String]("Aircraft Type")
+    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+    val col8 = new TableColumn[Flight, String]("Home Airport")
+    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+    val col9 = new TableColumn[Flight, String]("Callsign")
+    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+    val col10 = new TableColumn[Flight, String]("Blt Area")
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+    
+
+    tableView.columns ++= List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+
+
+    dataTab.content = tableView
+
 
 
 
@@ -82,7 +116,7 @@ object Dashboard extends JFXApp3:
     */
     //getFlightData()
 
-    root.children += (menuBar, tabPane)
+    root.children += (menuBar, tabPane, tableView)
 
   end start
 
