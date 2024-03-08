@@ -212,7 +212,7 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home",
+                "home": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
                 "options": [
                     "-Duser.dir=/Users/alvin/VScode/OS2Projekti/project"
                 ]
@@ -221,7 +221,7 @@
                 
             ],
             "runtimeConfig": {
-                "home": "/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home",
+                "home": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
                 "options": [
                     "-Duser.dir=/Users/alvin/VScode/OS2Projekti/project"
                 ]
