@@ -1,0 +1,169 @@
+file://<WORKSPACE>/src/main/scala/Dashboard.scala
+### java.lang.AssertionError: NoDenotation.owner
+
+occurred in the presentation compiler.
+
+presentation compiler configuration:
+Scala version: 3.3.0
+Classpath:
+<WORKSPACE>/.bloop/root/bloop-bsp-clients-classes/classes-Metals-SKJtf6EOQ06ZiWnaEO85wA== [exists ], <HOME>/Library/Caches/bloop/semanticdb/com.sourcegraph.semanticdb-javac.0.9.9/semanticdb-javac-0.9.9.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/model/core_3/1.4.7/core_3-1.4.7.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/core_3/1.2.5/core_3-1.2.5.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-mac.jar [exists ], <HOME>/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3.jar [exists ]
+Options:
+-Xsemanticdb -sourceroot <WORKSPACE>
+
+
+action parameters:
+offset: 3334
+uri: file://<WORKSPACE>/src/main/scala/Dashboard.scala
+text:
+```scala
+
+import scalafx.application.JFXApp3
+import scalafx.scene.Scene
+import scalafx.scene.layout.Pane
+import scalafx.scene.shape.Rectangle
+import scalafx.scene.paint.Color._
+import finaviaAPI.APIClient.*
+import scalafx.scene.control._
+import scalafx.Includes._
+import scalafx.event.ActionEvent
+import javafx.scene.layout.VBox
+import java.awt.Graphics
+import scalafx.stage.StageStyle.Unified
+import javafx.stage.StageStyle
+import scalafx.beans.property.StringProperty
+import scalafx.collections.ObservableBuffer
+import scalafx.beans.property.{StringProperty}
+import finaviaAPI.Flight
+import Visual.GraphData
+import scalafx.scene.chart._
+import java.util.Locale.Category
+
+
+object Dashboard extends JFXApp3:
+
+  def start() =
+
+    stage = new JFXApp3.PrimaryStage:
+      title = "Helsinki Airport Dashboard"
+      width = 1500
+      height = 900
+      initStyle(StageStyle.DECORATED)
+
+    val root = Pane()
+    val scene = Scene(parent = root)
+    stage.scene = scene
+
+    val menuBar = new MenuBar
+    val fileMenu = new Menu("File")
+    val settingsMenu = new Menu("Settings")
+    val exitItem = new MenuItem("Exit")
+    val colorItem = new MenuItem("Color")
+    fileMenu.items = List(exitItem)
+    settingsMenu.items = List(colorItem)
+    menuBar.menus = List(fileMenu, settingsMenu)
+    menuBar.prefWidth = 1500
+
+    
+    val tabPane = new TabPane
+    val homeTab = new Tab
+    homeTab.text = "Home"
+    val dataTab = new Tab
+    dataTab.text = "Data"
+    tabPane.layoutY = 30
+    tabPane.minWidth = 1500
+    tabPane.tabs = List(homeTab, dataTab)
+ 
+    val tableView = new TableView(getFlightData())
+    tableView.minHeight = 900
+    val col1 = new TableColumn[Flight, String]("Flight Number")
+    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+    val col2 = new TableColumn[Flight, String]("Departure Time")
+    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+    val col3 = new TableColumn[Flight, String]("Date")    
+    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+    val col4 = new TableColumn[Flight, String]("Route")
+    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+    val col5 = new TableColumn[Flight, String]("Route")
+    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+    val col7 = new TableColumn[Flight, String]("Aircraft Type")
+    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+    val col8 = new TableColumn[Flight, String]("Home Airport")
+    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+    val col9 = new TableColumn[Flight, String]("Callsign")
+    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+    val col10 = new TableColumn[Flight, String]("Blt Area")
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+    
+
+    tableView.columns ++= List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+
+    val xAxis = new NumberAxis()
+    val yAxis = new CategoryAxis()
+    val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
+    val series = new XYChart.Series[String, Number]
+    series.setName = "amkwsnqa"
+    series.setData = carrierCountArray.map(cca => XYChart.Data[String, Number@@])
+    
+
+
+
+
+
+    /*
+    val button = new Button("Click me")
+    button.layoutX = 100
+    button.layoutY = 100
+
+    val comboBox = new ComboBox(List("Table", "Graph", "Metric"))
+    comboBox.layoutX = 200
+    comboBox.layoutY = 100
+
+    val listView = new ListView(List("Scalafx", "pydton"))
+    listView.layoutX = 100
+    listView.layoutY = 150
+  
+
+    
+
+    button.onAction = (e: ActionEvent) => {
+      val selected = listView.selectionModel.apply().getSelectedItems
+      listView.items = listView.items.apply().diff(selected)
+      println("Button clicked")
+    }
+
+    comboBox.onAction = (e: ActionEvent) => {
+      listView.items.apply() += comboBox.selectionModel.apply().getSelectedItem
+    }
+    */
+    //getFlightData()
+
+    root.children += (menuBar, tabPane, tableView)
+
+  end start
+
+end Dashboard
+
+
+```
+
+
+
+#### Error stacktrace:
+
+```
+dotty.tools.dotc.core.SymDenotations$NoDenotation$.owner(SymDenotations.scala:2576)
+	scala.meta.internal.pc.SignatureHelpProvider$.isValid(SignatureHelpProvider.scala:83)
+	scala.meta.internal.pc.SignatureHelpProvider$.notCurrentApply(SignatureHelpProvider.scala:96)
+	scala.meta.internal.pc.SignatureHelpProvider$.$anonfun$1(SignatureHelpProvider.scala:48)
+	scala.collection.StrictOptimizedLinearSeqOps.loop$3(LinearSeq.scala:280)
+	scala.collection.StrictOptimizedLinearSeqOps.dropWhile(LinearSeq.scala:282)
+	scala.collection.StrictOptimizedLinearSeqOps.dropWhile$(LinearSeq.scala:278)
+	scala.collection.immutable.List.dropWhile(List.scala:79)
+	scala.meta.internal.pc.SignatureHelpProvider$.signatureHelp(SignatureHelpProvider.scala:48)
+	scala.meta.internal.pc.ScalaPresentationCompiler.signatureHelp$$anonfun$1(ScalaPresentationCompiler.scala:398)
+```
+#### Short summary: 
+
+java.lang.AssertionError: NoDenotation.owner

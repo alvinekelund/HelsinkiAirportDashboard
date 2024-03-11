@@ -1,3 +1,4 @@
+
 import scalafx.application.JFXApp3
 import scalafx.scene.Scene
 import scalafx.scene.layout.Pane
@@ -15,6 +16,9 @@ import scalafx.beans.property.StringProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.beans.property.{StringProperty}
 import finaviaAPI.Flight
+import Visual.GraphData
+import scalafx.scene.chart._
+import java.util.Locale.Category
 
 
 object Dashboard extends JFXApp3:
@@ -30,11 +34,6 @@ object Dashboard extends JFXApp3:
     val root = Pane()
     val scene = Scene(parent = root)
     stage.scene = scene
-
-
-    // val vbox = new VBox(10, new Button("Home"), new Button("Settings"))
-
-
 
     val menuBar = new MenuBar
     val fileMenu = new Menu("File")
@@ -55,6 +54,8 @@ object Dashboard extends JFXApp3:
     tabPane.layoutY = 30
     tabPane.minWidth = 1500
     tabPane.tabs = List(homeTab, dataTab)
+
+    
  
     val tableView = new TableView(getFlightData())
     tableView.minHeight = 900
@@ -82,8 +83,23 @@ object Dashboard extends JFXApp3:
 
     tableView.columns ++= List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
 
+    val graphData = new GraphData()
+    val flightData = getFlightData()
+    val xAxis = new CategoryAxis()
+    val yAxis = new NumberAxis()
+    xAxis.label = "Airline"
+    yAxis.label = "Number of Flights"
+    val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
+    val series = new XYChart.Series[String, Number]
+    series.setName("Operated flights by airline")
+    series.data = carrierCountArray.map(cca => XYChart.Data[String, Number](cca._1, cca._2))
+
+    val makeChart = new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
 
     dataTab.content = tableView
+    homeTab.content = makeChart
+    
+
 
 
 

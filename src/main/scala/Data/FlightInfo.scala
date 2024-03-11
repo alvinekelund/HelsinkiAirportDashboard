@@ -28,7 +28,7 @@ object Flight {
       (node \ "mfltnr").text,
       (node \ "route_1").text,
       (node \ "route_n_1").text,
-      (node \ "callsign").text,
+      (node \ "callsign").text, 
       (node \ "bltarea").text
     )
   }

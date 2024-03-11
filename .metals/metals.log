@@ -13162,3 +13162,2239 @@ INFO: compiler crashed due to an error in the Scala compiler, retrying with new 
 2024.03.08 13:20:29 INFO  compiling root (1 scala source)
 2024.03.08 13:20:34 WARN  there was 1 deprecation warning; re-run with -deprecation for details
 2024.03.08 13:20:34 INFO  time: compiled root in 6.08s
+2024.03.08 13:22:00 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 13:22:00 INFO  Closing debug server tcp://0.0.0.0:58795
+2024.03.08 13:22:00 INFO  Closing debug server tcp://0.0.0.0:58809
+2024.03.08 13:22:01 INFO  Canceling debug proxy for [Dashboard]
+Mar 08, 2024 1:22:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11811
+Exception in thread "pool-11-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:243)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Mar 08, 2024 1:25:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12136
+Mar 08, 2024 1:26:01 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12298
+2024.03.08 13:26:54 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 16h 6m 12.947s)
+2024.03.08 13:26:54 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 13:26:54 INFO  compiling root (1 scala source)
+2024.03.08 13:26:54 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 13:26:55 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 13:26:54 INFO  Loaded expression compiler in 36 milliseconds
+2024.03.08 13:26:54 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 13:26:54 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 13:26:56 INFO  time: compiled root in 1.3s
+Mar 08, 2024 1:26:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12362
+2024.03.08 13:27:02 INFO  Loaded all sources and classes in 6 seconds
+2024.03.08 13:27:06 INFO  Trying to attach to remote debuggee VM localhost:58970 .
+2024.03.08 13:27:06 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 13:28:41 INFO  compiling root (1 scala source)
+2024.03.08 13:28:41 INFO  time: compiled root in 0.79s
+Mar 08, 2024 1:42:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12557
+2024.03.08 13:42:54 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/FlightInfo.scala
+scala.meta.tokenizers.TokenizeException: <input>:33: error: unclosed string literal
+      (node \ "carrier)
+              ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 1:43:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12851
+Mar 08, 2024 1:44:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12903
+Mar 08, 2024 1:46:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13208
+Mar 08, 2024 2:38:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.StringIndexOutOfBoundsException: begin 676, end 697, length 687
+java.util.concurrent.CompletionException: java.lang.StringIndexOutOfBoundsException: begin 676, end 697, length 687
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.StringIndexOutOfBoundsException: begin 676, end 697, length 687
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at scala.meta.internal.metals.codeactions.FlatMapToForComprehensionCodeAction.getIndentForPos(FlatMapToForComprehensionCodeAction.scala:677)
+	at scala.meta.internal.metals.codeactions.FlatMapToForComprehensionCodeAction.$anonfun$contribute$4(FlatMapToForComprehensionCodeAction.scala:57)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.codeactions.FlatMapToForComprehensionCodeAction.$anonfun$contribute$3(FlatMapToForComprehensionCodeAction.scala:53)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.FlatMapToForComprehensionCodeAction.$anonfun$contribute$2(FlatMapToForComprehensionCodeAction.scala:52)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.FlatMapToForComprehensionCodeAction.$anonfun$contribute$1(FlatMapToForComprehensionCodeAction.scala:51)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+Mar 08, 2024 2:38:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13563
+Mar 08, 2024 2:38:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13572
+Mar 08, 2024 2:39:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13588
+2024.03.08 14:39:10 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/FlightInfo.scala
+scala.meta.tokenizers.TokenizeException: <input>:32: error: unclosed character literal
+      (node \ "callsign").text,''      (node \ "bltarea").text
+                               ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 2:46:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13824
+2024.03.08 14:46:23 INFO  compiling root (1 scala source)
+2024.03.08 14:46:23 INFO  time: compiled root in 0.7s
+2024.03.08 14:46:29 INFO  compiling root (1 scala source)
+2024.03.08 14:46:29 INFO  time: compiled root in 0.63s
+2024.03.08 14:46:44 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/DataParser.scala
+scala.meta.tokenizers.TokenizeException: <input>:38: error: unclosed character literal
+''
+^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 14:47:02 INFO  Closing debug server tcp://0.0.0.0:58966
+2024.03.08 14:47:02 INFO  Canceling debug proxy for [Dashboard]
+Mar 08, 2024 2:47:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13924
+2024.03.08 14:47:10 INFO  compiling root (1 scala source)
+2024.03.08 14:47:10 INFO  time: compiled root in 0.64s
+Mar 08, 2024 2:47:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.UnsupportedOperationException: tail of empty list
+java.util.concurrent.CompletionException: java.lang.UnsupportedOperationException: tail of empty list
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.UnsupportedOperationException: tail of empty list
+	at scala.collection.immutable.Nil$.tail(List.scala:664)
+	at scala.collection.immutable.Nil$.tail(List.scala:661)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$endPosOfTree$1(CreateCompanionObjectCodeAction.scala:77)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.endPosOfTree(CreateCompanionObjectCodeAction.scala:75)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$5(CreateCompanionObjectCodeAction.scala:61)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$4(CreateCompanionObjectCodeAction.scala:58)
+	at scala.Option$WithFilter.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$2(CreateCompanionObjectCodeAction.scala:56)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$1(CreateCompanionObjectCodeAction.scala:55)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2024.03.08 14:47:28 INFO  compiling root (1 scala source)
+2024.03.08 14:47:28 INFO  time: compiled root in 0.4s
+2024.03.08 14:47:36 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+scala.meta.tokenizers.TokenizeException: <input>:22: error: unclosed comment
+/*
+^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 14:47:40 INFO  compiling root (1 scala source)
+2024.03.08 14:47:40 INFO  time: compiled root in 0.74s
+2024.03.08 14:48:08 INFO  compiling root (1 scala source)
+2024.03.08 14:48:08 INFO  time: compiled root in 0.4s
+2024.03.08 14:48:13 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+scala.meta.tokenizers.TokenizeException: <input>:22: error: unclosed comment
+/*
+^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 14:48:22 INFO  compiling root (1 scala source)
+2024.03.08 14:48:22 INFO  time: compiled root in 0.32s
+2024.03.08 14:48:40 INFO  compiling root (3 scala sources)
+2024.03.08 14:48:44 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 17h 28m 3.363s)
+2024.03.08 14:48:44 INFO  compiling root (3 scala sources)
+2024.03.08 14:48:46 INFO  time: compiled root in 1.19s
+Mar 08, 2024 2:49:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14210
+2024.03.08 14:49:52 INFO  compiling root (3 scala sources)
+2024.03.08 14:49:55 INFO  time: compiled root in 3.46s
+Mar 08, 2024 2:49:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14278
+2024.03.08 14:50:06 INFO  compiling root (3 scala sources)
+2024.03.08 14:50:12 INFO  time: compiled root in 6.16s
+2024.03.08 14:50:12 INFO  compiling root (3 scala sources)
+2024.03.08 14:50:16 INFO  time: compiled root in 4.24s
+2024.03.08 14:50:53 INFO  compiling root (3 scala sources)
+2024.03.08 14:50:55 INFO  time: compiled root in 2.6s
+2024.03.08 14:51:09 INFO  compiling root (3 scala sources)
+Mar 08, 2024 2:51:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14386
+2024.03.08 14:51:11 INFO  time: compiled root in 1.55s
+2024.03.08 14:51:11 INFO  compiling root (3 scala sources)
+2024.03.08 14:51:12 INFO  time: compiled root in 1.47s
+2024.03.08 14:51:23 INFO  compiling root (3 scala sources)
+2024.03.08 14:51:26 INFO  time: compiled root in 3.12s
+2024.03.08 14:51:26 INFO  compiling root (3 scala sources)
+2024.03.08 14:51:29 INFO  time: compiled root in 2.56s
+2024.03.08 14:52:12 INFO  compiling root (3 scala sources)
+2024.03.08 14:52:15 INFO  time: compiled root in 2.86s
+Mar 08, 2024 2:52:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14485
+2024.03.08 14:52:31 INFO  compiling root (3 scala sources)
+2024.03.08 14:52:35 INFO  time: compiled root in 3.4s
+2024.03.08 14:52:35 INFO  compiling root (3 scala sources)
+2024.03.08 14:52:38 INFO  time: compiled root in 2.56s
+2024.03.08 14:53:05 INFO  compiling root (3 scala sources)
+2024.03.08 14:53:07 INFO  time: compiled root in 1.79s
+2024.03.08 14:53:12 INFO  compiling root (3 scala sources)
+2024.03.08 14:53:14 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 17h 32m 33.368s)
+2024.03.08 14:53:14 INFO  compiling root (3 scala sources)
+2024.03.08 14:53:14 INFO  time: compiled root in 0.24s
+Mar 08, 2024 2:53:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14580
+Mar 08, 2024 2:53:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14589
+2024.03.08 14:53:37 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+scala.meta.tokenizers.TokenizeException: <input>:2: error: unclosed comment
+/*
+^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 14:53:42 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 17h 33m 1.075s)
+2024.03.08 14:53:42 INFO  compiling root (1 scala source)
+2024.03.08 14:53:42 INFO  compiling root (1 scala source)
+2024.03.08 14:53:42 INFO  time: compiled root in 0.24s
+2024.03.08 14:53:42 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 14:53:42 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 14:53:43 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 14:53:42 INFO  Loaded expression compiler in 22 milliseconds
+2024.03.08 14:53:42 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 14:53:42 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 14:53:46 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 14:53:47 INFO  Trying to attach to remote debuggee VM localhost:59512 .
+2024.03.08 14:53:47 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 14:53:56 INFO  Closing debug server tcp://0.0.0.0:59509
+2024.03.08 14:53:56 INFO  Canceling debug proxy for [Dashboard]
+Mar 08, 2024 2:54:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14668
+2024.03.08 14:54:45 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+2024.03.08 14:54:49 INFO  compiling root (1 scala source)
+2024.03.08 14:54:49 INFO  time: compiled root in 0.24s
+2024.03.08 14:54:49 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+2024.03.08 14:54:49 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/ColumnChart.scala
+2024.03.08 14:55:00 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 17h 34m 19.412s)
+2024.03.08 14:55:01 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 14:55:01 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 14:55:01 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 14:55:00 INFO  Loaded expression compiler in 2 milliseconds
+2024.03.08 14:55:00 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 14:55:00 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 14:55:04 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 14:55:05 INFO  Trying to attach to remote debuggee VM localhost:59532 .
+2024.03.08 14:55:05 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 14:55:08 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 14:55:08 INFO  Closing debug server tcp://0.0.0.0:59529
+Mar 08, 2024 2:55:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14739
+Mar 08, 2024 2:55:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14751
+2024.03.08 14:55:29 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Data/DataParser.scala
+scala.meta.tokenizers.TokenizeException: <input>:73: error: unclosed comment
+  /*
+  ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 2:55:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14796
+2024.03.08 14:55:38 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 17h 34m 56.719s)
+2024.03.08 14:55:38 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 14:55:38 INFO  compiling root (1 scala source)
+2024.03.08 14:55:38 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 14:55:38 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 14:55:38 INFO  Loaded expression compiler in 1 millisecond
+2024.03.08 14:55:38 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 14:55:38 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 14:55:40 INFO  time: compiled root in 2.13s
+2024.03.08 14:55:41 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 14:55:44 INFO  Trying to attach to remote debuggee VM localhost:59541 .
+2024.03.08 14:55:44 INFO  Attaching to debuggee VM succeeded.
+Mar 08, 2024 3:12:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14838
+Mar 08, 2024 3:12:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14839
+Mar 08, 2024 3:13:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14855
+Mar 08, 2024 3:13:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14884
+Mar 08, 2024 3:13:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14899
+Mar 08, 2024 3:15:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14925
+2024.03.08 15:33:28 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 15:33:28 INFO  Closing debug server tcp://0.0.0.0:59538
+Mar 08, 2024 3:34:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14985
+Mar 08, 2024 3:36:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15115
+2024.03.08 15:38:45 INFO  compiling root (1 scala source)
+2024.03.08 15:38:46 INFO  time: compiled root in 1.25s
+Mar 08, 2024 3:38:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15174
+2024.03.08 15:40:35 INFO  compiling root (3 scala sources)
+2024.03.08 15:40:38 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 19m 56.666s)
+2024.03.08 15:40:38 INFO  compiling root (3 scala sources)
+2024.03.08 15:40:41 INFO  time: compiled root in 3.46s
+2024.03.08 15:40:53 INFO  compiling root (3 scala sources)
+2024.03.08 15:40:55 INFO  time: compiled root in 1.89s
+2024.03.08 15:41:06 INFO  compiling root (3 scala sources)
+2024.03.08 15:41:08 INFO  time: compiled root in 2.47s
+2024.03.08 15:41:12 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:17: error: illegal character '\u00a8'
+import finaviaAPI.Flight¨
+                        ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 15:42:15 INFO  compiling root (3 scala sources)
+2024.03.08 15:42:17 INFO  time: compiled root in 2.01s
+2024.03.08 15:42:22 INFO  compiling root (3 scala sources)
+2024.03.08 15:42:24 INFO  time: compiled root in 1.87s
+2024.03.08 15:43:23 INFO  compiling root (3 scala sources)
+2024.03.08 15:43:25 INFO  time: compiled root in 1.65s
+2024.03.08 15:45:20 INFO  compiling root (3 scala sources)
+2024.03.08 15:45:22 INFO  time: compiled root in 1.83s
+2024.03.08 15:45:22 INFO  compiling root (3 scala sources)
+2024.03.08 15:45:24 INFO  time: compiled root in 2s
+Mar 08, 2024 3:45:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16164
+2024.03.08 15:45:34 INFO  compiling root (3 scala sources)
+2024.03.08 15:45:36 INFO  time: compiled root in 1.6s
+2024.03.08 15:45:36 INFO  compiling root (3 scala sources)
+Mar 08, 2024 3:45:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16181
+2024.03.08 15:45:38 INFO  time: compiled root in 1.82s
+Mar 08, 2024 3:45:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16199
+2024.03.08 15:46:03 INFO  compiling root (3 scala sources)
+2024.03.08 15:46:04 INFO  time: compiled root in 1.38s
+2024.03.08 15:46:04 INFO  compiling root (3 scala sources)
+2024.03.08 15:46:06 INFO  time: compiled root in 1.65s
+2024.03.08 15:46:06 INFO  compiling root (3 scala sources)
+2024.03.08 15:46:07 INFO  time: compiled root in 1.28s
+2024.03.08 15:46:20 INFO  compiling root (3 scala sources)
+2024.03.08 15:46:22 INFO  time: compiled root in 1.75s
+2024.03.08 15:46:22 INFO  compiling root (3 scala sources)
+2024.03.08 15:46:25 INFO  time: compiled root in 2.39s
+Mar 08, 2024 3:46:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16346
+Mar 08, 2024 3:46:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16360
+2024.03.08 15:48:42 INFO  compiling root (3 scala sources)
+2024.03.08 15:48:45 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 15:48:45 INFO  time: compiled root in 2.85s
+2024.03.08 15:48:46 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:48:46 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:48:46 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:48:46 INFO  Loaded expression compiler in 8 milliseconds
+2024.03.08 15:48:46 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:48:46 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:48:50 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 15:48:52 INFO  Trying to attach to remote debuggee VM localhost:60254 .
+2024.03.08 15:48:52 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:48:59 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 15:48:59 INFO  Closing debug server tcp://0.0.0.0:60251
+Mar 08, 2024 3:49:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16586
+2024.03.08 15:49:16 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 15:50:21 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:50:21 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:50:21 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:50:21 INFO  Loaded expression compiler in 4 milliseconds
+2024.03.08 15:50:21 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:50:21 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:50:24 INFO  Loaded all sources and classes in 2 seconds
+2024.03.08 15:50:25 INFO  Trying to attach to remote debuggee VM localhost:60275 .
+2024.03.08 15:50:25 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:50:31 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 15:50:31 INFO  Closing debug server tcp://0.0.0.0:60272
+2024.03.08 15:51:01 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:118: error: unclosed comment
+    /*val graphData = new GraphData()
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 15:51:05 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:118: error: unclosed comment
+    /*val graphData = new GraphData()
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 15:51:06 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:118: error: unclosed comment
+    /*val graphData = new GraphData()
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 15:51:09 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 30m 28.213s)
+2024.03.08 15:51:09 INFO  compiling root (1 scala source)
+2024.03.08 15:51:09 INFO  compiling root (1 scala source)
+2024.03.08 15:51:11 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 15:51:11 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 15:51:11 INFO  time: compiled root in 2.08s
+2024.03.08 15:51:12 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:51:12 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:51:12 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:51:11 INFO  Loaded expression compiler in 4 milliseconds
+2024.03.08 15:51:11 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:51:11 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:51:14 INFO  Loaded all sources and classes in 2 seconds
+2024.03.08 15:51:16 INFO  Trying to attach to remote debuggee VM localhost:60290 .
+2024.03.08 15:51:16 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:51:43 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:118: error: unclosed comment
+    /*val graphData = new GraphData()
+    ^
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:27)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:26)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter.incompleteInputError$(Reporter.scala:29)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.incompleteInputError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipNestedComments(LegacyScanner.scala:52)
+	at scala.meta.internal.tokenizers.LegacyScanner.skipToCommentEnd(LegacyScanner.scala:71)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:313)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 15:52:30 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 31m 48.835s)
+2024.03.08 15:52:30 INFO  compiling root (1 scala source)
+2024.03.08 15:52:30 INFO  compiling root (1 scala source)
+2024.03.08 15:52:36 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 15:52:36 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 15:52:36 INFO  time: compiled root in 6.28s
+2024.03.08 15:52:37 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:52:37 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:52:37 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:52:38 INFO  Loaded expression compiler in 33 milliseconds
+2024.03.08 15:52:38 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:52:38 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:52:41 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 15:52:43 INFO  Trying to attach to remote debuggee VM localhost:60304 .
+2024.03.08 15:52:43 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:52:54 INFO  Closing debug server tcp://0.0.0.0:60301
+2024.03.08 15:52:54 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 15:53:08 INFO  Closing debug server tcp://0.0.0.0:60287
+2024.03.08 15:53:08 INFO  Canceling debug proxy for [Dashboard]
+Mar 08, 2024 3:58:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16742
+Mar 08, 2024 3:58:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16749
+2024.03.08 15:58:35 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:58:35 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:58:35 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:58:35 INFO  Loaded expression compiler in 12 milliseconds
+2024.03.08 15:58:35 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:58:35 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:58:43 INFO  Loaded all sources and classes in 8 seconds
+2024.03.08 15:58:43 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 38m 2.552s)
+2024.03.08 15:58:46 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 15:58:46 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 15:58:46 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 15:58:46 INFO  Loaded expression compiler in 48 milliseconds
+2024.03.08 15:58:46 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 15:58:46 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 15:58:51 INFO  Trying to attach to remote debuggee VM localhost:60340 .
+2024.03.08 15:58:51 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:59:14 INFO  Loaded all sources and classes in 27 seconds
+2024.03.08 15:59:25 INFO  Trying to attach to remote debuggee VM localhost:60348 .
+2024.03.08 15:59:25 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 15:59:56 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:00:49 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 16:00:49 INFO  Closing debug server tcp://0.0.0.0:60337
+2024.03.08 16:00:56 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 16:00:56 INFO  Closing debug server tcp://0.0.0.0:60343
+Mar 08, 2024 4:06:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16812
+Mar 08, 2024 4:06:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16820
+Mar 08, 2024 4:08:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16866
+2024.03.08 16:08:32 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:09:57 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:12:26 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:12:38 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:12:38 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:13:34 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:13:39 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Visual/GraphData.scala
+2024.03.08 16:13:56 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 53m 14.845s)
+2024.03.08 16:13:56 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 16:13:56 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 16:13:56 INFO  compiling root (1 scala source)
+2024.03.08 16:13:57 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 16:13:56 INFO  Loaded expression compiler in 42 milliseconds
+2024.03.08 16:13:56 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 16:13:56 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 16:14:02 INFO  Loaded all sources and classes in 5 seconds
+2024.03.08 16:14:02 INFO  time: compiled root in 5.92s
+2024.03.08 16:14:02 INFO  compiling root (1 scala source)
+2024.03.08 16:14:06 INFO  Trying to attach to remote debuggee VM localhost:60430 .
+2024.03.08 16:14:06 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 16:14:08 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 16:14:08 INFO  time: compiled root in 5.34s
+Mar 08, 2024 4:14:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16948
+2024.03.08 16:14:16 INFO  Closing debug server tcp://0.0.0.0:60426
+2024.03.08 16:14:16 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 16:14:31 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 18h 53m 49.954s)
+2024.03.08 16:14:31 INFO  compiling root (1 scala source)
+2024.03.08 16:14:31 INFO  compiling root (1 scala source)
+2024.03.08 16:14:33 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 16:14:33 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.08 16:14:33 INFO  time: compiled root in 1.99s
+2024.03.08 16:14:33 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 16:14:33 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 16:14:33 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 16:14:33 INFO  Loaded expression compiler in 2 milliseconds
+2024.03.08 16:14:33 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 16:14:33 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 16:14:37 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 16:14:39 INFO  Trying to attach to remote debuggee VM localhost:60444 .
+2024.03.08 16:14:39 INFO  Attaching to debuggee VM succeeded.
+Mar 08, 2024 4:18:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16980
+2024.03.08 16:22:29 WARN  Using indexes to guess the definition of Column
+Mar 08, 2024 4:22:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17431
+2024.03.08 16:24:34 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:83: error: unclosed string literal
+    val columnChart = new BarChart["Carrier, ]
+                                   ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 16:24:43 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:83: error: unclosed string literal
+    val columnChart = new BarChart["Carrier", "Flights]
+                                              ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 16:24:44 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:83: error: unclosed string literal
+    val columnChart = new BarChart["Carrier", "Flights""]
+                                                       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 4:25:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17927
+2024.03.08 16:25:35 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 19h 4m 53.983s)
+2024.03.08 16:25:35 INFO  compiling root (1 scala source)
+2024.03.08 16:25:35 INFO  compiling root (1 scala source)
+2024.03.08 16:25:44 INFO  time: compiled root in 9.03s
+2024.03.08 16:25:44 INFO  compiling root (1 scala source)
+2024.03.08 16:25:46 INFO  time: compiled root in 1.17s
+2024.03.08 16:25:46 INFO  {
+  "jsonrpc": "2.0",
+  "id": "845",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.08 16:25:46 ERROR failed: Starting debug server
+scala.meta.internal.metals.MetalsBspException: BSP connection failed in the attempt to get: DebugSessionAddress
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.$anonfun$applyOrElse$9(BuildServerConnection.scala:494)
+	at scala.Option.getOrElse(Option.scala:201)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:494)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:469)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:358)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:317)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 16:26:06 INFO  compiling root (1 scala source)
+2024.03.08 16:26:09 INFO  time: compiled root in 2.6s
+2024.03.08 16:26:32 INFO  compiling root (1 scala source)
+2024.03.08 16:26:36 INFO  time: compiled root in 3.94s
+2024.03.08 16:26:38 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:85: error: unclosed string interpolation
+    val columnChart = new BarChart["Carrier, "Flights", graphData.perCarrier(flightData)]
+                                                      ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 4:26:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18017
+2024.03.08 16:27:27 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 16:27:28 INFO  Closing debug server tcp://0.0.0.0:60441
+Mar 08, 2024 4:28:12 PM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.stream.scaladsl.type.Source
+the classfile defining the type might be missing from the classpath
+dotty.tools.FatalError: cannot resolve reference to type akka.stream.scaladsl.type.Source
+the classfile defining the type might be missing from the classpath
+	at dotty.tools.FatalError$.apply(FatalError.scala:3)
+	at dotty.tools.dotc.core.TypeErasure.checkedSuperType(TypeErasure.scala:701)
+	at dotty.tools.dotc.core.TypeErasure.dotty$tools$dotc$core$TypeErasure$$sigName(TypeErasure.scala:856)
+	at dotty.tools.dotc.core.TypeErasure$.sigName(TypeErasure.scala:204)
+	at dotty.tools.dotc.core.Signature.$anonfun$2(Signature.scala:111)
+	at scala.collection.immutable.List.map(List.scala:250)
+	at dotty.tools.dotc.core.Signature.prependTermParams(Signature.scala:111)
+	at dotty.tools.dotc.core.Types$MethodOrPoly.computeSignature$2(Types.scala:3700)
+	at dotty.tools.dotc.core.Types$MethodOrPoly.signature(Types.scala:3717)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.signature(Denotations.scala:618)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.matchesLoosely(Denotations.scala:1024)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.matches(Denotations.scala:1008)
+	at dotty.tools.dotc.core.Denotations$Denotation.mergeDenot$1(Denotations.scala:409)
+	at dotty.tools.dotc.core.Denotations$Denotation.meet(Denotations.scala:499)
+	at dotty.tools.dotc.core.Denotations$DenotUnion.toDenot(Denotations.scala:1230)
+	at dotty.tools.dotc.core.SymDenotations$ClassDenotation.findMember(SymDenotations.scala:2138)
+	at dotty.tools.dotc.core.Types$Type.go$1(Types.scala:689)
+	at dotty.tools.dotc.core.Types$Type.findMember(Types.scala:872)
+	at dotty.tools.dotc.core.Types$Type.memberBasedOnFlags(Types.scala:672)
+	at dotty.tools.dotc.core.Types$Type.member(Types.scala:656)
+	at scala.meta.internal.pc.completions.Completions.completionsWithSuffix(Completions.scala:325)
+	at scala.meta.internal.pc.completions.Completions.$anonfun$5(Completions.scala:601)
+	at scala.collection.immutable.List.filter(List.scala:515)
+	at scala.meta.internal.pc.CompilerSearchVisitor.visitClassfile(CompilerSearchVisitor.scala:81)
+	at scala.meta.internal.metals.ClasspathSearch.$anonfun$search$5(ClasspathSearch.scala:50)
+	at scala.meta.internal.metals.ClasspathSearch.$anonfun$search$5$adapted(ClasspathSearch.scala:40)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1300)
+	at scala.meta.internal.metals.ClasspathSearch.search(ClasspathSearch.scala:40)
+	at scala.meta.internal.metals.WorkspaceSymbolProvider.search(WorkspaceSymbolProvider.scala:93)
+	at scala.meta.internal.metals.MetalsSymbolSearch.search$1(MetalsSymbolSearch.scala:101)
+	at scala.meta.internal.metals.MetalsSymbolSearch.search(MetalsSymbolSearch.scala:105)
+	at scala.meta.internal.pc.completions.Completions.enrichWithSymbolSearch(Completions.scala:605)
+	at scala.meta.internal.pc.completions.Completions.filterInteresting(Completions.scala:707)
+	at scala.meta.internal.pc.completions.Completions.completions(Completions.scala:204)
+	at scala.meta.internal.pc.completions.CompletionProvider.completions(CompletionProvider.scala:86)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.complete$$anonfun$1(ScalaPresentationCompiler.scala:146)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$1(CompilerAccess.scala:102)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:245)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 4:28:12 PM scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: cannot resolve reference to type akka.stream.scaladsl.type.Source
+the classfile defining the type might be missing from the classpath
+dotty.tools.FatalError: cannot resolve reference to type akka.stream.scaladsl.type.Source
+the classfile defining the type might be missing from the classpath
+	at dotty.tools.FatalError$.apply(FatalError.scala:3)
+	at dotty.tools.dotc.core.TypeErasure.checkedSuperType(TypeErasure.scala:701)
+	at dotty.tools.dotc.core.TypeErasure.dotty$tools$dotc$core$TypeErasure$$sigName(TypeErasure.scala:856)
+	at dotty.tools.dotc.core.TypeErasure$.sigName(TypeErasure.scala:204)
+	at dotty.tools.dotc.core.Signature.$anonfun$2(Signature.scala:111)
+	at scala.collection.immutable.List.map(List.scala:250)
+	at dotty.tools.dotc.core.Signature.prependTermParams(Signature.scala:111)
+	at dotty.tools.dotc.core.Types$MethodOrPoly.computeSignature$2(Types.scala:3700)
+	at dotty.tools.dotc.core.Types$MethodOrPoly.signature(Types.scala:3717)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.signature(Denotations.scala:618)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.matchesLoosely(Denotations.scala:1024)
+	at dotty.tools.dotc.core.Denotations$SingleDenotation.matches(Denotations.scala:1008)
+	at dotty.tools.dotc.core.Denotations$Denotation.mergeDenot$1(Denotations.scala:409)
+	at dotty.tools.dotc.core.Denotations$Denotation.meet(Denotations.scala:499)
+	at dotty.tools.dotc.core.Denotations$DenotUnion.toDenot(Denotations.scala:1230)
+	at dotty.tools.dotc.core.SymDenotations$ClassDenotation.findMember(SymDenotations.scala:2138)
+	at dotty.tools.dotc.core.Types$Type.go$1(Types.scala:689)
+	at dotty.tools.dotc.core.Types$Type.findMember(Types.scala:872)
+	at dotty.tools.dotc.core.Types$Type.memberBasedOnFlags(Types.scala:672)
+	at dotty.tools.dotc.core.Types$Type.member(Types.scala:656)
+	at scala.meta.internal.pc.completions.Completions.completionsWithSuffix(Completions.scala:325)
+	at scala.meta.internal.pc.completions.Completions.$anonfun$5(Completions.scala:601)
+	at scala.collection.immutable.List.filter(List.scala:515)
+	at scala.meta.internal.pc.CompilerSearchVisitor.visitClassfile(CompilerSearchVisitor.scala:81)
+	at scala.meta.internal.metals.ClasspathSearch.$anonfun$search$5(ClasspathSearch.scala:50)
+	at scala.meta.internal.metals.ClasspathSearch.$anonfun$search$5$adapted(ClasspathSearch.scala:40)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1300)
+	at scala.meta.internal.metals.ClasspathSearch.search(ClasspathSearch.scala:40)
+	at scala.meta.internal.metals.WorkspaceSymbolProvider.search(WorkspaceSymbolProvider.scala:93)
+	at scala.meta.internal.metals.MetalsSymbolSearch.search$1(MetalsSymbolSearch.scala:101)
+	at scala.meta.internal.metals.MetalsSymbolSearch.search(MetalsSymbolSearch.scala:105)
+	at scala.meta.internal.pc.completions.Completions.enrichWithSymbolSearch(Completions.scala:605)
+	at scala.meta.internal.pc.completions.Completions.filterInteresting(Completions.scala:707)
+	at scala.meta.internal.pc.completions.Completions.completions(Completions.scala:204)
+	at scala.meta.internal.pc.completions.CompletionProvider.completions(CompletionProvider.scala:86)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.complete$$anonfun$1(ScalaPresentationCompiler.scala:146)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$1(CompilerAccess.scala:102)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:245)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+Mar 08, 2024 4:28:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18244
+2024.03.08 16:28:39 INFO  compiling root (1 scala source)
+2024.03.08 16:28:42 INFO  time: compiled root in 3.53s
+2024.03.08 16:29:01 INFO  compiling root (1 scala source)
+2024.03.08 16:29:02 INFO  time: compiled root in 1.19s
+2024.03.08 16:30:38 INFO  compiling root (1 scala source)
+2024.03.08 16:30:39 INFO  time: compiled root in 1.31s
+2024.03.08 16:30:39 INFO  compiling root (1 scala source)
+2024.03.08 16:30:42 INFO  time: compiled root in 1.92s
+Mar 08, 2024 4:36:12 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-36-12-139.md
+Mar 08, 2024 4:36:30 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-36-30-776.md
+2024.03.08 16:36:33 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:85: error: illegal character '\u00b4'
+    val columnChart = BarChart[xAxis, ya´]
+                                        ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+error while checking new XYChart.Series[Number, String](null)
+error while checking val series = new XYChart.Series[Number, String](null)
+error while checking {
+  stage =
+    new JFXApp3.PrimaryStage {
+      title = "Helsinki Airport Dashboard"
+      width = 1500
+      height = 900
+      initStyle(StageStyle.DECORATED)
+    }
+  val root = Pane()
+  val scene = Scene(parent = root)
+  stage.scene = scene
+  val menuBar = new MenuBar()
+  val fileMenu = new Menu("File")
+  val settingsMenu = new Menu("Settings")
+  val exitItem = new MenuItem("Exit")
+  val colorItem = new MenuItem("Color")
+  fileMenu.items = List(exitItem)
+  settingsMenu.items = List(colorItem)
+  menuBar.menus = List(fileMenu, settingsMenu)
+  menuBar.prefWidth = 1500
+  val tabPane = new TabPane()
+  val homeTab = new Tab()
+  homeTab.text = "Home"
+  val dataTab = new Tab()
+  dataTab.text = "Data"
+  tabPane.layoutY = 30
+  tabPane.minWidth = 1500
+  tabPane.tabs = List(homeTab, dataTab)
+  val tableView = new TableView(getFlightData())
+  tableView.minHeight = 900
+  val col1 = new TableColumn[Flight, String]("Flight Number")
+  col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+  val col2 = new TableColumn[Flight, String]("Departure Time")
+  col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+  val col3 = new TableColumn[Flight, String]("Date")
+  col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+  val col4 = new TableColumn[Flight, String]("Route")
+  col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+  val col5 = new TableColumn[Flight, String]("Route")
+  col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+  val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+  col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+  val col7 = new TableColumn[Flight, String]("Aircraft Type")
+  col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+  val col8 = new TableColumn[Flight, String]("Home Airport")
+  col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+  val col9 = new TableColumn[Flight, String]("Callsign")
+  col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+  val col10 = new TableColumn[Flight, String]("Blt Area")
+  col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+  tableView.columns ++=
+    List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+  val xAxis = new NumberAxis()
+  val yAxis = new CategoryAxis()
+  val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
+  val series = new XYChart.Series[Number, String](null)
+  <empty>
+}
+error while checking def start() =
+  {
+    stage =
+      new JFXApp3.PrimaryStage {
+        title = "Helsinki Airport Dashboard"
+        width = 1500
+        height = 900
+        initStyle(StageStyle.DECORATED)
+      }
+    val root = Pane()
+    val scene = Scene(parent = root)
+    stage.scene = scene
+    val menuBar = new MenuBar()
+    val fileMenu = new Menu("File")
+    val settingsMenu = new Menu("Settings")
+    val exitItem = new MenuItem("Exit")
+    val colorItem = new MenuItem("Color")
+    fileMenu.items = List(exitItem)
+    settingsMenu.items = List(colorItem)
+    menuBar.menus = List(fileMenu, settingsMenu)
+    menuBar.prefWidth = 1500
+    val tabPane = new TabPane()
+    val homeTab = new Tab()
+    homeTab.text = "Home"
+    val dataTab = new Tab()
+    dataTab.text = "Data"
+    tabPane.layoutY = 30
+    tabPane.minWidth = 1500
+    tabPane.tabs = List(homeTab, dataTab)
+    val tableView = new TableView(getFlightData())
+    tableView.minHeight = 900
+    val col1 = new TableColumn[Flight, String]("Flight Number")
+    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+    val col2 = new TableColumn[Flight, String]("Departure Time")
+    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+    val col3 = new TableColumn[Flight, String]("Date")
+    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+    val col4 = new TableColumn[Flight, String]("Route")
+    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+    val col5 = new TableColumn[Flight, String]("Route")
+    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+    val col7 = new TableColumn[Flight, String]("Aircraft Type")
+    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+    val col8 = new TableColumn[Flight, String]("Home Airport")
+    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+    val col9 = new TableColumn[Flight, String]("Callsign")
+    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+    val col10 = new TableColumn[Flight, String]("Blt Area")
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+    tableView.columns ++=
+      List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+    val xAxis = new NumberAxis()
+    val yAxis = new CategoryAxis()
+    val carrierCountArray: Array[(String, Int)] =
+      graphData.perCarrier(flightData)
+    val series = new XYChart.Series[Number, String](null)
+    <empty>
+  }
+error while checking  extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking module object Dashboard extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking package <empty> {
+  import scalafx.application.JFXApp3
+  import scalafx.scene.Scene
+  import scalafx.scene.layout.Pane
+  import scalafx.scene.shape.Rectangle
+  import scalafx.scene.paint.Color.*
+  import finaviaAPI.APIClient.*
+  import scalafx.scene.control.*
+  import scalafx.Includes.*
+  import scalafx.event.ActionEvent
+  import javafx.scene.layout.VBox
+  import java.awt.Graphics
+  import scalafx.stage.StageStyle.Unified
+  import javafx.stage.StageStyle
+  import scalafx.beans.property.StringProperty
+  import scalafx.collections.ObservableBuffer
+  import scalafx.beans.property.StringProperty
+  import finaviaAPI.Flight
+  import Visual.GraphData
+  import scalafx.scene.chart.*
+  import java.util.Locale.Category
+  module object Dashboard extends JFXApp3 {
+    def start() =
+      {
+        stage =
+          new JFXApp3.PrimaryStage {
+            title = "Helsinki Airport Dashboard"
+            width = 1500
+            height = 900
+            initStyle(StageStyle.DECORATED)
+          }
+        val root = Pane()
+        val scene = Scene(parent = root)
+        stage.scene = scene
+        val menuBar = new MenuBar()
+        val fileMenu = new Menu("File")
+        val settingsMenu = new Menu("Settings")
+        val exitItem = new MenuItem("Exit")
+        val colorItem = new MenuItem("Color")
+        fileMenu.items = List(exitItem)
+        settingsMenu.items = List(colorItem)
+        menuBar.menus = List(fileMenu, settingsMenu)
+        menuBar.prefWidth = 1500
+        val tabPane = new TabPane()
+        val homeTab = new Tab()
+        homeTab.text = "Home"
+        val dataTab = new Tab()
+        dataTab.text = "Data"
+        tabPane.layoutY = 30
+        tabPane.minWidth = 1500
+        tabPane.tabs = List(homeTab, dataTab)
+        val tableView = new TableView(getFlightData())
+        tableView.minHeight = 900
+        val col1 = new TableColumn[Flight, String]("Flight Number")
+        col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+        val col2 = new TableColumn[Flight, String]("Departure Time")
+        col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+        val col3 = new TableColumn[Flight, String]("Date")
+        col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+        val col4 = new TableColumn[Flight, String]("Route")
+        col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+        val col5 = new TableColumn[Flight, String]("Route")
+        col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+        val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+        col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+        val col7 = new TableColumn[Flight, String]("Aircraft Type")
+        col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+        val col8 = new TableColumn[Flight, String]("Home Airport")
+        col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+        val col9 = new TableColumn[Flight, String]("Callsign")
+        col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+        val col10 = new TableColumn[Flight, String]("Blt Area")
+        col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+        tableView.columns ++=
+          List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+        val xAxis = new NumberAxis()
+        val yAxis = new CategoryAxis()
+        val carrierCountArray: Array[(String, Int)] =
+          graphData.perCarrier(flightData)
+        val series = new XYChart.Series[Number, String](null)
+        <empty>
+      }
+  }
+}
+Mar 08, 2024 4:51:59 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-51-59-548.md
+2024.03.08 16:51:59 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+error while checking new XYChart.Series[Number, String](null)
+error while checking val series = new XYChart.Series[Number, String](null)
+error while checking {
+  stage =
+    new JFXApp3.PrimaryStage {
+      title = "Helsinki Airport Dashboard"
+      width = 1500
+      height = 900
+      initStyle(StageStyle.DECORATED)
+    }
+  val root = Pane()
+  val scene = Scene(parent = root)
+  stage.scene = scene
+  val menuBar = new MenuBar()
+  val fileMenu = new Menu("File")
+  val settingsMenu = new Menu("Settings")
+  val exitItem = new MenuItem("Exit")
+  val colorItem = new MenuItem("Color")
+  fileMenu.items = List(exitItem)
+  settingsMenu.items = List(colorItem)
+  menuBar.menus = List(fileMenu, settingsMenu)
+  menuBar.prefWidth = 1500
+  val tabPane = new TabPane()
+  val homeTab = new Tab()
+  homeTab.text = "Home"
+  val dataTab = new Tab()
+  dataTab.text = "Data"
+  tabPane.layoutY = 30
+  tabPane.minWidth = 1500
+  tabPane.tabs = List(homeTab, dataTab)
+  val tableView = new TableView(getFlightData())
+  tableView.minHeight = 900
+  val col1 = new TableColumn[Flight, String]("Flight Number")
+  col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+  val col2 = new TableColumn[Flight, String]("Departure Time")
+  col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+  val col3 = new TableColumn[Flight, String]("Date")
+  col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+  val col4 = new TableColumn[Flight, String]("Route")
+  col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+  val col5 = new TableColumn[Flight, String]("Route")
+  col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+  val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+  col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+  val col7 = new TableColumn[Flight, String]("Aircraft Type")
+  col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+  val col8 = new TableColumn[Flight, String]("Home Airport")
+  col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+  val col9 = new TableColumn[Flight, String]("Callsign")
+  col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+  val col10 = new TableColumn[Flight, String]("Blt Area")
+  col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+  tableView.columns ++=
+    List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+  val xAxis = new NumberAxis()
+  val yAxis = new CategoryAxis()
+  val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
+  val series = new XYChart.Series[Number, String](null)
+  <empty>
+}
+error while checking def start() =
+  {
+    stage =
+      new JFXApp3.PrimaryStage {
+        title = "Helsinki Airport Dashboard"
+        width = 1500
+        height = 900
+        initStyle(StageStyle.DECORATED)
+      }
+    val root = Pane()
+    val scene = Scene(parent = root)
+    stage.scene = scene
+    val menuBar = new MenuBar()
+    val fileMenu = new Menu("File")
+    val settingsMenu = new Menu("Settings")
+    val exitItem = new MenuItem("Exit")
+    val colorItem = new MenuItem("Color")
+    fileMenu.items = List(exitItem)
+    settingsMenu.items = List(colorItem)
+    menuBar.menus = List(fileMenu, settingsMenu)
+    menuBar.prefWidth = 1500
+    val tabPane = new TabPane()
+    val homeTab = new Tab()
+    homeTab.text = "Home"
+    val dataTab = new Tab()
+    dataTab.text = "Data"
+    tabPane.layoutY = 30
+    tabPane.minWidth = 1500
+    tabPane.tabs = List(homeTab, dataTab)
+    val tableView = new TableView(getFlightData())
+    tableView.minHeight = 900
+    val col1 = new TableColumn[Flight, String]("Flight Number")
+    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+    val col2 = new TableColumn[Flight, String]("Departure Time")
+    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+    val col3 = new TableColumn[Flight, String]("Date")
+    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+    val col4 = new TableColumn[Flight, String]("Route")
+    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+    val col5 = new TableColumn[Flight, String]("Route")
+    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+    val col7 = new TableColumn[Flight, String]("Aircraft Type")
+    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+    val col8 = new TableColumn[Flight, String]("Home Airport")
+    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+    val col9 = new TableColumn[Flight, String]("Callsign")
+    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+    val col10 = new TableColumn[Flight, String]("Blt Area")
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+    tableView.columns ++=
+      List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+    val xAxis = new NumberAxis()
+    val yAxis = new CategoryAxis()
+    val carrierCountArray: Array[(String, Int)] =
+      graphData.perCarrier(flightData)
+    val series = new XYChart.Series[Number, String](null)
+    <empty>
+  }
+error while checking  extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking module object Dashboard extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking package <empty> {
+  import scalafx.application.JFXApp3
+  import scalafx.scene.Scene
+  import scalafx.scene.layout.Pane
+  import scalafx.scene.shape.Rectangle
+  import scalafx.scene.paint.Color.*
+  import finaviaAPI.APIClient.*
+  import scalafx.scene.control.*
+  import scalafx.Includes.*
+  import scalafx.event.ActionEvent
+  import javafx.scene.layout.VBox
+  import java.awt.Graphics
+  import scalafx.stage.StageStyle.Unified
+  import javafx.stage.StageStyle
+  import scalafx.beans.property.StringProperty
+  import scalafx.collections.ObservableBuffer
+  import scalafx.beans.property.StringProperty
+  import finaviaAPI.Flight
+  import Visual.GraphData
+  import scalafx.scene.chart.*
+  import java.util.Locale.Category
+  module object Dashboard extends JFXApp3 {
+    def start() =
+      {
+        stage =
+          new JFXApp3.PrimaryStage {
+            title = "Helsinki Airport Dashboard"
+            width = 1500
+            height = 900
+            initStyle(StageStyle.DECORATED)
+          }
+        val root = Pane()
+        val scene = Scene(parent = root)
+        stage.scene = scene
+        val menuBar = new MenuBar()
+        val fileMenu = new Menu("File")
+        val settingsMenu = new Menu("Settings")
+        val exitItem = new MenuItem("Exit")
+        val colorItem = new MenuItem("Color")
+        fileMenu.items = List(exitItem)
+        settingsMenu.items = List(colorItem)
+        menuBar.menus = List(fileMenu, settingsMenu)
+        menuBar.prefWidth = 1500
+        val tabPane = new TabPane()
+        val homeTab = new Tab()
+        homeTab.text = "Home"
+        val dataTab = new Tab()
+        dataTab.text = "Data"
+        tabPane.layoutY = 30
+        tabPane.minWidth = 1500
+        tabPane.tabs = List(homeTab, dataTab)
+        val tableView = new TableView(getFlightData())
+        tableView.minHeight = 900
+        val col1 = new TableColumn[Flight, String]("Flight Number")
+        col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+        val col2 = new TableColumn[Flight, String]("Departure Time")
+        col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+        val col3 = new TableColumn[Flight, String]("Date")
+        col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+        val col4 = new TableColumn[Flight, String]("Route")
+        col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+        val col5 = new TableColumn[Flight, String]("Route")
+        col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+        val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+        col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+        val col7 = new TableColumn[Flight, String]("Aircraft Type")
+        col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+        val col8 = new TableColumn[Flight, String]("Home Airport")
+        col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+        val col9 = new TableColumn[Flight, String]("Callsign")
+        col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+        val col10 = new TableColumn[Flight, String]("Blt Area")
+        col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+        tableView.columns ++=
+          List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+        val xAxis = new NumberAxis()
+        val yAxis = new CategoryAxis()
+        val carrierCountArray: Array[(String, Int)] =
+          graphData.perCarrier(flightData)
+        val series = new XYChart.Series[Number, String](null)
+        <empty>
+      }
+  }
+}
+Mar 08, 2024 4:52:00 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-52-00-216.md
+2024.03.08 16:52:00 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+error while checking new XYChart.Series[Number, String](null)
+error while checking val series = new XYChart.Series[Number, String](null)
+error while checking {
+  stage =
+    new JFXApp3.PrimaryStage {
+      title = "Helsinki Airport Dashboard"
+      width = 1500
+      height = 900
+      initStyle(StageStyle.DECORATED)
+    }
+  val root = Pane()
+  val scene = Scene(parent = root)
+  stage.scene = scene
+  val menuBar = new MenuBar()
+  val fileMenu = new Menu("File")
+  val settingsMenu = new Menu("Settings")
+  val exitItem = new MenuItem("Exit")
+  val colorItem = new MenuItem("Color")
+  fileMenu.items = List(exitItem)
+  settingsMenu.items = List(colorItem)
+  menuBar.menus = List(fileMenu, settingsMenu)
+  menuBar.prefWidth = 1500
+  val tabPane = new TabPane()
+  val homeTab = new Tab()
+  homeTab.text = "Home"
+  val dataTab = new Tab()
+  dataTab.text = "Data"
+  tabPane.layoutY = 30
+  tabPane.minWidth = 1500
+  tabPane.tabs = List(homeTab, dataTab)
+  val tableView = new TableView(getFlightData())
+  tableView.minHeight = 900
+  val col1 = new TableColumn[Flight, String]("Flight Number")
+  col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+  val col2 = new TableColumn[Flight, String]("Departure Time")
+  col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+  val col3 = new TableColumn[Flight, String]("Date")
+  col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+  val col4 = new TableColumn[Flight, String]("Route")
+  col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+  val col5 = new TableColumn[Flight, String]("Route")
+  col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+  val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+  col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+  val col7 = new TableColumn[Flight, String]("Aircraft Type")
+  col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+  val col8 = new TableColumn[Flight, String]("Home Airport")
+  col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+  val col9 = new TableColumn[Flight, String]("Callsign")
+  col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+  val col10 = new TableColumn[Flight, String]("Blt Area")
+  col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+  tableView.columns ++=
+    List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+  val xAxis = new NumberAxis()
+  val yAxis = new CategoryAxis()
+  val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
+  val series = new XYChart.Series[Number, String](null)
+  <empty>
+}
+error while checking def start() =
+  {
+    stage =
+      new JFXApp3.PrimaryStage {
+        title = "Helsinki Airport Dashboard"
+        width = 1500
+        height = 900
+        initStyle(StageStyle.DECORATED)
+      }
+    val root = Pane()
+    val scene = Scene(parent = root)
+    stage.scene = scene
+    val menuBar = new MenuBar()
+    val fileMenu = new Menu("File")
+    val settingsMenu = new Menu("Settings")
+    val exitItem = new MenuItem("Exit")
+    val colorItem = new MenuItem("Color")
+    fileMenu.items = List(exitItem)
+    settingsMenu.items = List(colorItem)
+    menuBar.menus = List(fileMenu, settingsMenu)
+    menuBar.prefWidth = 1500
+    val tabPane = new TabPane()
+    val homeTab = new Tab()
+    homeTab.text = "Home"
+    val dataTab = new Tab()
+    dataTab.text = "Data"
+    tabPane.layoutY = 30
+    tabPane.minWidth = 1500
+    tabPane.tabs = List(homeTab, dataTab)
+    val tableView = new TableView(getFlightData())
+    tableView.minHeight = 900
+    val col1 = new TableColumn[Flight, String]("Flight Number")
+    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+    val col2 = new TableColumn[Flight, String]("Departure Time")
+    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+    val col3 = new TableColumn[Flight, String]("Date")
+    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+    val col4 = new TableColumn[Flight, String]("Route")
+    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+    val col5 = new TableColumn[Flight, String]("Route")
+    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+    val col7 = new TableColumn[Flight, String]("Aircraft Type")
+    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+    val col8 = new TableColumn[Flight, String]("Home Airport")
+    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+    val col9 = new TableColumn[Flight, String]("Callsign")
+    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+    val col10 = new TableColumn[Flight, String]("Blt Area")
+    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+    tableView.columns ++=
+      List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+    val xAxis = new NumberAxis()
+    val yAxis = new CategoryAxis()
+    val carrierCountArray: Array[(String, Int)] =
+      graphData.perCarrier(flightData)
+    val series = new XYChart.Series[Number, String](null)
+    <empty>
+  }
+error while checking  extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking module object Dashboard extends JFXApp3 {
+  def start() =
+    {
+      stage =
+        new JFXApp3.PrimaryStage {
+          title = "Helsinki Airport Dashboard"
+          width = 1500
+          height = 900
+          initStyle(StageStyle.DECORATED)
+        }
+      val root = Pane()
+      val scene = Scene(parent = root)
+      stage.scene = scene
+      val menuBar = new MenuBar()
+      val fileMenu = new Menu("File")
+      val settingsMenu = new Menu("Settings")
+      val exitItem = new MenuItem("Exit")
+      val colorItem = new MenuItem("Color")
+      fileMenu.items = List(exitItem)
+      settingsMenu.items = List(colorItem)
+      menuBar.menus = List(fileMenu, settingsMenu)
+      menuBar.prefWidth = 1500
+      val tabPane = new TabPane()
+      val homeTab = new Tab()
+      homeTab.text = "Home"
+      val dataTab = new Tab()
+      dataTab.text = "Data"
+      tabPane.layoutY = 30
+      tabPane.minWidth = 1500
+      tabPane.tabs = List(homeTab, dataTab)
+      val tableView = new TableView(getFlightData())
+      tableView.minHeight = 900
+      val col1 = new TableColumn[Flight, String]("Flight Number")
+      col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+      val col2 = new TableColumn[Flight, String]("Departure Time")
+      col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+      val col3 = new TableColumn[Flight, String]("Date")
+      col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+      val col4 = new TableColumn[Flight, String]("Route")
+      col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+      val col5 = new TableColumn[Flight, String]("Route")
+      col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+      val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+      col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+      val col7 = new TableColumn[Flight, String]("Aircraft Type")
+      col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+      val col8 = new TableColumn[Flight, String]("Home Airport")
+      col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+      val col9 = new TableColumn[Flight, String]("Callsign")
+      col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+      val col10 = new TableColumn[Flight, String]("Blt Area")
+      col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+      tableView.columns ++=
+        List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+      val xAxis = new NumberAxis()
+      val yAxis = new CategoryAxis()
+      val carrierCountArray: Array[(String, Int)] =
+        graphData.perCarrier(flightData)
+      val series = new XYChart.Series[Number, String](null)
+      <empty>
+    }
+}
+error while checking package <empty> {
+  import scalafx.application.JFXApp3
+  import scalafx.scene.Scene
+  import scalafx.scene.layout.Pane
+  import scalafx.scene.shape.Rectangle
+  import scalafx.scene.paint.Color.*
+  import finaviaAPI.APIClient.*
+  import scalafx.scene.control.*
+  import scalafx.Includes.*
+  import scalafx.event.ActionEvent
+  import javafx.scene.layout.VBox
+  import java.awt.Graphics
+  import scalafx.stage.StageStyle.Unified
+  import javafx.stage.StageStyle
+  import scalafx.beans.property.StringProperty
+  import scalafx.collections.ObservableBuffer
+  import scalafx.beans.property.StringProperty
+  import finaviaAPI.Flight
+  import Visual.GraphData
+  import scalafx.scene.chart.*
+  import java.util.Locale.Category
+  module object Dashboard extends JFXApp3 {
+    def start() =
+      {
+        stage =
+          new JFXApp3.PrimaryStage {
+            title = "Helsinki Airport Dashboard"
+            width = 1500
+            height = 900
+            initStyle(StageStyle.DECORATED)
+          }
+        val root = Pane()
+        val scene = Scene(parent = root)
+        stage.scene = scene
+        val menuBar = new MenuBar()
+        val fileMenu = new Menu("File")
+        val settingsMenu = new Menu("Settings")
+        val exitItem = new MenuItem("Exit")
+        val colorItem = new MenuItem("Color")
+        fileMenu.items = List(exitItem)
+        settingsMenu.items = List(colorItem)
+        menuBar.menus = List(fileMenu, settingsMenu)
+        menuBar.prefWidth = 1500
+        val tabPane = new TabPane()
+        val homeTab = new Tab()
+        homeTab.text = "Home"
+        val dataTab = new Tab()
+        dataTab.text = "Data"
+        tabPane.layoutY = 30
+        tabPane.minWidth = 1500
+        tabPane.tabs = List(homeTab, dataTab)
+        val tableView = new TableView(getFlightData())
+        tableView.minHeight = 900
+        val col1 = new TableColumn[Flight, String]("Flight Number")
+        col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+        val col2 = new TableColumn[Flight, String]("Departure Time")
+        col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+        val col3 = new TableColumn[Flight, String]("Date")
+        col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+        val col4 = new TableColumn[Flight, String]("Route")
+        col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+        val col5 = new TableColumn[Flight, String]("Route")
+        col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+        val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+        col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+        val col7 = new TableColumn[Flight, String]("Aircraft Type")
+        col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+        val col8 = new TableColumn[Flight, String]("Home Airport")
+        col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+        val col9 = new TableColumn[Flight, String]("Callsign")
+        col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+        val col10 = new TableColumn[Flight, String]("Blt Area")
+        col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+        tableView.columns ++=
+          List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+        val xAxis = new NumberAxis()
+        val yAxis = new CategoryAxis()
+        val carrierCountArray: Array[(String, Int)] =
+          graphData.perCarrier(flightData)
+        val series = new XYChart.Series[Number, String](null)
+        <empty>
+      }
+  }
+}
+Mar 08, 2024 4:52:00 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-52-00-548.md
+2024.03.08 16:51:59 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+Mar 08, 2024 4:55:17 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-55-17-242.md
+Mar 08, 2024 4:55:20 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-55-20-724.md
+Mar 08, 2024 4:55:22 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-55-22-041.md
+Mar 08, 2024 4:55:23 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/alvin/VScode/OS2Projekti/.metals/.reports/metals-full/2024-03-08/r_compiler-error_(root)_16-55-23-554.md
+Mar 08, 2024 4:56:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19882
+2024.03.08 16:57:35 INFO  compiling root (1 scala source)
+2024.03.08 16:57:38 INFO  time: compiled root in 2.14s
+2024.03.08 16:57:38 INFO  compiling root (1 scala source)
+2024.03.08 16:57:39 INFO  time: compiled root in 1.43s
+2024.03.08 16:57:41 INFO  compiling root (1 scala source)
+2024.03.08 16:57:42 INFO  time: compiled root in 1.44s
+2024.03.08 16:57:42 INFO  compiling root (1 scala source)
+2024.03.08 16:57:46 INFO  time: compiled root in 3.46s
+2024.03.08 16:57:46 INFO  compiling root (1 scala source)
+2024.03.08 16:57:49 INFO  time: compiled root in 2.93s
+Mar 08, 2024 4:58:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20138
+2024.03.08 16:59:26 INFO  compiling root (1 scala source)
+2024.03.08 16:59:26 INFO  time: compiled root in 0.98s
+2024.03.08 16:59:27 INFO  compiling root (1 scala source)
+2024.03.08 16:59:28 INFO  time: compiled root in 1.21s
+2024.03.08 16:59:28 INFO  compiling root (1 scala source)
+2024.03.08 16:59:29 INFO  time: compiled root in 1.56s
+2024.03.08 16:59:29 INFO  compiling root (1 scala source)
+2024.03.08 16:59:31 INFO  time: compiled root in 1.34s
+Mar 08, 2024 4:59:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20240
+2024.03.08 16:59:47 INFO  compiling root (1 scala source)
+2024.03.08 16:59:47 INFO  time: compiled root in 0.93s
+2024.03.08 16:59:48 INFO  compiling root (1 scala source)
+2024.03.08 16:59:48 INFO  time: compiled root in 0.82s
+2024.03.08 16:59:48 INFO  compiling root (1 scala source)
+2024.03.08 16:59:50 INFO  time: compiled root in 1.05s
+2024.03.08 17:00:23 INFO  compiling root (1 scala source)
+2024.03.08 17:00:24 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.08 17:00:24 INFO  time: compiled root in 1.78s
+Mar 08, 2024 5:01:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20472
+Mar 08, 2024 5:02:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20571
+2024.03.08 17:02:07 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 19h 41m 26.304s)
+2024.03.08 17:02:07 INFO  compiling root (1 scala source)
+2024.03.08 17:02:07 INFO  compiling root (1 scala source)
+2024.03.08 17:02:09 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.08 17:02:09 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.08 17:02:09 INFO  time: compiled root in 1.41s
+2024.03.08 17:02:09 INFO  compiling root (1 scala source)
+2024.03.08 17:02:10 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.08 17:02:10 INFO  time: compiled root in 1.14s
+2024.03.08 17:02:10 INFO  {
+  "jsonrpc": "2.0",
+  "id": "951",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.08 17:02:10 ERROR failed: Starting debug server
+scala.meta.internal.metals.MetalsBspException: BSP connection failed in the attempt to get: DebugSessionAddress
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.$anonfun$applyOrElse$9(BuildServerConnection.scala:494)
+	at scala.Option.getOrElse(Option.scala:201)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:494)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:469)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:358)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:317)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.08 17:02:22 INFO  compiling root (1 scala source)
+2024.03.08 17:02:24 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.08 17:02:24 INFO  time: compiled root in 1.6s
+2024.03.08 17:03:20 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 19h 42m 38.658s)
+2024.03.08 17:03:20 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.08 17:03:20 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.08 17:03:20 INFO  Starting debug proxy for [Dashboard]
+2024.03.08 17:03:20 INFO  Loaded expression compiler in 18 milliseconds
+2024.03.08 17:03:20 INFO  Loaded step filter in 0 milliseconds
+2024.03.08 17:03:20 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.08 17:03:24 INFO  Loaded all sources and classes in 3 seconds
+2024.03.08 17:03:31 INFO  Trying to attach to remote debuggee VM localhost:61105 .
+2024.03.08 17:03:31 INFO  Attaching to debuggee VM succeeded.
+2024.03.08 20:55:30 INFO  Canceling debug proxy for [Dashboard]
+2024.03.08 20:55:31 INFO  Closing debug server tcp://0.0.0.0:61102
+2024.03.10 15:27:33 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 66h 6m 51.676s)
+2024.03.10 15:27:33 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.10 15:27:33 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.10 15:27:34 INFO  Starting debug proxy for [Dashboard]
+2024.03.10 15:27:33 INFO  Loaded expression compiler in 17 milliseconds
+2024.03.10 15:27:33 INFO  Loaded step filter in 0 milliseconds
+2024.03.10 15:27:33 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.10 15:27:46 INFO  Loaded all sources and classes in 12 seconds
+2024.03.10 15:27:52 INFO  Trying to attach to remote debuggee VM localhost:57916 .
+2024.03.10 15:27:52 INFO  Attaching to debuggee VM succeeded.
+2024.03.10 15:28:26 INFO  Canceling debug proxy for [Dashboard]
+2024.03.10 15:28:26 INFO  Closing debug server tcp://0.0.0.0:57913
+Mar 10, 2024 3:28:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20811
+2024.03.10 15:28:34 INFO  compiling root (1 scala source)
+2024.03.10 15:28:39 INFO  time: compiled root in 4.79s
+2024.03.10 15:32:58 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 66h 12m 17.346s)
+2024.03.10 15:32:59 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.10 15:32:58 INFO  compiling root (1 scala source)
+2024.03.10 15:32:59 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.10 15:32:59 INFO  Starting debug proxy for [Dashboard]
+2024.03.10 15:32:58 INFO  Loaded expression compiler in 22 milliseconds
+2024.03.10 15:32:58 INFO  Loaded step filter in 0 milliseconds
+2024.03.10 15:32:58 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.10 15:33:09 INFO  Loaded all sources and classes in 9 seconds
+2024.03.10 15:33:09 INFO  time: compiled root in 10s
+2024.03.10 15:33:18 INFO  Trying to attach to remote debuggee VM localhost:58019 .
+2024.03.10 15:33:18 INFO  Attaching to debuggee VM succeeded.
+2024.03.10 15:33:50 INFO  Canceling debug proxy for [Dashboard]
+2024.03.10 15:33:50 INFO  Closing debug server tcp://0.0.0.0:58015
+Mar 10, 2024 3:34:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21144
+2024.03.10 15:48:08 INFO  compiling root (1 scala source)
+2024.03.10 15:48:17 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.10 15:48:17 INFO  time: compiled root in 9.51s
+2024.03.10 15:48:24 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 66h 27m 42.822s)
+2024.03.10 15:48:24 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.10 15:48:24 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.10 15:48:25 INFO  Starting debug proxy for [Dashboard]
+2024.03.10 15:48:24 INFO  Loaded expression compiler in 12 milliseconds
+2024.03.10 15:48:24 INFO  Loaded step filter in 0 milliseconds
+2024.03.10 15:48:24 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.10 15:48:29 INFO  Loaded all sources and classes in 4 seconds
+2024.03.10 15:48:31 INFO  Trying to attach to remote debuggee VM localhost:58083 .
+2024.03.10 15:48:31 INFO  Attaching to debuggee VM succeeded.
+2024.03.11 13:19:52 INFO  Canceling debug proxy for [Dashboard]
+2024.03.11 13:19:52 INFO  Closing debug server tcp://0.0.0.0:58080
