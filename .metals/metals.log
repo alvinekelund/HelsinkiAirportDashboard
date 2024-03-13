@@ -15398,3 +15398,268 @@ WARNING: Unmatched cancel notification for request id 21144
 2024.03.10 15:48:31 INFO  Attaching to debuggee VM succeeded.
 2024.03.11 13:19:52 INFO  Canceling debug proxy for [Dashboard]
 2024.03.11 13:19:52 INFO  Closing debug server tcp://0.0.0.0:58080
+2024.03.11 13:21:16 INFO  Shutting down server
+2024.03.11 13:21:16 INFO  shutting down Metals
+2024.03.11 13:21:18 INFO  Shut down connection with build server.
+2024.03.11 13:21:18 INFO  Shut down connection with build server.
+2024.03.12 13:21:45 INFO  Started: Metals version 1.2.2 in folders '/Users/alvin/VScode/OS2Projekti' for client Visual Studio Code 1.87.0.
+13:21:46.694 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+13:21:46.698 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+13:21:46.699 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+13:21:46.704 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+13:21:46.704 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+13:21:46.704 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+13:21:46.704 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+13:21:46.704 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+13:21:46.708 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+13:21:46.712 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+13:21:46.713 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+13:21:46.713 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+13:21:46.713 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+13:21:46.713 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+13:21:46.713 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+13:21:46.718 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:21:46.718 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+13:21:46.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+13:21:46.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+13:21:46.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+13:21:46.860 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/alvin/VScode/OS2Projekti/.metals/metals (H2 2.2)
+13:21:46.860 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+13:21:46.860 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+13:21:46.861 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+13:21:46.861 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+13:21:46.866 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+13:21:46.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+13:21:46.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:21:46.874 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+13:21:46.879 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:21:46.886 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:21:46.886 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:21:46.886 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:21:46.887 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:21:46.887 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:21:46.888 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:21:46.888 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:21:46.888 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:21:46.888 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:21:46.888 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:21:46.905 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.029s)
+13:21:46.906 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+13:21:46.912 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+13:21:46.917 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+13:21:46.934 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 35 of 100M
+2024.03.12 13:21:50 INFO  skipping build import with status 'Installed'
+2024.03.12 13:21:50 INFO  Attempting to connect to the build server...
+2024.03.12 13:21:50 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 13:21:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 13:21:53 INFO  Attempting to connect to the build server...
+2024.03.12 13:21:53 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 13:21:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 13:21:53 INFO  time: Connected to build server in 4.21s
+2024.03.12 13:21:53 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.12 13:21:55 INFO  time: Imported build in 0.68s
+2024.03.12 13:22:09 INFO  no build target found for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.12 13:22:21 INFO  time: indexed workspace in 11s
+2024.03.12 14:12:34 INFO  Shutting down server
+2024.03.12 14:12:34 INFO  shutting down Metals
+2024.03.12 14:12:34 INFO  Shut down connection with build server.
+2024.03.12 14:12:34 INFO  Shut down connection with build server.
+2024.03.12 14:12:34 INFO  Exiting server
+2024.03.12 14:16:26 INFO  Started: Metals version 1.2.2 in folders '/Users/alvin/VScode/OS2Projekti' for client Visual Studio Code 1.87.0.
+14:16:27.506 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:16:27.510 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:16:27.510 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:16:27.514 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:16:27.514 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+14:16:27.514 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:16:27.514 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:16:27.514 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+14:16:27.518 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:16:27.521 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:16:27.522 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:16:27.522 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:16:27.522 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:16:27.522 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:16:27.522 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:16:27.527 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:16:27.527 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:16:27.530 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:16:27.530 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:16:27.530 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:16:27.696 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/alvin/VScode/OS2Projekti/.metals/metals (H2 2.2)
+14:16:27.696 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:16:27.697 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:16:27.697 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:16:27.698 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:16:27.702 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:16:27.703 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:16:27.703 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:16:27.711 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:16:27.714 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:16:27.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:16:27.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:16:27.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:16:27.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:16:27.722 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:16:27.723 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:16:27.723 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:16:27.723 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:16:27.723 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:16:27.723 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:16:27.740 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.028s)
+14:16:27.742 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:16:27.749 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:16:27.755 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:16:27.776 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 35 of 100M
+2024.03.12 14:16:30 INFO  skipping build import with status 'Installed'
+2024.03.12 14:16:30 INFO  Attempting to connect to the build server...
+2024.03.12 14:16:30 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 14:16:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 14:16:31 INFO  Attempting to connect to the build server...
+2024.03.12 14:16:31 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 14:16:31 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 14:16:31 INFO  time: Connected to build server in 1.5s
+2024.03.12 14:16:31 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.12 14:16:31 INFO  time: Imported build in 0.37s
+2024.03.12 14:16:44 INFO  no build target found for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala. Using presentation compiler with project's scala-library version: 3.3.1
+Mar 12, 2024 2:16:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+2024.03.12 14:16:57 INFO  running '/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/_k/74l7m8q96c70qsmn56rqh_zc0000gq/T/metals4286474856976808290/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.03.12 14:17:02 INFO  [info] welcome to sbt 1.9.8 (Amazon.com Inc. Java 17.0.8.1)
+2024.03.12 14:17:02 INFO  time: indexed workspace in 18s
+2024.03.12 14:17:07 INFO  [info] loading global plugins from /Users/alvin/.sbt/1.0/plugins
+2024.03.12 14:17:11 INFO  [info] loading settings for project os2projekti-build-build from metals.sbt ...
+2024.03.12 14:17:11 INFO  [info] loading project definition from /Users/alvin/VScode/OS2Projekti/project/project
+2024.03.12 14:17:14 INFO  [info] loading settings for project os2projekti-build from metals.sbt ...
+2024.03.12 14:17:14 INFO  [info] loading project definition from /Users/alvin/VScode/OS2Projekti/project
+2024.03.12 14:17:21 INFO  time: code lens generation in 1.17s
+2024.03.12 14:17:21 INFO  time: code lens generation in 1.16s
+2024.03.12 14:17:21 INFO  time: code lens generation in 1.17s
+2024.03.12 14:17:21 INFO  time: code lens generation in 1.16s
+2024.03.12 14:17:22 INFO  [success] Generated .bloop/os2projekti-build.json
+2024.03.12 14:17:22 INFO  [success] Total time: 8 s, completed 12 Mar 2024, 14.17.23
+2024.03.12 14:17:24 INFO  [info] loading settings for project root from build.sbt ...
+2024.03.12 14:17:24 INFO  [info] set current project to OS2Projekti (in build file:/Users/alvin/VScode/OS2Projekti/)
+2024.03.12 14:17:25 INFO  time: code lens generation in 4.7s
+2024.03.12 14:17:26 INFO  [success] Generated .bloop/root.json
+2024.03.12 14:17:26 INFO  [success] Generated .bloop/root-test.json
+2024.03.12 14:17:26 INFO  [success] Total time: 1 s, completed 12 Mar 2024, 14.17.26
+2024.03.12 14:17:27 INFO  time: ran 'sbt bloopInstall' in 29s
+2024.03.12 14:17:27 INFO  Disconnecting from Bloop session...
+2024.03.12 14:17:27 INFO  Shut down connection with build server.
+2024.03.12 14:17:27 INFO  Shut down connection with build server.
+2024.03.12 14:17:27 INFO  Attempting to connect to the build server...
+2024.03.12 14:17:27 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 14:17:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 14:17:27 INFO  Attempting to connect to the build server...
+2024.03.12 14:17:27 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.12 14:17:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.12 14:17:27 INFO  time: Connected to build server in 0.25s
+2024.03.12 14:17:27 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.12 14:17:27 INFO  time: Imported build in 0.13s
+2024.03.12 14:17:36 INFO  time: indexed workspace in 9.39s
+error: /Users/alvin/VScode/OS2Projekti/.metals/.tmp/.metals/.tmp/Main-8798695809365957637.scala is not a file
+2024.03.13 10:16:32 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:45: error: illegal character '\u00b4'
+    fileMenu.items = List(openItem, saveItem, exitItem, ´´)
+                                                        ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.13 10:16:39 INFO  compiling root (1 scala source)
+2024.03.13 10:16:42 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.13 10:16:42 INFO  time: compiled root in 4.15s
+2024.03.13 10:22:13 INFO  compiling root (1 scala source)
+2024.03.13 10:22:15 INFO  time: compiled root in 2.11s
+2024.03.13 10:22:22 INFO  compiling root (1 scala source)
+2024.03.13 10:22:25 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.13 10:22:25 INFO  time: compiled root in 2.92s
+2024.03.13 10:27:01 INFO  time: code lens generation in 2.54s
+2024.03.13 10:27:18 INFO  compiling root (1 scala source)
+2024.03.13 10:27:20 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.13 10:27:20 INFO  time: compiled root in 1.38s
+2024.03.13 10:42:41 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:52: error: can't use unescaped LF in character literals
+    openItem.accelerator = new KeyCodeCombination(KeyCode.O, KeyCombination.ControlDown)'openItem.accelerator = new KeyCodeCombination(KeyCode.O, KeyCombination.ControlDown)'
+                                                                                                                                                                              ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:383)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.13 10:42:41 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:52: error: unclosed character literal
+    openItem.accelerator = new KeyCodeCombination(KeyCode.O, KeyCombination.ControlDown)''
+                                                                                        ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchSingleQuote$1(LegacyScanner.scala:407)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:412)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 13, 2024 10:42:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1933
+2024.03.13 10:43:13 INFO  compiling root (1 scala source)
+2024.03.13 10:43:14 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2024.03.13 10:43:14 INFO  time: compiled root in 1.49s

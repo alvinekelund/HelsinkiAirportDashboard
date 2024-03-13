@@ -3,6 +3,7 @@ import scalafx.application.JFXApp3
 import scalafx.scene.Scene
 import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
+import scalafx.scene.input.{KeyCodeCombination, KeyCode, KeyCombination}
 import scalafx.scene.paint.Color._
 import finaviaAPI.APIClient.*
 import scalafx.scene.control._
@@ -19,6 +20,7 @@ import finaviaAPI.Flight
 import Visual.GraphData
 import scalafx.scene.chart._
 import java.util.Locale.Category
+import scalafx.stage.FileChooser
 
 
 object Dashboard extends JFXApp3:
@@ -38,12 +40,24 @@ object Dashboard extends JFXApp3:
     val menuBar = new MenuBar
     val fileMenu = new Menu("File")
     val settingsMenu = new Menu("Settings")
+    val saveItem = new MenuItem("Save")
+    val openItem = new MenuItem("Open")
     val exitItem = new MenuItem("Exit")
     val colorItem = new MenuItem("Color")
-    fileMenu.items = List(exitItem)
+    fileMenu.items = List(openItem, saveItem, new SeparatorMenuItem, exitItem)
     settingsMenu.items = List(colorItem)
     menuBar.menus = List(fileMenu, settingsMenu)
     menuBar.prefWidth = 1500
+
+    openItem.accelerator = new KeyCodeCombination(KeyCode.O, KeyCombination.ControlDown)
+    saveItem.accelerator = new KeyCodeCombination(KeyCode.S, KeyCombination.ControlDown)
+    exitItem.accelerator = new KeyCodeCombination(KeyCode.X, KeyCombination.ControlDown)
+
+    exitItem.onAction = (e: ActionEvent) => sys.exit(0)
+    openItem.onAction = (e: ActionEvent) => {
+      val fileChooser = new FileChooser
+      val selectedFile = fileChooser.showOpenDialog(stage)
+    }
 
     
     val tabPane = new TabPane
