@@ -19750,3 +19750,838 @@ WARNING: Unmatched cancel notification for request id 7765
 2024.03.14 16:25:21 INFO  time: compiled root in 4.16s
 Mar 14, 2024 4:25:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 7970
+2024.03.14 16:47:39 INFO  compiling root (1 scala source)
+2024.03.14 16:47:44 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 16:47:44 INFO  time: compiled root in 5.5s
+Mar 14, 2024 4:54:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8293
+Mar 14, 2024 4:55:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8452
+2024.03.14 16:59:06 INFO  compiling root (1 scala source)
+2024.03.14 16:59:17 INFO  time: compiled root in 10s
+2024.03.14 17:03:08 INFO  compiling root (1 scala source)
+2024.03.14 17:03:12 INFO  time: compiled root in 4.59s
+2024.03.14 17:03:12 INFO  compiling root (1 scala source)
+2024.03.14 17:03:18 INFO  time: compiled root in 4.98s
+2024.03.14 17:04:13 INFO  compiling root (1 scala source)
+2024.03.14 17:04:17 INFO  time: compiled root in 3.45s
+2024.03.14 17:04:17 INFO  compiling root (1 scala source)
+2024.03.14 17:04:21 INFO  time: compiled root in 4.31s
+2024.03.14 17:04:29 INFO  compiling root (1 scala source)
+2024.03.14 17:04:32 INFO  time: compiled root in 3.66s
+2024.03.14 17:04:32 INFO  compiling root (1 scala source)
+2024.03.14 17:04:34 INFO  time: compiled root in 1.23s
+2024.03.14 17:04:58 INFO  compiling root (1 scala source)
+2024.03.14 17:05:01 INFO  time: compiled root in 3.01s
+2024.03.14 17:05:01 INFO  compiling root (1 scala source)
+2024.03.14 17:05:05 INFO  time: compiled root in 3.07s
+2024.03.14 17:07:45 INFO  compiling root (1 scala source)
+2024.03.14 17:07:53 INFO  time: compiled root in 7.37s
+2024.03.14 17:07:53 INFO  compiling root (1 scala source)
+2024.03.14 17:08:00 INFO  time: compiled root in 6.7s
+2024.03.14 17:10:21 INFO  compiling root (1 scala source)
+2024.03.14 17:10:23 INFO  time: compiled root in 1.74s
+2024.03.14 17:10:23 INFO  compiling root (1 scala source)
+2024.03.14 17:10:27 INFO  time: compiled root in 3.83s
+2024.03.14 17:10:44 INFO  compiling root (1 scala source)
+2024.03.14 17:10:48 INFO  time: compiled root in 4.02s
+2024.03.14 17:10:52 INFO  compiling root (1 scala source)
+2024.03.14 17:10:55 INFO  time: compiled root in 2.9s
+2024.03.14 17:12:44 INFO  compiling root (1 scala source)
+2024.03.14 17:12:49 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 33m 48.333s)
+2024.03.14 17:12:49 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 17:12:49 INFO  compiling root (1 scala source)
+2024.03.14 17:12:49 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 17:12:49 INFO  time: compiled root in 0.45s
+2024.03.14 17:13:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:02 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 34m 1.003s)
+2024.03.14 17:13:02 INFO  compiling root (1 scala source)
+2024.03.14 17:13:02 INFO  compiling root (1 scala source)
+2024.03.14 17:13:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:03 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:03 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 17:13:07 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 17:13:07 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 17:13:07 INFO  time: compiled root in 5.5s
+2024.03.14 17:13:08 INFO  {
+  "jsonrpc": "2.0",
+  "id": "677",
+  "error": {
+    "code": -32603,
+    "message": "java.nio.file.NoSuchFileException: /Users/alvin/VScode/OS2Projekti/.bloop/root/bloop-bsp-clients-classes/classes-Metals-PGBnz1SOSSCR-iKKieeDUA\u003d\u003d/Dashboard$$anon$2.class\n\tat java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)\n\tat java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)\n\tat java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)\n\tat java.base/sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:248)\n\tat java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)\n\tat java.base/java.nio.file.Files.delete(Files.java:1152)\n\tat bloop.Compiler$$anon$2.$anonfun$trigger$10(Compiler.scala:548)\n\tat bloop.Compiler$$anon$2.$anonfun$trigger$10$adapted(Compiler.scala:540)\n\tat scala.collection.mutable.HashSet.foreach(HashSet.scala:79)\n\tat bloop.Compiler$$anon$2.$anonfun$trigger$9(Compiler.scala:540)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat monix.eval.internal.TaskRunLoop$.startFull(TaskRunLoop.scala:81)\n\tat monix.eval.internal.TaskRestartCallback.syncOnSuccess(TaskRestartCallback.scala:101)\n\tat monix.eval.internal.TaskRestartCallback.onSuccess(TaskRestartCallback.scala:74)\n\tat monix.eval.internal.TaskShift$Register$$anon$1.run(TaskShift.scala:65)\n\tat monix.execution.internal.InterceptRunnable.run(InterceptRunnable.scala:27)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\n\tat java.base/java.lang.Thread.run(Thread.java:833)\n"
+  }
+}
+2024.03.14 17:13:08 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:08 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:08 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 17:13:07 INFO  Loaded expression compiler in 21 milliseconds
+2024.03.14 17:13:07 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:07 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:17 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 34m 15.519s)
+2024.03.14 17:13:17 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 34m 15.764s)
+2024.03.14 17:13:17 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 34m 15.764s)
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:17 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 2h 34m 15.86s)
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:17 INFO  Starting debug proxy for [Dashboard]
+Mar 14, 2024 5:13:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:17 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:18 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:17 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 17:13:17 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 17:13:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 17:13:18 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 17:13:19 INFO  Loaded expression compiler in 45 milliseconds
+2024.03.14 17:13:19 INFO  Loaded expression compiler in 46 milliseconds
+2024.03.14 17:13:19 INFO  Loaded expression compiler in 34 milliseconds
+2024.03.14 17:13:19 INFO  Loaded expression compiler in 45 milliseconds
+2024.03.14 17:13:19 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:19 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:19 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:19 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:19 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:19 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:19 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:19 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:19 INFO  Loaded expression compiler in 62 milliseconds
+2024.03.14 17:13:19 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 17:13:19 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5-sources.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:19 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:25 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:25 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:25 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/bloop/semanticdb/com.sourcegraph.semanticdb-javac.0.9.9/semanticdb-javac-0.9.9.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:29 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:32 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:36 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:38 WARN  Cannot list the class files in /Users/alvin/Library/Caches/bloop/semanticdb/com.sourcegraph.semanticdb-javac.0.9.9/semanticdb-javac-0.9.9.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:38 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:38 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:40 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:40 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:40 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:44 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:51 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:13:59 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:01 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:05 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:06 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:06 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:18 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:18 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:18 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:21 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:24 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:24 INFO  Loaded all sources and classes in 1 minute
+2024.03.14 17:14:24 INFO  Loaded all sources and classes in 1 minute
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:14:27 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.14 17:16:17 INFO  Loaded all sources and classes in 2 minutes
+2024.03.14 17:16:17 INFO  Loaded all sources and classes in 2 minutes
+2024.03.14 17:16:17 INFO  Loaded all sources and classes in 2 minutes
+2024.03.14 17:30:12 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.14 17:30:12 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.14 17:59:45 INFO  Trying to attach to remote debuggee VM localhost:65370 .
+2024.03.14 17:59:45 INFO  Trying to attach to remote debuggee VM localhost:65377 .
+2024.03.14 17:59:47 INFO  Attaching to debuggee VM succeeded.
+2024.03.14 17:59:47 INFO  Attaching to debuggee VM succeeded.
+2024.03.14 18:06:20 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.14 18:06:24 INFO  Trying to attach to remote debuggee VM localhost:65371 .
+2024.03.14 18:16:19 INFO  Attaching to debuggee VM succeeded.
+2024.03.14 18:17:22 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.14 18:17:22 INFO  Trying to attach to remote debuggee VM localhost:65372 .
+2024.03.14 18:17:24 INFO  Attaching to debuggee VM succeeded.
+2024.03.14 18:21:17 INFO  Canceling debug proxy for [Dashboard]
+Mar 14, 2024 6:21:17 PM org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer fireError
+SEVERE: java.net.SocketException: Socket closed
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.net.SocketException: Socket closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.debug.SocketEndpoint.consume(SocketEndpoint.scala:22)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.consume(MessageIdAdapter.scala:43)
+	at scala.meta.internal.metals.debug.DebugProxy.$anonfun$handleServerMessage$1(DebugProxy.scala:243)
+	at scala.meta.internal.metals.debug.DebugProxy.$anonfun$handleServerMessage$1$adapted(DebugProxy.scala:207)
+	at scala.meta.internal.metals.debug.ServerAdapter.$anonfun$onReceived$1(ServerAdapter.scala:25)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.$anonfun$listen$1(MessageIdAdapter.scala:57)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at scala.meta.internal.metals.debug.SocketEndpoint.listen(SocketEndpoint.scala:26)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.listen(MessageIdAdapter.scala:47)
+	at scala.meta.internal.metals.debug.ServerAdapter.onReceived(ServerAdapter.scala:18)
+	at scala.meta.internal.metals.debug.DebugProxy.$anonfun$listenToServer$1(DebugProxy.scala:78)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.ensureOpenAndConnected(NioSocketImpl.java:165)
+	at java.base/sun.nio.ch.NioSocketImpl.beginWrite(NioSocketImpl.java:371)
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:416)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 18 more
+
+2024.03.14 18:21:18 INFO  Closing debug server tcp://0.0.0.0:65357
+2024.03.14 18:21:22 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.14 18:21:22 INFO  Trying to attach to remote debuggee VM localhost:65369 .
+2024.03.14 18:21:24 INFO  Attaching to debuggee VM succeeded.
+2024.03.14 18:21:29 INFO  Canceling debug proxy for [Dashboard]
+2024.03.14 18:21:29 INFO  Closing debug server tcp://0.0.0.0:65358
+2024.03.14 18:28:11 INFO  compiling root (1 scala source)
+2024.03.14 18:28:17 INFO  time: compiled root in 5.76s
+2024.03.14 18:29:13 INFO  compiling root (1 scala source)
+2024.03.14 18:29:19 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:29:19 INFO  time: compiled root in 6.73s
+2024.03.14 18:30:20 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:70: error: unclosed string interpolation
+    val comboBox = new ComboBox(List("Column", Scatter, Line, Pie"))
+                                                                  ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:30:23 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:70: error: unclosed string interpolation
+    val comboBox = new ComboBox(List("Column", "Scatter", Line, Pie"))
+                                                                    ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:30:23 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:70: error: unclosed string interpolation
+    val comboBox = new ComboBox(List("Column", "Scatter""", Line, Pie"))
+                                                                      ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:30:24 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:70: error: unclosed string interpolation
+    val comboBox = new ComboBox(List("Column", "Scatter", Line, Pie"))
+                                                                    ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:30:28 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:70: error: unclosed string interpolation
+    val comboBox = new ComboBox(List("Column", "Scatter", "Line", Pie"))
+                                                                      ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:659)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:357)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:30:32 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 3h 51m 30.43s)
+2024.03.14 18:30:32 INFO  compiling root (1 scala source)
+2024.03.14 18:30:32 INFO  compiling root (1 scala source)
+2024.03.14 18:30:38 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:30:38 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:30:38 INFO  time: compiled root in 6.73s
+2024.03.14 18:30:38 ERROR failed: Starting debug server
+java.util.concurrent.CancellationException
+	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
+	at scala.meta.internal.metals.CancelTokens$$anon$1.cancel(CancelTokens.scala:35)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$startDebugSession$3(BuildServerConnection.scala:262)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$startDebugSession$3$adapted(BuildServerConnection.scala:262)
+	at scala.util.Success.foreach(Try.scala:260)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:481)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:31:32 INFO  Canceling debug proxy for [Dashboard]
+2024.03.14 18:31:32 INFO  Closing debug server tcp://0.0.0.0:65359
+2024.03.14 18:31:36 INFO  Canceling debug proxy for [Dashboard]
+2024.03.14 18:34:52 INFO  Closing debug server tcp://0.0.0.0:65363
+2024.03.14 18:34:52 INFO  Canceling debug proxy for [Dashboard]
+2024.03.14 18:34:56 INFO  Closing debug server tcp://0.0.0.0:65364
+2024.03.14 18:34:56 INFO  Canceling debug proxy for [Dashboard]
+Mar 14, 2024 6:37:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10243
+2024.03.14 18:37:46 INFO  compiling root (1 scala source)
+2024.03.14 18:37:48 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 18:37:50 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:37:50 INFO  time: compiled root in 5.07s
+2024.03.14 18:41:22 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 4h 2m 21.126s)
+2024.03.14 18:41:22 INFO  compiling root (1 scala source)
+2024.03.14 18:41:22 INFO  compiling root (1 scala source)
+2024.03.14 18:41:26 INFO  time: compiled root in 3.88s
+2024.03.14 18:41:26 INFO  compiling root (1 scala source)
+2024.03.14 18:41:30 INFO  time: compiled root in 3.8s
+2024.03.14 18:41:30 INFO  {
+  "jsonrpc": "2.0",
+  "id": "735",
+  "error": {
+    "code": -32603,
+    "message": "Compilation not successful"
+  }
+}
+2024.03.14 18:41:30 ERROR failed: Starting debug server
+scala.meta.internal.metals.MetalsBspException: BSP connection failed in the attempt to get: DebugSessionAddress
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.$anonfun$applyOrElse$9(BuildServerConnection.scala:494)
+	at scala.Option.getOrElse(Option.scala:201)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:494)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$1.applyOrElse(BuildServerConnection.scala:469)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:358)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:317)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 18:57:56 INFO  compiling root (1 scala source)
+2024.03.14 18:58:06 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:58:11 INFO  time: compiled root in 14s
+2024.03.14 18:58:52 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 4h 19m 51.013s)
+2024.03.14 18:58:52 INFO  compiling root (1 scala source)
+2024.03.14 18:58:52 INFO  compiling root (1 scala source)
+2024.03.14 18:58:56 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:58:56 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 18:58:57 INFO  time: compiled root in 4.88s
+2024.03.14 18:58:57 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.14 18:58:57 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.14 18:58:58 INFO  Starting debug proxy for [Dashboard]
+2024.03.14 18:58:57 INFO  Loaded expression compiler in 20 milliseconds
+2024.03.14 18:58:57 INFO  Loaded step filter in 0 milliseconds
+2024.03.14 18:58:57 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.14 18:58:57 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.14 18:59:17 INFO  Loaded all sources and classes in 18 seconds
+2024.03.14 18:59:33 INFO  time: code lens generation in 1.84s
+2024.03.14 19:09:18 INFO  Canceling debug proxy for [Dashboard]
+2024.03.14 19:09:56 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:09:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:09:56 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.14 19:09:57 INFO  time: Imported build in 0.12s
+2024.03.14 19:10:03 INFO  time: indexed workspace in 6.42s
+2024.03.14 19:10:04 INFO  compiling root (1 scala source)
+2024.03.14 19:10:31 INFO  time: compiled root in 27s
+2024.03.14 19:24:27 INFO  compiling root (1 scala source)
+2024.03.14 19:24:31 INFO  time: compiled root in 4.36s
+2024.03.14 19:27:18 INFO  compiling root (1 scala source)
+Exception in thread "pool-16-thread-1" java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:243)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Mar 14, 2024 7:31:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11089
+2024.03.14 19:32:23 INFO  file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala:139:42: stale bloop error: Not found: newChart
+    homeTab.content = new VBox(comboBox, newChart)
+                                         ^^^^^^^^
+2024.03.14 19:32:23 WARN  Could not find semantic tokens for: file:///Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.14 19:32:42 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 14, 2024 7:32:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+WARNING: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: Broken pipe
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$.$anonfun$apply$4(FutureWithTimeout.scala:54)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: Broken pipe
+	at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:53)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:277)
+	at java.base/java.nio.channels.Channels.writeFullyImpl(Channels.java:74)
+	at java.base/java.nio.channels.Channels.writeFully(Channels.java:93)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:171)
+	at java.base/java.io.OutputStream.write(OutputStream.java:127)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:151)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:137)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:108)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 13 more
+
+2024.03.14 19:35:42 INFO  Scala test classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:35:42 INFO  Scala main classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:37:23 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:39:34 INFO  Disconnecting from Bloop session...
+2024.03.14 19:39:34 INFO  Cancelling compilation on Bloop server
+2024.03.14 19:39:34 INFO  Shut down connection with build server.
+2024.03.14 19:39:36 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:39:36 ERROR timeout: build server 'bloop' during shutdown
+2024.03.14 19:39:36 INFO  Attempting to connect to the build server...
+2024.03.14 19:39:36 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:39:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:39:36 INFO  Attempting to connect to the build server...
+2024.03.14 19:39:36 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:39:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:39:36 INFO  time: Connected to build server in 0.47s
+2024.03.14 19:39:36 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.14 19:39:36 INFO  time: Imported build in 0.12s
+2024.03.14 19:39:42 INFO  time: indexed workspace in 5.08s
+2024.03.14 19:39:43 INFO  compiling root (1 scala source)
+2024.03.14 19:39:55 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 19.013s)
+2024.03.14 19:39:55 INFO  compiling root (1 scala source)
+Mar 14, 2024 7:40:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11335
+2024.03.14 19:40:26 INFO  compiling root (1 scala source)
+2024.03.14 19:40:31 INFO  time: compiled root in 5.33s
+2024.03.14 19:40:31 WARN  Disconnecting from deduplication of ongoing compilation for 'root'
+No progress update for 30 seconds caused bloop to cancel compilation and schedule a new compile.
+2024.03.14 19:40:31 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 54.824s)
+2024.03.14 19:40:31 INFO  compiling root (1 scala source)
+2024.03.14 19:40:41 INFO  time: compiled root in 10s
+2024.03.14 19:41:04 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 14, 2024 7:41:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11375
+Mar 14, 2024 7:41:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11412
+2024.03.14 19:42:34 INFO  Scala test classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:42:34 INFO  Scala main classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:44:53 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [15 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:44:58 INFO  running '/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/_k/74l7m8q96c70qsmn56rqh_zc0000gq/T/metals14283661757990944479/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.03.14 19:45:01 INFO  [info] welcome to sbt 1.9.8 (Amazon.com Inc. Java 17.0.8.1)
+2024.03.14 19:45:03 INFO  [info] loading global plugins from /Users/alvin/.sbt/1.0/plugins
+2024.03.14 19:45:05 INFO  [info] loading settings for project os2projekti-build-build from metals.sbt ...
+2024.03.14 19:45:05 INFO  [info] loading project definition from /Users/alvin/VScode/OS2Projekti/project/project
+2024.03.14 19:45:06 INFO  [info] loading settings for project os2projekti-build from metals.sbt ...
+2024.03.14 19:45:06 INFO  [info] loading project definition from /Users/alvin/VScode/OS2Projekti/project
+2024.03.14 19:45:09 INFO  [success] Generated .bloop/os2projekti-build.json
+2024.03.14 19:45:09 INFO  [success] Total time: 3 s, completed 14 Mar 2024, 19.45.10
+2024.03.14 19:45:09 INFO  [info] loading settings for project root from build.sbt ...
+2024.03.14 19:45:09 INFO  [info] set current project to OS2Projekti (in build file:/Users/alvin/VScode/OS2Projekti/)
+2024.03.14 19:45:11 INFO  [success] Generated .bloop/root-test.json
+2024.03.14 19:45:11 INFO  [success] Generated .bloop/root.json
+2024.03.14 19:45:11 INFO  [success] Total time: 1 s, completed 14 Mar 2024, 19.45.11
+2024.03.14 19:45:11 INFO  time: ran 'sbt bloopInstall' in 12s
+2024.03.14 19:45:11 INFO  Disconnecting from Bloop session...
+2024.03.14 19:45:11 INFO  Cancelling compilation on Bloop server
+2024.03.14 19:45:13 ERROR timeout: build server 'bloop' during shutdown
+2024.03.14 19:45:13 ERROR timeout: build server 'bloop' during shutdown
+2024.03.14 19:45:13 INFO  Attempting to connect to the build server...
+2024.03.14 19:45:13 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:45:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:45:13 INFO  Attempting to connect to the build server...
+2024.03.14 19:45:13 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:45:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:45:13 INFO  time: Connected to build server in 0.56s
+2024.03.14 19:45:13 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.14 19:45:18 INFO  time: indexed workspace in 4.72s
+2024.03.14 19:45:19 INFO  compiling root (1 scala source)
+2024.03.14 19:45:22 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.14 19:45:26 INFO  time: compiled root in 7.61s
+2024.03.14 19:46:16 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.14 19:46:17 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+

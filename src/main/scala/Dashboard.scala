@@ -67,7 +67,12 @@ object Dashboard extends JFXApp3:
       val selectedFile = fileChooser.showOpenDialog(stage)
     }
 
-    
+    val comboBox = new ComboBox(List("Column", "Scatter", "Line", "Pie"))
+    comboBox.layoutX = 20
+    comboBox.layoutY = 100
+    comboBox.value = "Pie"
+
+
     val tabPane = new TabPane
     val homeTab = new Tab
     homeTab.text = "Home"
@@ -87,6 +92,11 @@ object Dashboard extends JFXApp3:
     tabPane1.layoutY = 30
     tabPane1.minWidth = 1500
     tabPane1.tabs = List(allTab, depTab, arrTab)    
+
+    val tables = new Tables
+    allTab.content = tables.createFlightTableAll()
+    depTab.content = tables.createFlightTableDep()
+    arrTab.content = tables.createFlightTableArr()
     
     def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
       val columnChart = new ColumnChart()
@@ -119,18 +129,22 @@ object Dashboard extends JFXApp3:
         case _ => throw new IllegalArgumentException("Invalid graph type")
 
     val graphData = new GraphData
-    val chart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
 
 
-    val tables = new Tables
-    allTab.content = tables.createFlightTableAll()
-    depTab.content = tables.createFlightTableDep()
-    arrTab.content = tables.createFlightTableArr()
 
 
+
+    val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
+
+    comboBox.onAction = () => {
+      val selectedGraph = comboBox.value.value
+      val newChart = makeChart(selectedGraph, graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
+      homeTab.content = new VBox(comboBox, newChart)
+    }
     
+    homeTab.content = new VBox(comboBox, defaultChart)
     dataTab.content = tabPane1
-    homeTab.content = chart
+
     
     root.children += (menuBar, tabPane)
 
