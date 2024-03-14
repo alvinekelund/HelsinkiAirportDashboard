@@ -6,13 +6,13 @@ import finaviaAPI.Flight._
 import sttp.client3._
 import sttp.client3.circe._
 import scala.xml.{Elem, XML}
-import finaviaAPI.APIClient.getFlightData
+import finaviaAPI.DataParser.getFlightData
 import java.io.StringReader
 import scalafx.collections.ObservableBuffer
 import scala.io.Source
 import scala.collection.mutable.Map
 
-object APIClient {
+object DataParser {
   def getFlightData(set: String): ObservableBuffer[Flight] = {
     apiCallCounter()
     val request =

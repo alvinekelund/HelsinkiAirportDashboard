@@ -4,7 +4,7 @@ import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.input.{KeyCodeCombination, KeyCode, KeyCombination}
 import scalafx.scene.paint.Color._
-import finaviaAPI.APIClient.*
+import finaviaAPI.DataParser.*
 import scalafx.scene.control._
 import scalafx.Includes._
 import scalafx.event.ActionEvent

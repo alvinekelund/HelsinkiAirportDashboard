@@ -1,5 +1,0 @@
-package Visual
-
-class PieChart {
-  
-}

@@ -5,7 +5,7 @@ import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.input.{KeyCodeCombination, KeyCode, KeyCombination}
 import scalafx.scene.paint.Color._
-import finaviaAPI.APIClient.*
+import finaviaAPI.DataParser.*
 import scalafx.scene.control._
 import scalafx.Includes._
 import scalafx.event.ActionEvent
@@ -17,8 +17,8 @@ import scalafx.beans.property.StringProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.beans.property.{StringProperty}
 import finaviaAPI.Flight
-import Visual.GraphData
-import Visual.ColumnChart
+import Visual.*
+import Visual.LinePlot
 import scalafx.scene.chart._
 import java.util.Locale.Category
 import scalafx.stage.FileChooser
@@ -26,6 +26,9 @@ import cats.conversions.all
 import Visual.Tables
 import cats.instances.list
 import Visual.ScatterPlot
+import finaviaAPI.DataParser
+import scala.annotation.meta.field
+
 
 
 object Dashboard extends JFXApp3:
@@ -84,14 +87,40 @@ object Dashboard extends JFXApp3:
     tabPane1.layoutY = 30
     tabPane1.minWidth = 1500
     tabPane1.tabs = List(allTab, depTab, arrTab)    
+    
+    def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
+      val columnChart = new ColumnChart()
+      val chart = columnChart.createColumnChart(graphDataType, x, y, label)
+      chart
+    
+    def makeScatterChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): ScatterChart[String, Number] = 
+      val scatterChart = new ScatterPlot()
+      val chart = scatterChart.createScatterChart(graphDataType, x, y, label)
+      chart
 
-    // columnChart
-    val columnChart = new ColumnChart()
-    val barChart = columnChart.createCarrierColumnChart()
-    val makeColumnChart = barChart
+    def makeLineChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): LineChart[String, Number] = 
+      val lineChart = new LinePlot()
+      val chart = lineChart.createLineChart(graphDataType, x, y, label)
+      chart
 
-    val scatterPlot = new ScatterPlot()
-    val scatterChart = scatterPlot.createHourScatterPlot()
+    def makePieChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): PieChart = 
+      val pieChart = new PieGraph()
+      val chart = pieChart.createPieChart(graphDataType, x, y, label)
+      chart
+
+    
+
+    def makeChart(graphType: String, dataType: Array[(String, Int)], x: String, y: String, label: String) = 
+      graphType match
+        case "Column" => makeColumnGraph(dataType, x, y, label)
+        case "Scatter" => makeScatterChart(dataType, x, y, label)
+        case "Line" => makeLineChart(dataType, x, y, label)
+        case "Pie" => makePieChart(dataType, x, y, label)
+        case _ => throw new IllegalArgumentException("Invalid graph type")
+
+    val graphData = new GraphData
+    val chart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
+
 
     val tables = new Tables
     allTab.content = tables.createFlightTableAll()
@@ -101,7 +130,7 @@ object Dashboard extends JFXApp3:
 
     
     dataTab.content = tabPane1
-    homeTab.content = scatterChart
+    homeTab.content = chart
     
     root.children += (menuBar, tabPane)
 

@@ -5,7 +5,7 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.paint.Color._
-import finaviaAPI.APIClient.*
+import finaviaAPI.DataParser.*
 import scalafx.scene.control._
 import scalafx.Includes._
 import scalafx.event.ActionEvent
@@ -22,25 +22,17 @@ import javafx.scene.chart.{CategoryAxis, NumberAxis, XYChart, BarChart, ScatterC
 
 
 class ScatterPlot {
-    def createHourScatterPlot(): ScatterChart[String, Number]  = 
+    def createScatterChart(dataSet: Array[(String, Int)], x: String, y: String, label: String): ScatterChart[String, Number]  = 
         val graphData = new GraphData()
-        val flightData = getAllFlightData()
-
         val xAxis = new CategoryAxis()
         val yAxis = new NumberAxis()
-        xAxis.label = "Time"
-        yAxis.label = "Number of Flights"
-
-        val hourDataArray: Array[(String, Int)] = graphData.flightPerHourData(flightData)
-
+        xAxis.label = x
+        yAxis.label = y
         val series = new XYChart.Series[String, Number]()
-        series.setName("Number of Flights")
-
-        // Convert Array to ObservableBuffer
-        series.data = ObservableBuffer(hourDataArray.map(cca => XYChart.Data[String, Number](cca._1, cca._2)): _*)
-
-        // Return the ScatterChart with xAxis, yAxis, and series
+        series.setName(label)
+        series.data = ObservableBuffer(dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2)): _*)
         new ScatterChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
 
-    end createHourScatterPlot
+   
+    end createScatterChart
 }
