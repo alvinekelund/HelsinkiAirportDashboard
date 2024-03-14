@@ -18,9 +18,14 @@ import scalafx.collections.ObservableBuffer
 import scalafx.beans.property.{StringProperty}
 import finaviaAPI.Flight
 import Visual.GraphData
+import Visual.ColumnChart
 import scalafx.scene.chart._
 import java.util.Locale.Category
 import scalafx.stage.FileChooser
+import cats.conversions.all
+import Visual.Tables
+import cats.instances.list
+import Visual.ScatterPlot
 
 
 object Dashboard extends JFXApp3:
@@ -69,84 +74,36 @@ object Dashboard extends JFXApp3:
     tabPane.minWidth = 1500
     tabPane.tabs = List(homeTab, dataTab)
 
-    
- 
-    val tableView = new TableView(getFlightData())
-    tableView.minHeight = 900
-    val col1 = new TableColumn[Flight, String]("Flight Number")
-    col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
-    val col2 = new TableColumn[Flight, String]("Departure Time")
-    col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
-    val col3 = new TableColumn[Flight, String]("Date")    
-    col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
-    val col4 = new TableColumn[Flight, String]("Route")
-    col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
-    val col5 = new TableColumn[Flight, String]("Route")
-    col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
-    val col6 = new TableColumn[Flight, String]("Aircraft Registration")
-    col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
-    val col7 = new TableColumn[Flight, String]("Aircraft Type")
-    col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
-    val col8 = new TableColumn[Flight, String]("Home Airport")
-    col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
-    val col9 = new TableColumn[Flight, String]("Callsign")
-    col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
-    val col10 = new TableColumn[Flight, String]("Blt Area")
-    col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
-    
+    val tabPane1 = new TabPane
+    val depTab = new Tab
+    val arrTab = new Tab
+    val allTab = new Tab
+    depTab.text = "Departing"
+    arrTab.text = "Arriving"
+    allTab.text = "All"
+    tabPane1.layoutY = 30
+    tabPane1.minWidth = 1500
+    tabPane1.tabs = List(allTab, depTab, arrTab)    
 
-    tableView.columns ++= List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+    // columnChart
+    val columnChart = new ColumnChart()
+    val barChart = columnChart.createCarrierColumnChart()
+    val makeColumnChart = barChart
 
-    val graphData = new GraphData()
-    val flightData = getFlightData()
-    val xAxis = new CategoryAxis()
-    val yAxis = new NumberAxis()
-    xAxis.label = "Airline"
-    yAxis.label = "Number of Flights"
-    val carrierCountArray: Array[(String, Int)] = graphData.perCarrier(flightData)
-    val series = new XYChart.Series[String, Number]
-    series.setName("Operated flights by airline")
-    series.data = carrierCountArray.map(cca => XYChart.Data[String, Number](cca._1, cca._2))
+    val scatterPlot = new ScatterPlot()
+    val scatterChart = scatterPlot.createHourScatterPlot()
 
-    val makeChart = new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+    val tables = new Tables
+    allTab.content = tables.createFlightTableAll()
+    depTab.content = tables.createFlightTableDep()
+    arrTab.content = tables.createFlightTableArr()
 
-    dataTab.content = tableView
-    homeTab.content = makeChart
-    
-
-
-
-
-
-    /*
-    val button = new Button("Click me")
-    button.layoutX = 100
-    button.layoutY = 100
-
-    val comboBox = new ComboBox(List("Table", "Graph", "Metric"))
-    comboBox.layoutX = 200
-    comboBox.layoutY = 100
-
-    val listView = new ListView(List("Scalafx", "pydton"))
-    listView.layoutX = 100
-    listView.layoutY = 150
-  
 
     
-
-    button.onAction = (e: ActionEvent) => {
-      val selected = listView.selectionModel.apply().getSelectedItems
-      listView.items = listView.items.apply().diff(selected)
-      println("Button clicked")
-    }
-
-    comboBox.onAction = (e: ActionEvent) => {
-      listView.items.apply() += comboBox.selectionModel.apply().getSelectedItem
-    }
-    */
-    //getFlightData()
-
-    root.children += (menuBar, tabPane, tableView)
+    dataTab.content = tabPane1
+    homeTab.content = scatterChart
+    
+    root.children += (menuBar, tabPane)
 
   end start
 

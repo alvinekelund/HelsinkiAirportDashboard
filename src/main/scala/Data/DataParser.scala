@@ -13,11 +13,11 @@ import scala.io.Source
 import scala.collection.mutable.Map
 
 object APIClient {
-  def getFlightData(): ObservableBuffer[Flight] = {
+  def getFlightData(set: String): ObservableBuffer[Flight] = {
     apiCallCounter()
     val request =
       basicRequest
-        .get(uri"https://api.finavia.fi/flights/public/v0/flights/all/all")
+        .get(uri"https://api.finavia.fi/flights/public/v0/flights/$set/all")
         .header("Accept", "application/xml")
         .header("app_id", "0f1e817b")
         .header("app_key", "8a61352ed66585e182e53a3107b4ab4c")
@@ -38,5 +38,18 @@ object APIClient {
 
     flights
   }
+
+  def getAllFlightData(): ObservableBuffer[Flight] = {
+    getFlightData("all")
+  }
+
+  def getDepFlightData(): ObservableBuffer[Flight] = {
+    getFlightData("dep")
+  }
+
+  def getArrFlightData(): ObservableBuffer[Flight] = {
+    getFlightData("arr")
+  }
+    
 
 }
