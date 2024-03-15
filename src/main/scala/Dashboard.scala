@@ -28,6 +28,7 @@ import cats.instances.list
 import Visual.ScatterPlot
 import finaviaAPI.DataParser
 import scala.annotation.meta.field
+import cats.instances.map
 
 
 
@@ -67,10 +68,16 @@ object Dashboard extends JFXApp3:
       val selectedFile = fileChooser.showOpenDialog(stage)
     }
 
-    val comboBox = new ComboBox(List("Column", "Scatter", "Line", "Pie"))
-    comboBox.layoutX = 20
-    comboBox.layoutY = 100
-    comboBox.value = "Pie"
+    val graphComboBox = new ComboBox(List("Column", "Scatter", "Line", "Pie"))
+    graphComboBox.layoutX = 20
+    graphComboBox.layoutY = 100
+    graphComboBox.value = "Pie"
+
+    val datasetComboBox = new ComboBox(List("Carrier", "Time"))
+    datasetComboBox.layoutX = 100
+    datasetComboBox.layoutY = 100
+    datasetComboBox.value = "Time"
+
 
 
     val tabPane = new TabPane
@@ -130,19 +137,30 @@ object Dashboard extends JFXApp3:
 
     val graphData = new GraphData
 
-
-
-
-
-    val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
-
-    comboBox.onAction = () => {
-      val selectedGraph = comboBox.value.value
-      val newChart = makeChart(selectedGraph, graphData.flightPerHourData(getAllFlightData()), "der", "fkw", "disf")
-      homeTab.content = new VBox(comboBox, newChart)
+    def getChartData(dataset: String): Tuple4[Array[(String, Int)], String, String, String] = dataset match {
+      case "Time" => Tuple4(graphData.flightPerHourData(getAllFlightData()), "Time", "Airplanes flown", "Airplanes flown each hour")
+      case "Carrier" => Tuple4(graphData.flightPerCarrierData(getAllFlightData()), "Carrier", "Airplanes flown", "Amount of planes flown by carrier")
+      case _ => throw new IllegalArgumentException("Invalid dataset")
     }
-    
-    homeTab.content = new VBox(comboBox, defaultChart)
+
+    val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "Time", "Airplanes flown", "Airplanes flown each hour")
+
+
+    val chartVBox = new VBox(graphComboBox, datasetComboBox, defaultChart)
+
+
+    graphComboBox.onAction = () => updateChart()
+    datasetComboBox.onAction = () => updateChart()
+
+    def updateChart(): Unit = {
+      val selectedDataset = datasetComboBox.value.value
+      val selectedGraph = graphComboBox.value.value
+      val newChart = makeChart(selectedGraph, getChartData(selectedDataset)._1, getChartData(selectedDataset)._2, getChartData(selectedDataset)._3, getChartData(selectedDataset)._4)
+      chartVBox.children.clear()
+      chartVBox.children.addAll(graphComboBox, datasetComboBox, newChart)
+    }
+
+    homeTab.content = chartVBox
     dataTab.content = tabPane1
 
     

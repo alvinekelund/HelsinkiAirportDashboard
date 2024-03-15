@@ -26,7 +26,7 @@ class GraphData {
     callsignMap
   }
 
-  def flightsPerCarrierData(data: ObservableBuffer[Flight]): Array[(String, Int)] = {
+  def flightPerCarrierData(data: ObservableBuffer[Flight]): Array[(String, Int)] = {
   val carrierCountMap = Map[String, Int]().withDefaultValue(0)
 
   for (flight <- data) {

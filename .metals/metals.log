@@ -20585,3 +20585,918 @@ java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.lang.Thread.run(Thread.java:833)
 
+2024.03.14 19:47:27 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 14, 2024 7:47:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11514
+2024.03.14 19:47:37 INFO  Shutting down server
+2024.03.14 19:47:37 INFO  shutting down Metals
+2024.03.14 19:47:37 INFO  Shut down connection with build server.
+2024.03.14 19:47:37 INFO  Shut down connection with build server.
+Mar 14, 2024 7:47:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFO: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.RequestRegistry.$anonfun$register$5(RequestRegistry.scala:78)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.utils.RequestRegistry.$anonfun$register$4(RequestRegistry.scala:78)
+	at scala.meta.internal.metals.Cancelable$$anon$1.cancel(Cancelable.scala:18)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:396)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1(BspSession.scala:34)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1$adapted(BspSession.scala:34)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.bsp.BspSession.cancel(BspSession.scala:34)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.cancel(MetalsLspService.scala:162)
+	at scala.meta.internal.metals.MetalsLspService.onShutdown(MetalsLspService.scala:947)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2(WorkspaceLspService.scala:1199)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2$adapted(WorkspaceLspService.scala:1199)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.WorkspaceLspService.shutdown(WorkspaceLspService.scala:1199)
+	at scala.meta.metals.MetalsLanguageServer.shutdown(MetalsLanguageServer.scala:260)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:263)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:285)
+	at java.base/java.nio.channels.Channels.writeFullyImpl(Channels.java:74)
+	at java.base/java.nio.channels.Channels.writeFully(Channels.java:93)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:171)
+	at java.base/java.io.OutputStream.write(OutputStream.java:127)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:151)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:137)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:108)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 46 more
+
+2024.03.14 19:47:37 INFO  Bloop should support `buildTarget/jvmRunEnvironment`, but it fails.
+2024.03.14 19:47:37 INFO  Bloop should support `buildTarget/jvmRunEnvironment`, but it fails.
+2024.03.14 19:47:37 INFO  Cancelling compilation on Bloop server
+Mar 14, 2024 7:47:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFO: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:396)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1(BspSession.scala:34)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1$adapted(BspSession.scala:34)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.bsp.BspSession.cancel(BspSession.scala:34)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.cancel(MetalsLspService.scala:162)
+	at scala.meta.internal.metals.MetalsLspService.onShutdown(MetalsLspService.scala:947)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2(WorkspaceLspService.scala:1199)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2$adapted(WorkspaceLspService.scala:1199)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.WorkspaceLspService.shutdown(WorkspaceLspService.scala:1199)
+	at scala.meta.metals.MetalsLanguageServer.shutdown(MetalsLanguageServer.scala:260)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:263)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:285)
+	at java.base/java.nio.channels.Channels.writeFullyImpl(Channels.java:74)
+	at java.base/java.nio.channels.Channels.writeFully(Channels.java:93)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:171)
+	at java.base/java.io.OutputStream.write(OutputStream.java:127)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:151)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:137)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:108)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 45 more
+
+2024.03.14 19:47:37 INFO  Cancelling compilation on Bloop server
+2024.03.14 19:47:37 INFO  Scala main classes not supported by server
+2024.03.14 19:47:37 INFO  Cancelling compilation on Bloop server
+2024.03.14 19:47:37 INFO  Scala test classes not supported by server
+2024.03.14 19:47:37 INFO  Bloop should support `buildTarget/jvmRunEnvironment`, but it fails.
+2024.03.14 19:47:37 INFO  Exiting server
+2024.03.14 19:47:58 INFO  Started: Metals version 1.2.2 in folders '/Users/alvin/VScode/OS2Projekti' for client Visual Studio Code 1.87.1.
+19:48:00.841 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+19:48:00.843 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+19:48:00.844 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+19:48:00.845 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+19:48:00.845 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+19:48:00.845 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+19:48:00.845 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+19:48:00.845 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+19:48:00.848 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+19:48:00.851 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+19:48:00.854 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:48:00.855 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+19:48:00.856 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+19:48:00.856 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+19:48:00.857 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+19:48:00.952 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/alvin/VScode/OS2Projekti/.metals/metals (H2 2.2)
+19:48:00.952 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+19:48:00.952 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+19:48:00.953 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+19:48:00.953 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+19:48:00.956 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+19:48:00.956 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+19:48:00.956 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:48:00.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+19:48:00.964 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:48:00.969 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:48:00.969 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+19:48:00.969 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+19:48:00.970 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+19:48:00.979 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.016s)
+19:48:00.980 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+19:48:00.983 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+19:48:00.987 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+19:48:00.998 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 35 of 100M
+2024.03.14 19:48:01 INFO  skipping build import with status 'Installed'
+2024.03.14 19:48:01 INFO  Attempting to connect to the build server...
+2024.03.14 19:48:01 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:48:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:48:02 INFO  Attempting to connect to the build server...
+2024.03.14 19:48:02 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.14 19:48:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.14 19:48:02 INFO  time: Connected to build server in 1.47s
+2024.03.14 19:48:02 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.14 19:48:03 INFO  time: Imported build in 0.28s
+2024.03.14 19:48:12 INFO  time: indexed workspace in 8.63s
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 76
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 86
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 77
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 78
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 79
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 83
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 88
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 90
+Mar 14, 2024 7:57:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 94
+2024.03.15 11:15:17 INFO  compiling root (1 scala source)
+2024.03.15 11:15:22 INFO  time: compiled root in 4.91s
+2024.03.15 11:16:39 INFO  compiling root (1 scala source)
+2024.03.15 11:16:43 INFO  time: compiled root in 3.16s
+2024.03.15 11:16:43 INFO  compiling root (1 scala source)
+2024.03.15 11:16:46 INFO  time: compiled root in 2.88s
+2024.03.15 11:19:08 INFO  compiling root (1 scala source)
+2024.03.15 11:19:25 INFO  time: compiled root in 16s
+2024.03.15 11:19:26 INFO  compiling root (1 scala source)
+2024.03.15 11:19:41 INFO  time: compiled root in 14s
+2024.03.15 11:21:06 INFO  compiling root (2 scala sources)
+2024.03.15 11:21:10 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:21:10 INFO  time: compiled root in 4.42s
+2024.03.15 11:23:19 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 35m 17.192s)
+2024.03.15 11:23:19 INFO  compiling root (1 scala source)
+2024.03.15 11:23:19 INFO  compiling root (1 scala source)
+2024.03.15 11:23:23 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:23:23 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:23:23 INFO  time: compiled root in 3.68s
+2024.03.15 11:23:23 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.15 11:23:23 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.15 11:23:24 INFO  Starting debug proxy for [Dashboard]
+2024.03.15 11:23:23 INFO  Loaded expression compiler in 21 milliseconds
+2024.03.15 11:23:23 INFO  Loaded step filter in 0 milliseconds
+2024.03.15 11:23:23 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.15 11:23:23 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.15 11:23:31 INFO  Loaded all sources and classes in 7 seconds
+Mar 15, 2024 11:23:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1042
+2024.03.15 11:24:10 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.15 11:24:10 INFO  Trying to attach to remote debuggee VM localhost:52022 .
+2024.03.15 11:24:10 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 36m 8.563s)
+2024.03.15 11:24:10 INFO  Attaching to debuggee VM succeeded.
+2024.03.15 11:24:10 INFO  compiling root (1 scala source)
+2024.03.15 11:24:10 INFO  compiling root (1 scala source)
+2024.03.15 11:24:16 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 36m 13.573s)
+2024.03.15 11:24:16 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 15h 36m 13.573s)
+2024.03.15 11:24:16 INFO  compiling root (1 scala source)
+2024.03.15 11:24:16 INFO  compiling root (1 scala source)
+2024.03.15 11:24:20 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:24:20 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:24:20 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:24:20 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 11:24:20 INFO  Deduplicating compilation of root-test from bsp client 'Metals 1.2.2' (since 15h 36m 18.319s)
+2024.03.15 11:24:20 INFO  time: compiled root in 4.82s
+2024.03.15 11:24:21 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.15 11:24:21 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.15 11:24:21 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.15 11:24:21 INFO  Starting debug proxy for [Dashboard]
+2024.03.15 11:24:21 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.15 11:24:21 INFO  Starting debug proxy for [Dashboard]
+2024.03.15 11:24:21 INFO  Loaded expression compiler in 23 milliseconds
+2024.03.15 11:24:21 INFO  Loaded step filter in 0 milliseconds
+2024.03.15 11:24:21 INFO  Loaded expression compiler in 28 milliseconds
+2024.03.15 11:24:21 INFO  Loaded step filter in 0 milliseconds
+2024.03.15 11:24:21 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.15 11:24:21 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-generic_3/0.14.2/circe-generic_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/json-common_3/3.3.7/json-common_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/shared/ws_3/1.2.5/ws_3-1.2.5-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the source files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10-sources.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/20/javafx-web-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.2/circe-parser_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/20/javafx-base-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.2/circe-core_3-0.14.2.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/20/javafx-swing-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.7.0/cats-core_3-2.7.0.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_3/10.5.3/akka-http-core_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_3/10.5.3/akka-parsing_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/core_3/3.3.7/core_3-3.3.7.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/20/javafx-media-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_3/10.5.3/akka-http_3-10.5.3.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.3.0/scala3-library_3-3.3.0.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/20/javafx-graphics-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/bloop/semanticdb/com.sourcegraph.semanticdb-javac.0.9.9/semanticdb-javac-0.9.9.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/softwaremill/sttp/client3/circe_3/3.3.7/circe_3-3.3.7.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:26 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalafx/scalafx_3/20.0.0-R31/scalafx_3-20.0.0-R31.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:32 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.7.0/cats-kernel_3-2.7.0.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:32 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/20/javafx-fxml-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:32 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/20/javafx-controls-20-mac.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:40 WARN  Cannot list the class files in /Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.0.0/scala-xml_3-2.0.0.jar: FileSystemAlreadyExistsException null
+2024.03.15 11:24:52 INFO  compiling root (1 scala source)
+2024.03.15 11:24:58 INFO  Loaded all sources and classes in 36 seconds
+2024.03.15 11:24:58 INFO  Loaded all sources and classes in 36 seconds
+2024.03.15 11:25:22 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 11:25:24 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.15 11:25:27 INFO  Trying to attach to remote debuggee VM localhost:52037 .
+2024.03.15 11:25:29 INFO  Attaching to debuggee VM succeeded.
+2024.03.15 11:25:53 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.15 11:25:54 INFO  Trying to attach to remote debuggee VM localhost:52036 .
+2024.03.15 11:25:54 INFO  Attaching to debuggee VM succeeded.
+2024.03.15 12:49:53 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 12:57:47 INFO  Canceling debug proxy for [Dashboard]
+2024.03.15 12:57:47 INFO  Closing debug server tcp://0.0.0.0:52020
+2024.03.15 12:57:48 INFO  Closing debug server tcp://0.0.0.0:52032
+2024.03.15 12:57:48 INFO  Canceling debug proxy for [Dashboard]
+2024.03.15 12:57:48 INFO  Closing debug server tcp://0.0.0.0:52034
+2024.03.15 12:57:48 INFO  Canceling debug proxy for [Dashboard]
+2024.03.15 12:58:08 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 12:58:41 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 12:58:47 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:01:49 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:01:52 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:06 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:08 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:10 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:18 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:19 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:20 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:23 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:24 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:25 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:30 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:30 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:31 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:32 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:33 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:34 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:35 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:39 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:40 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:41 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:42 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:43 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:43 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:46 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:46 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:48 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:55 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:55 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:57 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:58 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:02:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:03:03 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:03:13 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:03:16 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:03:17 INFO  compiling root (1 scala source)
+2024.03.15 13:03:23 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:03:23 INFO  time: compiled root in 6.23s
+Mar 15, 2024 1:04:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1503
+2024.03.15 13:05:23 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:06:23 INFO  Scala main classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:06:23 INFO  Scala test classes not supported by server
+java.util.concurrent.TimeoutException: Future timed out after [3 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 15, 2024 1:09:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1514
+2024.03.15 13:09:57 INFO  Disconnecting from Bloop session...
+2024.03.15 13:09:57 INFO  Shut down connection with build server.
+2024.03.15 13:09:58 INFO  Attempting to connect to the build server...
+2024.03.15 13:09:58 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:09:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:09:58 INFO  Attempting to connect to the build server...
+2024.03.15 13:09:58 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:09:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:09:58 INFO  time: Connected to build server in 0.35s
+2024.03.15 13:09:58 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.15 13:09:59 ERROR timeout: build server 'bloop' during shutdown
+2024.03.15 13:09:59 INFO  Attempting to connect to the build server...
+2024.03.15 13:09:59 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:09:59 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:09:59 INFO  Attempting to connect to the build server...
+2024.03.15 13:09:59 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:09:59 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:09:59 INFO  time: Connected to build server in 93ms
+2024.03.15 13:09:59 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.15 13:10:06 INFO  time: indexed workspace in 7.54s
+2024.03.15 13:10:06 INFO  time: indexed workspace in 7.22s
+Mar 15, 2024 1:10:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1532
+2024.03.15 13:10:28 INFO  Shutting down server
+2024.03.15 13:10:28 INFO  shutting down Metals
+2024.03.15 13:10:28 INFO  Shut down connection with build server.
+2024.03.15 13:10:28 INFO  Shut down connection with build server.
+Mar 15, 2024 1:10:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify
+INFO: Failed to send notification message.
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.nio.channels.AsynchronousCloseException
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.RequestMonitorImpl$$anon$1.consume(ServerLivenessMonitor.scala:41)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:126)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.sendCancelNotification(RemoteEndpoint.java:180)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:150)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.$anonfun$cancel$1(FutureWithTimeout.scala:37)
+	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.metals.utils.FutureWithTimeout$$anon$1.cancel(FutureWithTimeout.scala:37)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.utils.RequestRegistry.cancel(RequestRegistry.scala:94)
+	at scala.meta.internal.metals.BuildServerConnection.cancel(BuildServerConnection.scala:396)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1(BspSession.scala:34)
+	at scala.meta.internal.bsp.BspSession.$anonfun$cancel$1$adapted(BspSession.scala:34)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.bsp.BspSession.cancel(BspSession.scala:34)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.cancel(MetalsLspService.scala:162)
+	at scala.meta.internal.metals.MetalsLspService.onShutdown(MetalsLspService.scala:947)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2(WorkspaceLspService.scala:1199)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$shutdown$2$adapted(WorkspaceLspService.scala:1199)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.WorkspaceLspService.shutdown(WorkspaceLspService.scala:1199)
+	at scala.meta.metals.MetalsLanguageServer.shutdown(MetalsLanguageServer.scala:260)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.nio.channels.AsynchronousCloseException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at java.base/sun.nio.ch.SinkChannelImpl.endWrite(SinkChannelImpl.java:263)
+	at java.base/sun.nio.ch.SinkChannelImpl.write(SinkChannelImpl.java:285)
+	at java.base/java.nio.channels.Channels.writeFullyImpl(Channels.java:74)
+	at java.base/java.nio.channels.Channels.writeFully(Channels.java:93)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:171)
+	at java.base/java.io.OutputStream.write(OutputStream.java:127)
+	at java.base/java.nio.channels.Channels$1.write(Channels.java:151)
+	at scala.meta.internal.metals.ClosableOutputStream.write(ClosableOutputStream.scala:26)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:137)
+	at java.base/java.io.FilterOutputStream.write(FilterOutputStream.java:108)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)
+	... 45 more
+
+2024.03.15 13:10:28 INFO  Cancelling compilation on Bloop server
+2024.03.15 13:10:28 INFO  Cancelling compilation on Bloop server
+2024.03.15 13:10:28 INFO  Bloop should support `buildTarget/jvmRunEnvironment`, but it fails.
+2024.03.15 13:10:28 INFO  Cancelling compilation on Bloop server
+2024.03.15 13:10:28 INFO  Cancelling compilation on Bloop server
+2024.03.15 13:10:28 ERROR failed: Starting debug server
+java.util.concurrent.CancellationException
+	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
+	at scala.meta.internal.metals.CancelTokens$$anon$1.cancel(CancelTokens.scala:35)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$startDebugSession$3(BuildServerConnection.scala:262)
+	at scala.meta.internal.metals.BuildServerConnection.$anonfun$startDebugSession$3$adapted(BuildServerConnection.scala:262)
+	at scala.util.Success.foreach(Try.scala:260)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:481)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:10:28 INFO  Exiting server
+2024.03.15 13:10:55 INFO  Started: Metals version 1.2.2 in folders '/Users/alvin/VScode/OS2Projekti' for client Visual Studio Code 1.87.1.
+13:10:58.758 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+13:10:58.761 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+13:10:58.761 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+13:10:58.764 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+13:10:58.764 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+13:10:58.764 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+13:10:58.764 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+13:10:58.764 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca ...
+13:10:58.768 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/alvin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+13:10:58.772 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+13:10:58.772 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+13:10:58.773 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+13:10:58.773 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+13:10:58.773 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+13:10:58.773 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+13:10:58.780 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:10:58.781 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+13:10:58.783 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+13:10:58.784 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+13:10:58.784 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+13:10:58.917 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/alvin/VScode/OS2Projekti/.metals/metals (H2 2.2)
+13:10:58.917 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+13:10:58.917 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+13:10:58.918 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+13:10:58.918 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+13:10:58.923 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+13:10:58.924 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+13:10:58.924 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:10:58.931 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+13:10:58.934 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:10:58.942 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:10:58.942 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:10:58.942 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:10:58.942 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:10:58.943 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:10:58.961 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.029s)
+13:10:58.963 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+13:10:58.970 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+13:10:58.975 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+13:10:58.994 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 35 of 100M
+2024.03.15 13:11:02 INFO  skipping build import with status 'Installed'
+2024.03.15 13:11:02 INFO  Attempting to connect to the build server...
+2024.03.15 13:11:02 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:11:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:11:03 INFO  Attempting to connect to the build server...
+2024.03.15 13:11:03 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:11:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:11:04 INFO  time: Connected to build server in 2.27s
+2024.03.15 13:11:04 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.15 13:11:05 INFO  time: Imported build in 0.35s
+2024.03.15 13:11:16 INFO  no build target found for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.15 13:11:26 INFO  time: indexed workspace in 9.97s
+2024.03.15 13:12:47 INFO  compiling root (1 scala source)
+2024.03.15 13:12:54 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:12:56 INFO  time: compiled root in 8.26s
+Mar 15, 2024 1:17:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 113
+2024.03.15 13:18:26 INFO  compiling root (1 scala source)
+2024.03.15 13:18:33 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:18:33 INFO  time: compiled root in 7.12s
+Mar 15, 2024 1:18:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 223
+2024.03.15 13:19:01 INFO  compiling root (1 scala source)
+2024.03.15 13:19:05 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:19:07 INFO  time: compiled root in 5.6s
+Mar 15, 2024 1:25:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 756
+2024.03.15 13:27:42 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:139: error: illegal character '\u00a7'
+    def getChartData(dataset: String): Map(Array[(String, Int)], String, String, String) = §dataset match {
+                                                                                           ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 15, 2024 1:27:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 949
+2024.03.15 13:28:39 INFO  compiling root (1 scala source)
+2024.03.15 13:28:43 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:28:45 INFO  time: compiled root in 6.19s
+2024.03.15 13:28:46 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:28:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:16 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:17 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:18 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:32 INFO  compiling root (1 scala source)
+2024.03.15 13:29:36 INFO  time: compiled root in 4.01s
+2024.03.15 13:29:36 INFO  compiling root (1 scala source)
+2024.03.15 13:29:37 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:40 INFO  time: compiled root in 3.44s
+2024.03.15 13:29:41 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:29:44 INFO  compiling root (1 scala source)
+2024.03.15 13:29:47 INFO  time: compiled root in 3.26s
+2024.03.15 13:29:48 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:06 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:07 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:07 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:09 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:10 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:12 INFO  compiling root (1 scala source)
+2024.03.15 13:30:22 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:24 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:24 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:26 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:27 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:30 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:34 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:35 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:38 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:40 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:46 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:48 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:50 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:53 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:53 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:56 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:30:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:01 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:04 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+Mar 15, 2024 1:31:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1313
+2024.03.15 13:31:05 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:07 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:07 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:31:26 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+Mar 15, 2024 1:31:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1366
+2024.03.15 13:32:23 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:35:58 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:35:59 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:02 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:06 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:07 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:09 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:10 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:11 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:14 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:16 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:17 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:21 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:21 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:23 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:25 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:28 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:29 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:31 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:55 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:36:55 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:01 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:05 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:33 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:36 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:37 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:48 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:49 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:50 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+Mar 15, 2024 1:37:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1636
+Mar 15, 2024 1:37:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1637
+2024.03.15 13:37:52 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:52 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:53 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:37:55 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:38:09 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:38:19 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:38:23 WARN  Could not load snapshot text for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+2024.03.15 13:39:37 INFO  Disconnecting from Bloop session...
+2024.03.15 13:39:38 INFO  Shut down connection with build server.
+2024.03.15 13:39:39 ERROR timeout: build server 'bloop' during shutdown
+2024.03.15 13:39:40 INFO  Attempting to connect to the build server...
+2024.03.15 13:39:40 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:39:40 INFO  Attempting to connect to the build server...
+2024.03.15 13:39:40 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:39:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:39:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:39:40 INFO  Attempting to connect to the build server...
+2024.03.15 13:39:40 INFO  Attempting to connect to the build server...
+2024.03.15 13:39:40 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:39:40 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home defined at /Users/alvin/.bloop/bloop.json
+2024.03.15 13:39:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:39:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/project/.metals/bsp.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.15 13:39:40 INFO  time: Connected to build server in 0.51s
+2024.03.15 13:39:40 INFO  time: Connected to build server in 0.35s
+2024.03.15 13:39:40 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.15 13:39:40 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.15 13:39:40 INFO  time: Imported build in 0.12s
+2024.03.15 13:39:40 INFO  time: Imported build in 0.12s
+2024.03.15 13:39:49 INFO  time: indexed workspace in 8.46s
+2024.03.15 13:39:49 INFO  time: indexed workspace in 8.44s
+2024.03.15 13:39:51 INFO  compiling root (1 scala source)
+2024.03.15 13:39:56 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:40:00 INFO  time: compiled root in 9.36s
+error: /Users/alvin/VScode/OS2Projekti/.metals/.tmp/.metals/.tmp/Main-5118082320830460032.scala is not a file
+2024.03.15 13:41:22 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-server.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2024.03.15 13:41:22 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/alvin/VScode/OS2Projekti/.metals/dap-client.trace.json or /Users/alvin/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2024.03.15 13:41:22 INFO  Starting debug proxy for [Dashboard]
+2024.03.15 13:41:22 INFO  Loaded expression compiler in 16 milliseconds
+2024.03.15 13:41:22 INFO  Loaded step filter in 0 milliseconds
+2024.03.15 13:41:22 WARN  Found duplicate entry core_3 in debuggee MainClassDebugAdapter(root, Dashboard)
+2024.03.15 13:41:22 WARN  Cannot list the source files in /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip: FileSystemAlreadyExistsException null
+2024.03.15 13:41:32 INFO  Loaded all sources and classes in 10 seconds
+2024.03.15 13:41:50 WARN  Cannot load step filter for Scala 3.3.0: InvocationTargetException null
+2024.03.15 13:41:50 INFO  Trying to attach to remote debuggee VM localhost:52594 .
+2024.03.15 13:41:50 INFO  Attaching to debuggee VM succeeded.
+2024.03.15 13:42:04 INFO  Canceling debug proxy for [Dashboard]
+2024.03.15 13:42:04 INFO  Closing debug server tcp://0.0.0.0:52592
+2024.03.15 13:43:01 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:162: error: illegal character '\u00a8'
+    homeTab.content = chartV¨
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:43:02 ERROR Failed to tokenize input for semantic tokens for /Users/alvin/VScode/OS2Projekti/src/main/scala/Dashboard.scala
+scala.meta.tokenizers.TokenizeException: <input>:162: error: illegal character '\u00a8'
+    homeTab.content = chartV¨
+                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:469)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:474)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:43:22 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:43:26 INFO  compiling root (1 scala source)
+2024.03.15 13:43:31 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:43:31 INFO  time: compiled root in 5.57s
+2024.03.15 13:45:47 INFO  compiling root (1 scala source)
+2024.03.15 13:45:54 WARN  there was 1 deprecation warning; re-run with -deprecation for details
+2024.03.15 13:45:54 INFO  time: compiled root in 6.53s
+2024.03.15 13:47:08 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2024.03.15 13:47:35 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+Mar 15, 2024 1:47:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.03.15 13:47:49 INFO  Cancelling compilation on Bloop server
+java.util.concurrent.TimeoutException: Future timed out after [10 minutes]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at scala.concurrent.Await$.result(package.scala:124)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionScalaFuture.$anonfun$withTimeout$1(MetalsEnrichments.scala:252)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
