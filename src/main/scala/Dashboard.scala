@@ -29,8 +29,10 @@ import finaviaAPI.DataParser
 import scala.annotation.meta.field
 import cats.instances.map
 import javafx.scene.layout.BorderPane
-import javafx.scene.layout.HBox
+import scalafx.scene.layout.HBox
 import scalafx.geometry.Orientation
+import scalafx.scene.layout.Priority
+import scalafx.scene.control.ComboBox
 
 
 
@@ -72,16 +74,6 @@ object Dashboard extends JFXApp3:
       val fileChooser = new FileChooser
       val selectedFile = fileChooser.showOpenDialog(stage)
     }
-/*
-    val graphComboBox = new ComboBox(List("Column", "Scatter", "Line", "Pie"))
-    graphComboBox.value = "Pie"
-
-    val datasetComboBox = new ComboBox(List("Carrier", "Time"))
-    datasetComboBox.value = "Time"
-
-    val deparrComboBox = new ComboBox(List("All", "Departing", "Arriving"))
-    deparrComboBox.value = "All"
-*/
 
 
     val tabPane = new TabPane
@@ -108,7 +100,9 @@ object Dashboard extends JFXApp3:
     allTab.content = tables.createFlightTableAll()
     depTab.content = tables.createFlightTableDep()
     arrTab.content = tables.createFlightTableArr()
-    
+
+
+
     def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
       val columnChart = new ColumnChart()
       val chart = columnChart.createColumnChart(graphDataType, x, y, label)
@@ -129,8 +123,6 @@ object Dashboard extends JFXApp3:
       val chart = pieChart.createPieChart(graphDataType, x, y, label)
       chart
 
-    
-
     def makeChart(graphType: String, dataType: Array[(String, Int)], x: String, y: String, label: String) = 
       graphType match
         case "Column" => makeColumnGraph(dataType, x, y, label)
@@ -139,7 +131,9 @@ object Dashboard extends JFXApp3:
         case "Pie" => makePieChart(dataType, x, y, label)
         case _ => throw new IllegalArgumentException("Invalid graph type")
 
+    val card = new Metric
     val graphData = new GraphData
+    val metricData = new MetricData
     var depArrData = getAllFlightData()
 
     def getChartData(dataset: String): Tuple4[Array[(String, Int)], String, String, String] = dataset match {
@@ -148,54 +142,86 @@ object Dashboard extends JFXApp3:
       case _ => throw new IllegalArgumentException("Invalid dataset")
     }
 
-    val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "Time", "Airplanes flown", "Airplanes flown each hour")
-
-
+    def getMetricData(dataset: String): Tuple2[String, String] = dataset match {
+      case "Amount" => Tuple2(metricData.totalFlights(depArrData), "Total amount of planes")
+    }
     
-    def initializeGraph(): (ComboBox[String], ComboBox[String], ComboBox[String], VBox) = {
+    val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "Time", "Airplanes flown", "Airplanes flown each hour")
+    
+
+    def initializeGraph(): HBox = {
+      val deparrComboBoxC = new ComboBox(List("All", "Departing", "Arriving"))
+      deparrComboBoxC.value = "All"
+
+      val deparrComboBoxM = new ComboBox(List("All", "Departing", "Arriving"))
+      deparrComboBoxM.value = "All"
+
+      val viewComboBox = new ComboBox(List("Graph View", "Metric View"))
+      viewComboBox.value = "Graph View"
+
+
       val graphComboBox = new ComboBox(List("Column", "Scatter", "Line", "Pie"))
-      graphComboBox.value = "Pie"
+      graphComboBox.value = "Column"
 
-      val datasetComboBox = new ComboBox(List("Carrier", "Time"))
-      datasetComboBox.value = "Time"
+      val datasetComboBoxC = new ComboBox(List("Carrier", "Time"))
+      datasetComboBoxC.value = "Time"
+      
+      val datasetComboBoxM = new ComboBox(List("Amount"))
+      datasetComboBoxM.value = "Amount"
 
-      val deparrComboBox = new ComboBox(List("All", "Departing", "Arriving"))
-      deparrComboBox.value = "All"
-
-      val comboBoxHBox = new HBox(10, graphComboBox, datasetComboBox, deparrComboBox)
-      val chartVBox = new VBox(defaultChart)
-
+      val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC)  
+      val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM)
+           
+      val chartVBox = new VBox(comboBoxHBox1, defaultChart)
       graphComboBox.onAction = () => updateChart()
-      datasetComboBox.onAction = () => updateChart()
-      deparrComboBox.onAction = () => updateChart()
+      datasetComboBoxC.onAction = () => updateChart()
+      datasetComboBoxM.onAction = () => updateChart()
+      deparrComboBoxC.onAction = () => updateChart()
+      deparrComboBoxM.onAction = () => updateChart()
+      viewComboBox.onAction = () => updateChart()
+      def updateChart(): Unit = 
+          var selectedDepArrC = deparrComboBoxC.value.value
+          var selectedDepArrM = deparrComboBoxM.value.value
+          var selectedView = viewComboBox.value.value
+          var selectedDatasetC = datasetComboBoxC.value.value
+          var selectedDatasetM = datasetComboBoxM.value.value
+          var selectedGraph = graphComboBox.value.value
+          
+          
+          depArrData = selectedDepArrC match 
+            case "All" => getAllFlightData()
+            case "Departing" => getDepFlightData()
+            case "Arriving" => getArrFlightData()
+          
+          val newContent = selectedView match 
+            case "Graph View" =>
+              (new VBox(comboBoxHBox1, makeChart(selectedGraph, getChartData(selectedDatasetC)._1, getChartData(selectedDatasetC)._2,
+                getChartData(selectedDatasetC)._3, getChartData(selectedDatasetC)._4)))
+            case "Metric View" =>
+              (new VBox(comboBoxHBox2, card.makeMetric(getMetricData(selectedDatasetM)._2, getMetricData(selectedDatasetM)._1)))
+              
+          chartVBox.children.clear()
+          chartVBox.children.add(newContent)
 
-      def updateChart(): Unit = {
-        val selectedDataset = datasetComboBox.value.value
-        val selectedGraph = graphComboBox.value.value
-        val selectedDepArr = deparrComboBox.value.value
-        depArrData = selectedDepArr match {
-          case "All" => getAllFlightData()
-          case "Departing" => getDepFlightData()
-          case "Arriving" => getArrFlightData()
-        }
-        val newChart = makeChart(selectedGraph, getChartData(selectedDataset)._1, getChartData(selectedDataset)._2, getChartData(selectedDataset)._3, getChartData(selectedDataset)._4)
-        chartVBox.children.clear()
-        chartVBox.children.addAll(newChart)
-      }
-
-      (graphComboBox, datasetComboBox, deparrComboBox, new VBox(comboBoxHBox, chartVBox))
+          
+      
+      new HBox(chartVBox, viewComboBox)
     }
 
-    val (graphComboBox1, datasetComboBox1, deparrComboBox1, chartVBox1) = initializeGraph()
-    val (graphComboBox2, datasetComboBox2, deparrComboBox2, chartVBox2) = initializeGraph()
+    val HBox1 = initializeGraph()
+    val HBox2 = initializeGraph()
+    val HBox3 = initializeGraph()
+
 
     val split = new SplitPane
     split.orientation = Orientation.Horizontal
-    split.items.addAll(chartVBox1, chartVBox2)
+    val split1 = new SplitPane
+    split1.orientation = Orientation.Vertical
+    split1.items.addAll(HBox1, HBox3)
+    split.items.addAll(split1, HBox2)
     
     homeTab.content = split
     dataTab.content = tabPane1
-
     
     root.children += (menuBar, tabPane)
 

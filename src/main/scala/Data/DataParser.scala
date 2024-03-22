@@ -11,8 +11,13 @@ import java.io.StringReader
 import scalafx.collections.ObservableBuffer
 import scala.io.Source
 import scala.collection.mutable.Map
+import java.time.format.DateTimeFormatter
+import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 
 object DataParser {
+
+  
   def getFlightData(set: String): ObservableBuffer[Flight] = {
     apiCallCounter()
     val request =
@@ -31,13 +36,29 @@ object DataParser {
     val xmlElem: Elem = XML.load(xmlReader)
 
     val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
-    (xmlElem \\ "flight").foreach {flightElem =>
+    (xmlElem \\ "flight").foreach { flightElem =>
       val flight = Flight.fromXml(flightElem)
-      flights.add(flight)
+      if (isFlightToOrFromHEL(flight) && isFlightInTheNext24h(flight)) {
+        flights.add(flight)
+      
     }
-
+  }
     flights
   }
+  def isFlightToOrFromHEL(flight: Flight): Boolean = {
+    flight.h_apt == "HEL" || flight.route_1 == "HEL"
+  }
+
+  def isFlightInTheNext24h(flight: Flight): Boolean = {
+    val sdtFormatter = DateTimeFormatter.ISO_DATE_TIME
+    val flightSdt = LocalDateTime.parse(flight.sdt, sdtFormatter)
+    val currentDateTime = LocalDateTime.now()
+    val hoursUntilDeparture = ChronoUnit.HOURS.between(currentDateTime, flightSdt)
+
+    hoursUntilDeparture <= 24
+    
+  }
+  
 
   def getAllFlightData(): ObservableBuffer[Flight] = {
     getFlightData("all")
