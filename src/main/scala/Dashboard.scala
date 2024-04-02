@@ -33,6 +33,16 @@ import scalafx.scene.layout.HBox
 import scalafx.geometry.Orientation
 import scalafx.scene.layout.Priority
 import scalafx.scene.control.ComboBox
+import scalafx.geometry.Pos.{TopRight, TopCenter}
+import scalafx.geometry.Pos
+import scalafx.scene.layout.StackPane
+import finaviaAPI.*
+import java.util.Timer
+import java.util.TimerTask
+import scala.concurrent.duration._
+import scalafx.application.Platform
+
+
 
 
 
@@ -44,14 +54,12 @@ object Dashboard extends JFXApp3:
     stage = new JFXApp3.PrimaryStage:
       title = "Helsinki Airport Dashboard"
       width = 1500
-      height = 900
+      height = 1000
       initStyle(StageStyle.DECORATED)
 
     val root = Pane()
     val scene = Scene(parent = root)
     stage.scene = scene
-
-    
 
     val menuBar = new MenuBar
     val fileMenu = new Menu("File")
@@ -69,11 +77,7 @@ object Dashboard extends JFXApp3:
     saveItem.accelerator = new KeyCodeCombination(KeyCode.S, KeyCombination.ControlDown)
     exitItem.accelerator = new KeyCodeCombination(KeyCode.X, KeyCombination.ControlDown)
 
-    exitItem.onAction = (e: ActionEvent) => sys.exit(0)
-    openItem.onAction = (e: ActionEvent) => {
-      val fileChooser = new FileChooser
-      val selectedFile = fileChooser.showOpenDialog(stage)
-    }
+    
 
 
     val tabPane = new TabPane
@@ -143,13 +147,13 @@ object Dashboard extends JFXApp3:
     }
 
     def getMetricData(dataset: String): Tuple2[String, String] = dataset match {
-      case "Amount" => Tuple2(metricData.totalFlights(depArrData), "Total amount of planes")
+      case "Amount" => Tuple2(metricData.totalFlights(depArrData), "Planes")
     }
     
     val defaultChart = makeChart("Pie", graphData.flightPerHourData(getAllFlightData()), "Time", "Airplanes flown", "Airplanes flown each hour")
     
 
-    def initializeGraph(): HBox = {
+    def initializeGraph(): VBox = {
       val deparrComboBoxC = new ComboBox(List("All", "Departing", "Arriving"))
       deparrComboBoxC.value = "All"
 
@@ -173,12 +177,11 @@ object Dashboard extends JFXApp3:
       val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM)
            
       val chartVBox = new VBox(comboBoxHBox1, defaultChart)
-      graphComboBox.onAction = () => updateChart()
-      datasetComboBoxC.onAction = () => updateChart()
-      datasetComboBoxM.onAction = () => updateChart()
-      deparrComboBoxC.onAction = () => updateChart()
-      deparrComboBoxM.onAction = () => updateChart()
-      viewComboBox.onAction = () => updateChart()
+   
+
+      var newCBoxes = comboBoxHBox1
+      var loaded = 0
+
       def updateChart(): Unit = 
           var selectedDepArrC = deparrComboBoxC.value.value
           var selectedDepArrM = deparrComboBoxM.value.value
@@ -187,42 +190,110 @@ object Dashboard extends JFXApp3:
           var selectedDatasetM = datasetComboBoxM.value.value
           var selectedGraph = graphComboBox.value.value
           
-          
-          depArrData = selectedDepArrC match 
-            case "All" => getAllFlightData()
-            case "Departing" => getDepFlightData()
-            case "Arriving" => getArrFlightData()
+          if loaded == 0 then
+            depArrData = selectedDepArrC match 
+              case "All" => getAllFlightData()
+              case "Departing" => getDepFlightData()
+              case "Arriving" => getArrFlightData()
+
+            depArrData = selectedDepArrM match
+              case "All" => getAllFlightData()
+              case "Departing" => getDepFlightData()
+              case "Arriving" => getArrFlightData()
           
           val newContent = selectedView match 
             case "Graph View" =>
-              (new VBox(comboBoxHBox1, makeChart(selectedGraph, getChartData(selectedDatasetC)._1, getChartData(selectedDatasetC)._2,
+              newCBoxes.children.clear()
+              newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC)
+              (new VBox(makeChart(selectedGraph, getChartData(selectedDatasetC)._1, getChartData(selectedDatasetC)._2,
                 getChartData(selectedDatasetC)._3, getChartData(selectedDatasetC)._4)))
             case "Metric View" =>
-              (new VBox(comboBoxHBox2, card.makeMetric(getMetricData(selectedDatasetM)._2, getMetricData(selectedDatasetM)._1)))
+              newCBoxes.children.clear()
+              newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM)
+              (new VBox(card.makeMetric(getMetricData(selectedDatasetM)._2, getMetricData(selectedDatasetM)._1)))
               
           chartVBox.children.clear()
           chartVBox.children.add(newContent)
 
-          
-      
-      new HBox(chartVBox, viewComboBox)
+      graphComboBox.onAction = () => updateChart()
+      datasetComboBoxC.onAction = () => updateChart()
+      datasetComboBoxM.onAction = () => updateChart()
+      deparrComboBoxC.onAction = () => updateChart()
+      deparrComboBoxM.onAction = () => updateChart()
+      viewComboBox.onAction = () => updateChart()
+      exitItem.onAction = (e: ActionEvent) => sys.exit(0)
+      saveItem.onAction = (e: ActionEvent) => {
+        val fileChooser = new FileChooser
+        val selectedFile = fileChooser.showSaveDialog(stage)
+        if (selectedFile != null) {
+        val writer = new java.io.PrintWriter(selectedFile)
+        writer.write(getAllFlightData().toString)
+        writer.close()
+      }
+      }
+      openItem.onAction = (e: ActionEvent) => {
+        val fileChooser = new FileChooser
+        val selectedFile = fileChooser.showOpenDialog(stage)
+        if (selectedFile != null) {
+          try {
+            val fileContent = scala.io.Source.fromFile(selectedFile).mkString
+            val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
+            val xmlElem = scala.xml.XML.loadString(fileContent)
+            (xmlElem \\ "flight").foreach { flightElem =>
+              val flight = Flight.fromXml(flightElem)
+              flights.addAll(flight)
+            }
+            depArrData.clear()
+            depArrData.addAll(flights)
+            loaded = 1
+            updateChart()
+          } catch {
+            case ex: Exception => ex.printStackTrace() 
+          }
+        }
+      }
+
+      // Create a timer to schedule the task
+      val timer = new Timer(true)
+      val interval = 1.minute.toMillis
+
+      // Schedule the task to run at fixed intervals
+      timer.scheduleAtFixedRate(new TimerTask {
+        def run(): Unit = {
+          Platform.runLater(() => updateChart())
+        }
+      }, 0, interval)
+
+      val vBoxHBox = new VBox(newCBoxes)
+      val border = new BorderPane
+      border.center = newCBoxes
+      border.right = viewComboBox
+      border.bottom = chartVBox
+      new VBox(border)
+
     }
+      
 
-    val HBox1 = initializeGraph()
-    val HBox2 = initializeGraph()
-    val HBox3 = initializeGraph()
-
+    val VBox1 = initializeGraph()
+    val VBox2 = initializeGraph()
+    val VBox3 = initializeGraph()
+    val VBox4 = initializeGraph()
 
     val split = new SplitPane
     split.orientation = Orientation.Horizontal
+
     val split1 = new SplitPane
     split1.orientation = Orientation.Vertical
-    split1.items.addAll(HBox1, HBox3)
-    split.items.addAll(split1, HBox2)
-    
+    split1.items.addAll(VBox1, VBox3)
+
+    val split2 = new SplitPane
+    split2.orientation = Orientation.Vertical
+    split2.items.addAll(VBox2, VBox4)
+    split.items.addAll(split1, split2)
+
     homeTab.content = split
     dataTab.content = tabPane1
-    
+
     root.children += (menuBar, tabPane)
 
   end start
