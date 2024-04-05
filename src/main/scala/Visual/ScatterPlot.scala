@@ -5,7 +5,7 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.paint.Color._
-import finaviaAPI.DataParser.*
+import Data.DataParser.*
 import scalafx.scene.control._
 import scalafx.Includes._
 import scalafx.event.ActionEvent
@@ -16,9 +16,11 @@ import javafx.stage.StageStyle
 import scalafx.beans.property.StringProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.beans.property.{StringProperty}
-import finaviaAPI.Flight
+import Data.Flight
 import cats.instances.double
 import javafx.scene.chart.{CategoryAxis, NumberAxis, XYChart, BarChart, ScatterChart, LineChart}
+import scalafx.scene.Node
+import scalafx.scene.control.*
 
 
 class ScatterPlot {
@@ -31,7 +33,19 @@ class ScatterPlot {
         val series = new XYChart.Series[String, Number]()
         series.setName(label)
         series.data = ObservableBuffer(dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2)): _*)
+        series.getData.foreach( d => {
+        val pointNode: scalafx.scene.Node = d.getNode
+        val pointValue = d.getYValue.toString
+        val pointTime = d.getXValue.toString
+        val roundedValue = BigDecimal(pointValue).setScale(1, BigDecimal.RoundingMode.HALF_UP)
+        val tooltip = new Tooltip()
+        tooltip.setText(pointTime + ": " + "$" + roundedValue.toString)
+        tooltip.setStyle("-fx-background-color: yellow; " + "-fx-text-fill: black; ")
+        Tooltip.install(pointNode, tooltip)
+        })
         new ScatterChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+
+      
 
    
     end createScatterChart

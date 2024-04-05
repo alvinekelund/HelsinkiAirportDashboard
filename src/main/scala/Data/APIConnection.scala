@@ -1,4 +1,4 @@
-package finaviaAPI
+package Data
 
 import scala.io.Source
 import scala.util.{Failure, Success, Using}

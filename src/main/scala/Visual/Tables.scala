@@ -4,7 +4,7 @@ import scalafx.scene.layout.Pane
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.input.{KeyCodeCombination, KeyCode, KeyCombination}
 import scalafx.scene.paint.Color._
-import finaviaAPI.DataParser.*
+import Data.DataParser.*
 import scalafx.scene.control._
 import scalafx.Includes._
 import scalafx.event.ActionEvent
@@ -15,7 +15,7 @@ import javafx.stage.StageStyle
 import scalafx.beans.property.StringProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.beans.property.{StringProperty}
-import finaviaAPI.Flight
+import Data.Flight
 import Visual.GraphData
 import Visual.ColumnChart
 import scalafx.scene.chart._

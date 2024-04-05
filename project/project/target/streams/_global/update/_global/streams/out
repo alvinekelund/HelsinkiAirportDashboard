@@ -1,3 +1,3 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/Users/alvin/IdeaProjects/OS2Projekti/project/project/"), "os2projekti-build-build")...
-[debug] Done updating ProjectRef(uri("file:/Users/alvin/IdeaProjects/OS2Projekti/project/project/"), "os2projekti-build-build")
+[debug] not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/Users/alvin/VScode/OS2Projekti/project/project/"), "os2projekti-build-build")...
+[debug] Done updating ProjectRef(uri("file:/Users/alvin/VScode/OS2Projekti/project/project/"), "os2projekti-build-build")
