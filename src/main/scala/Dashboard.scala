@@ -59,7 +59,7 @@ object Dashboard extends JFXApp3:
   def start() =
 
     
-    
+
     stage = new JFXApp3.PrimaryStage:
       title = "Helsinki Airport Dashboard"
       width = 1500
@@ -76,9 +76,9 @@ object Dashboard extends JFXApp3:
     val saveItem = new MenuItem("Save")
     val openItem = new MenuItem("Open")
     val exitItem = new MenuItem("Exit")
-    val colorItem = new MenuItem("Color")
+    val themeItem = new MenuItem("Theme")
     fileMenu.items = List(openItem, saveItem, new SeparatorMenuItem, exitItem)
-    settingsMenu.items = List(colorItem)
+    settingsMenu.items = List(themeItem)
     menuBar.menus = List(fileMenu, settingsMenu)
     menuBar.prefWidth = 1500
 
@@ -86,8 +86,20 @@ object Dashboard extends JFXApp3:
     saveItem.accelerator = new KeyCodeCombination(KeyCode.S, KeyCombination.ControlDown)
     exitItem.accelerator = new KeyCodeCombination(KeyCode.X, KeyCombination.ControlDown)
 
-    
+      
 
+    var isDarkMode = true
+
+    themeItem.onAction = (e: ActionEvent) => toggleTheme()
+
+    def toggleTheme(): Unit = {
+    isDarkMode = !isDarkMode
+    if (isDarkMode) {
+      stage.scene.value.stylesheets = List(getClass.getResource("/dark-theme.css").toExternalForm)
+    } else {
+      stage.scene.value.stylesheets = List(getClass.getResource("/light-theme.css").toExternalForm)
+    }
+  }
 
     val tabPane = new TabPane
     val homeTab = new Tab
@@ -116,7 +128,7 @@ object Dashboard extends JFXApp3:
     arrTab.content = tables.createFlightTableArr()
     
 
-
+    
 
     def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
       val columnChart = new ColumnChart()
@@ -161,37 +173,37 @@ object Dashboard extends JFXApp3:
             case "Amount" => Tuple2(metricData.totalFlights(depArr), "Planes")
           }
     
-    var visible: VBox = new VBox(0) 
-    val metric = new Metric
-    var removeAdd = 0
-    var metricCount = 0
-    var newestMetric: StackPane = metric.makeMetric(getMetricData("Amount", depArrData)._2, getMetricData("Amount", depArrData)._1)
-
-    var parentPane: Pane = new Pane
-    parentPane.getChildren().addAll(metric.makeMetric(getMetricData("Amount", getAllFlightData())._2, getMetricData("Amount", getAllFlightData())._1), metric.makeMetric(getMetricData("Amount", getAllFlightData())._2, getMetricData("Amount", getAllFlightData())._1))
-
-    def addMetric(card: StackPane): Pane = {
-      if metricCount == 0 then 
-        metric.metrics = card :: metric.metrics
-        parentPane.getChildren().addAll(card)
-        metricCount = 1
-        parentPane
-      else 
-        parentPane
-    }
-
-    def removeMetric(): Pane = {
-      metric.metrics = metric.metrics.filterNot(_ == card)
-      parentPane.getChildren().clear()
-      parentPane
-    }
     
-        
 
-    var chart: ScatterChart[String, Number] = makeScatterChart(getChartData("Time", depArrData)._1, "dfe", "fr", "rre")
+
+
+  
+    var chart: Option[ScatterChart[String, Number]] = None
+
+
     def initializeGraph(): VBox = {
       
-      
+      var chart: Option[ScatterChart[String, Number]] = None
+      var removeAdd = 0
+      var hideShow = 2 
+      var remainder = 0
+      var parentPane: Pane = new Pane
+      var visible: VBox = new VBox(0) 
+      val metric = new Metric
+
+
+      def addMetric(card: StackPane): Pane = {
+        parentPane.getChildren().clear()
+        parentPane.getChildren().addAll(card)
+        parentPane
+
+      }
+
+      def removeMetric(): Pane = {
+        parentPane.getChildren().clear()
+        parentPane
+      }
+    
       val deparrComboBoxC = new ComboBox(List("All", "Departing", "Arriving"))
       deparrComboBoxC.value = "All"
 
@@ -212,41 +224,22 @@ object Dashboard extends JFXApp3:
 
       val removeButton = new Button("Remove")
       val addButton = new Button("Add")
-    
+      val hideButton = new ToggleButton("Hide")
+      val viewBoxHBox = new HBox(10, hideButton, viewComboBox)
 
       val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC)  
       val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM, removeButton, addButton)
            
       
-      chart.getData.foreach( series=> {
-        series.getData.foreach( d => {
-          val pointNode: scalafx.scene.Node = d.getNode
-          val pointValue = d.getYValue.toString
-          val pointTime = d.getXValue.toString
-          val roundedValue = BigDecimal(pointValue).setScale(1, BigDecimal.RoundingMode.HALF_UP)
-          val tooltip = new Tooltip()
-          tooltip.setText(pointTime + ": " + "$" + roundedValue.toString)
-          tooltip.setStyle("-fx-background-color: yellow; " + "-fx-text-fill: black; ")
-          Tooltip.install(pointNode, tooltip)
-        })})
+      
 
-      /*val total = Visual.PieGraph.getData.foldLeft(0.0) {(x, y) => x + y.getPieValue}
-      Visual.PieGraph.getData.foreach( d => {
-        val sliceNode: scalafx.scene.Node = d.getNode
-        val pieValue = d.getPieValue
-        val percent = (pieValue / total) * 100
-        val msg = "%s: %.2f (%.2f%%)".format(d.getName, pieValue, percent)
-        val tt = new Tooltip()
-        tt.setText(msg)
-        tt.setStyle("-fx-background-color: yellow; " +  "-fx-text-fill: black; ")
-        Tooltip.install(sliceNode, tt) })
-    */
-
+      
+      var changeInfo = 0
       var newCBoxes = comboBoxHBox1
       var loaded = 0
       val border = new BorderPane
       border.center = newCBoxes
-      border.right = viewComboBox
+      border.right = viewBoxHBox
       border.bottom = visible
       def updateChart(): Unit = 
           
@@ -266,16 +259,13 @@ object Dashboard extends JFXApp3:
                 getChartData(selectedDatasetC, depArrData)._2,
                 getChartData(selectedDatasetC, depArrData)._3,
                 getChartData(selectedDatasetC, depArrData)._4))
-          if selectedGraph == "Scatter" then
-            val chart = makeChart(selectedGraph, getChartData(selectedDatasetC, depArrData)._1, 
-                  getChartData(selectedDatasetC, depArrData)._2,
-                  getChartData(selectedDatasetC, depArrData)._3,
-                  getChartData(selectedDatasetC, depArrData)._4)
+  
           newCBoxes.children.clear()
           newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC)
           visible = newChart
+  
           border.center = newCBoxes
-          border.right = viewComboBox
+          border.right = viewBoxHBox
           border.bottom = visible
 
       def updateMetrics(): Unit =
@@ -285,30 +275,42 @@ object Dashboard extends JFXApp3:
           var selectedView = viewComboBox.value.value
 
           if loaded == 0 then
-            depArrData = selectedDepArrM match
+            depArrData = selectedDepArrM match 
               case "All" => getAllFlightData()
               case "Departing" => getDepFlightData()
               case "Arriving" => getArrFlightData()
+          val newestMetric = metric.makeMetric(getMetricData(selectedDatasetM, depArrData)._2, getMetricData(selectedDatasetM, depArrData)._1)
 
           val newMetric =
-              if removeAdd == 1 then 
+            if changeInfo == 0 then
+                if removeAdd == 1 then 
+                  new VBox(addMetric(newestMetric))
+                else
+                  new VBox(removeMetric())
+            else
                 new VBox(addMetric(newestMetric))
-              else
-                new VBox(removeMetric())
+          
+
+          changeInfo = 0
           newCBoxes.children.clear()
           newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM, removeButton, addButton)
           visible = newMetric
+
           border.center = newCBoxes
-          border.right = viewComboBox
+          border.right = viewBoxHBox
           border.bottom = visible
 
 
-              
+      
       graphComboBox.onAction = () => updateChart()
       datasetComboBoxC.onAction = () => updateChart()
-      datasetComboBoxM.onAction = () => updateMetrics()
+      datasetComboBoxM.onAction = () => 
+        changeInfo = 1
+        updateMetrics()
       deparrComboBoxC.onAction = () => updateChart()
-      deparrComboBoxM.onAction = () => updateMetrics()
+      deparrComboBoxM.onAction = () => 
+        changeInfo = 1
+        updateMetrics()
       viewComboBox.onAction = () => 
         if (viewComboBox.value.value == "Graph View") then updateChart()
         else updateMetrics()
@@ -320,10 +322,11 @@ object Dashboard extends JFXApp3:
       addButton.onAction = (e: ActionEvent) => {
         println("dke")
         removeAdd = 1
-        val newestMetric = metric.makeMetric(getMetricData("Amount", depArrData)._2, getMetricData("Amount", depArrData)._1)
         updateMetrics()
       }
-
+      hideButton.onAction = () => {
+        visible.visible = !visible.visible.value
+      }
       exitItem.onAction = (e: ActionEvent) => sys.exit(0)
       saveItem.onAction = (e: ActionEvent) => {
       val fileChooser = new FileChooser
@@ -360,7 +363,7 @@ object Dashboard extends JFXApp3:
           }
         }, 0, interval)
         border.center = newCBoxes
-        border.right = viewComboBox
+        border.right = viewBoxHBox
         border.bottom = visible
         
 

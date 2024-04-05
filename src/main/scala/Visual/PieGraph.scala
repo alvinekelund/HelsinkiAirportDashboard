@@ -35,6 +35,17 @@ class PieGraph {
       data = buffer
     }
     
-    pieChart
+    val b = pieChart
+    val total = b.getData.foldLeft(0.0) {(x, y) => x + y.getPieValue}
+      b.getData.foreach( d => {
+        val sliceNode: scalafx.scene.Node = d.getNode
+        val pieValue = d.getPieValue
+        val percent = (pieValue / total) * 100
+        val msg = "%s: %.0f (%.2f%%)".format(d.getName, pieValue, percent)
+        val tt = new Tooltip()
+        tt.setText(msg)
+        tt.setStyle("-fx-background-color: lightgrey; " +  "-fx-text-fill: black; ")
+        Tooltip.install(sliceNode, tt) })
+    b
   }
 }

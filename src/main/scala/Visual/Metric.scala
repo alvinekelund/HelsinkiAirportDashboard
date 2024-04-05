@@ -21,6 +21,7 @@ import scalafx.scene.layout.HBox
 import scalafx.geometry.Pos.TopRight
 import scalafx.scene.layout.Region
 import scalafx.geometry.Point2D
+import scalafx.scene.control.Tooltip
 
 class Metric {
   private val maxMetrics = 4
@@ -79,6 +80,16 @@ class Metric {
         card.translateX = newTranslateX * 0.4
         card.translateY = newTranslateY * 0.4
       }
+
+      val pointNode: scalafx.scene.Node = card
+      val pointValue = name
+      val pointTime = initialValue
+      val roundedValue = BigDecimal(pointTime).setScale(0, BigDecimal.RoundingMode.HALF_UP)
+      val tooltip = new Tooltip()
+      tooltip.setText(pointValue + "\n" + roundedValue.toString)
+      tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
+      Tooltip.install(pointNode, tooltip)
+
       card
 
   

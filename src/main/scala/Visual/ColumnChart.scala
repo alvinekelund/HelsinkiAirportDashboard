@@ -32,7 +32,22 @@ class ColumnChart {
         val series = new XYChart.Series[String, Number]
         series.setName(label)
         series.data = dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2))
-        new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+        
+
+        val b = new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+        b.getData.foreach { series =>
+            series.getData.foreach { d =>
+                val pointNode: scalafx.scene.Node = d.getNode
+                val pointValue = d.getYValue.toString
+                val pointTime = d.getXValue.toString
+                val roundedValue = BigDecimal(pointValue).setScale(1, BigDecimal.RoundingMode.HALF_UP)
+                val tooltip = new Tooltip()
+                tooltip.setText(pointTime  + "\n"  + roundedValue.toString)
+                tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
+                Tooltip.install(pointNode, tooltip)
+            }
+            }
+        b
 
     end createColumnChart
 

@@ -1,0 +1,7 @@
+/* Define styles for light mode */
+.root {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+/* Add more styles for other UI elements as needed */
