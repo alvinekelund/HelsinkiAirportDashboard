@@ -48,13 +48,16 @@ import cats.conversions.all.autoNarrowContravariant
 import cats.conversions.variance.autoNarrowContravariant
 import cats.conversions.all.autoWidenFunctor
 import cats.conversions.variance.autoWidenFunctor
+ import scalafx.scene.paint.Color
+ import scalafx.scene.layout.Background
+ import scalafx.scene.layout.BackgroundFill
 
 
 
 
 
 
-object Dashboard extends JFXApp3:
+ object Dashboard extends JFXApp3:
 
   def start() =
 
@@ -63,10 +66,14 @@ object Dashboard extends JFXApp3:
     stage = new JFXApp3.PrimaryStage:
       title = "Helsinki Airport Dashboard"
       width = 1500
-      height = 1000
+      height = 970
       initStyle(StageStyle.DECORATED)
 
-    val root = Pane()
+    val darkBackgroundColor = new Background(Array(new BackgroundFill(Color.rgb(60, 60, 60), null, null)))
+    val lightBackgroundColor = new Background(Array(new BackgroundFill(Color.rgb(240, 240, 240), null, null)))
+
+    val root = new Pane 
+      
     val scene = Scene(parent = root)
     stage.scene = scene
 
@@ -76,31 +83,21 @@ object Dashboard extends JFXApp3:
     val saveItem = new MenuItem("Save")
     val openItem = new MenuItem("Open")
     val exitItem = new MenuItem("Exit")
-    val themeItem = new MenuItem("Theme")
-    fileMenu.items = List(openItem, saveItem, new SeparatorMenuItem, exitItem)
+    val liveItem = new MenuItem("Live")
+    val themeItem = new MenuItem("Light/Dark")
+    fileMenu.items = List(liveItem, openItem, saveItem, new SeparatorMenuItem, exitItem)
     settingsMenu.items = List(themeItem)
     menuBar.menus = List(fileMenu, settingsMenu)
     menuBar.prefWidth = 1500
 
     openItem.accelerator = new KeyCodeCombination(KeyCode.O, KeyCombination.ControlDown)
+    liveItem.accelerator = new KeyCodeCombination(KeyCode.L, KeyCombination.ControlDown)
     saveItem.accelerator = new KeyCodeCombination(KeyCode.S, KeyCombination.ControlDown)
     exitItem.accelerator = new KeyCodeCombination(KeyCode.X, KeyCombination.ControlDown)
 
       
 
-    var isDarkMode = true
-
-    themeItem.onAction = (e: ActionEvent) => toggleTheme()
-
-    def toggleTheme(): Unit = {
-    isDarkMode = !isDarkMode
-    if (isDarkMode) {
-      stage.scene.value.stylesheets = List(getClass.getResource("/dark-theme.css").toExternalForm)
-    } else {
-      stage.scene.value.stylesheets = List(getClass.getResource("/light-theme.css").toExternalForm)
-    }
-  }
-
+    
     val tabPane = new TabPane
     val homeTab = new Tab
     homeTab.text = "Home"
@@ -123,13 +120,12 @@ object Dashboard extends JFXApp3:
 
     val tables = new Tables
 
-    allTab.content = tables.createFlightTableAll()
-    depTab.content = tables.createFlightTableDep()
-    arrTab.content = tables.createFlightTableArr()
+    var fileContent: String = ""
+    var loaded = 0
     
 
     
-
+// general methods used in initializegraph
     def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
       val columnChart = new ColumnChart()
       val chart = columnChart.createColumnChart(graphDataType, x, y, label)
@@ -138,6 +134,21 @@ object Dashboard extends JFXApp3:
     def makeScatterChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): ScatterChart[String, Number] = 
       val scatterChart = new ScatterPlot()
       val chart = scatterChart.createScatterChart(graphDataType, x, y, label)
+      chart
+
+    def makeTwoSeriesScatterChart(graphDataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): ScatterChart[String, Number] =
+      val scatterChart = new ScatterPlot()
+      val chart = scatterChart.createScatterChartTwoSeries(graphDataType, x, y, label1, label2)
+      chart
+
+    def makeTwoSeriesColumnChart(graphDataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): BarChart[String, Number] =
+      val columnChart = new ColumnChart()
+      val chart = columnChart.createColumnChartTwoSeries(graphDataType, x, y, label1, label2)
+      chart
+
+    def makeTwoSeriesLineChart(graphDataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): LineChart[String, Number] =
+      val lineChart = new LinePlot()
+      val chart = lineChart.createLineChartTwoSeries(graphDataType, x, y, label1, label2)
       chart
 
     def makeLineChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): LineChart[String, Number] = 
@@ -157,6 +168,23 @@ object Dashboard extends JFXApp3:
         case "Line" => makeLineChart(dataType, x, y, label)
         case "Pie" => makePieChart(dataType, x, y, label)
         case _ => throw new IllegalArgumentException("Invalid graph type")
+    
+    def makeDualChart(graphType: String, dataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String) = 
+      graphType match
+        case "Column" => makeTwoSeriesColumnChart(dataType, x, y, label1, label2)
+        case "Scatter" => makeTwoSeriesScatterChart(dataType, x, y, label1, label2)
+        case "Line" => makeTwoSeriesLineChart(dataType, x, y, label1, label2)
+        case _ => throw new IllegalArgumentException("Invalid graph type")
+
+    def createLoadedFlightTableAll(): TableView[Flight] = {
+        tables.createLoadedFlightTable(fileContent)
+    }
+    def createLoadedFlightTableDep(): TableView[Flight] = {
+        tables.createLoadedFlightTable(fileContent)
+    }
+    def createLoadedFlightTableArr(): TableView[Flight] = {
+        tables.createLoadedFlightTable(fileContent)
+    }
 
     val card = new Metric
     val graphData = new GraphData
@@ -170,42 +198,43 @@ object Dashboard extends JFXApp3:
           }
 
     def getMetricData(dataset: String, depArr: ObservableBuffer[Flight]): Tuple2[String, String] = dataset match {
-            case "Amount" => Tuple2(metricData.totalFlights(depArr), "Planes")
+            case "Total (24h)" => Tuple2(metricData.totalFlights(depArr), "Total (24h)")
+            case "Busiest Hour" => Tuple2(metricData.busiestHour(depArr), "Busiest Hour")
+            case "Least Busy Hour" => Tuple2(metricData.leastBusyHour(depArr), "Least Busy Hour")
+            case _ => throw new IllegalArgumentException("Invalid dataset")
           }
     
-    
-
-
-
-  
-    var chart: Option[ScatterChart[String, Number]] = None
-
 
     def initializeGraph(): VBox = {
-      
-      var chart: Option[ScatterChart[String, Number]] = None
-      var removeAdd = 0
-      var hideShow = 2 
-      var remainder = 0
-      var parentPane: Pane = new Pane
+      val rectangleTool = new RectangleTool
+      val rectangle = rectangleTool.makeRectangle()
+      rectangleTool.parentPane.getChildren.addAll(rectangle)
+      // Add the selection rectangle to the root pane
+     // root.children.add(selectionRectangle)
+      var removeAdd = 1
       var visible: VBox = new VBox(0) 
       val metric = new Metric
+      var c = 0
 
 
       def addMetric(card: StackPane): Pane = {
-        parentPane.getChildren().clear()
-        parentPane.getChildren().addAll(card)
-        parentPane
+        rectangleTool.parentPane.getChildren().clear()
+        rectangleTool.parentPane.getChildren().addAll(card, rectangle)
+
+        rectangleTool.parentPane
 
       }
 
       def removeMetric(): Pane = {
-        parentPane.getChildren().clear()
-        parentPane
+        rectangleTool.parentPane.getChildren().clear()
+        rectangleTool.parentPane
       }
     
-      val deparrComboBoxC = new ComboBox(List("All", "Departing", "Arriving"))
-      deparrComboBoxC.value = "All"
+      val deparrComboBoxC1 = new ComboBox(List("All", "Departing", "Arriving", "Separate"))
+      deparrComboBoxC1.value = "All"
+
+      val deparrComboBoxC2 = new ComboBox(List("All", "Departing", "Arriving"))
+      deparrComboBoxC2.value = "All"
 
       val deparrComboBoxM = new ComboBox(List("All", "Departing", "Arriving"))
       deparrComboBoxM.value = "All"
@@ -219,51 +248,78 @@ object Dashboard extends JFXApp3:
       val datasetComboBoxC = new ComboBox(List("Carrier", "Time"))
       datasetComboBoxC.value = "Time"
       
-      val datasetComboBoxM = new ComboBox(List("Amount"))
-      datasetComboBoxM.value = "Amount"
+      val datasetComboBoxM = new ComboBox(List("Total (24h)", "Busiest Hour", "Least Busy Hour"))
+      datasetComboBoxM.value = "Total (24h)"
+
+      val colorComboBox = new ComboBox(List("LightBlue", "Orange", "Green", "Yellow", "Grey"))
+      colorComboBox.value = "LightBlue"
 
       val removeButton = new Button("Remove")
       val addButton = new Button("Add")
       val hideButton = new ToggleButton("Hide")
       val viewBoxHBox = new HBox(10, hideButton, viewComboBox)
-
-      val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC)  
-      val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM, removeButton, addButton)
+      // initial box, changes instantly
+      val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC1)  
+      //val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM, colorComboBox, removeButton, addButton)
            
       
       
-
-      
       var changeInfo = 0
       var newCBoxes = comboBoxHBox1
-      var loaded = 0
       val border = new BorderPane
       border.center = newCBoxes
       border.right = viewBoxHBox
       border.bottom = visible
       def updateChart(): Unit = 
           
-          var selectedDepArrC = deparrComboBoxC.value.value
+          var selectedDepArrC = 
+            if c == 0 && deparrComboBoxC1.value.value != "Separate" then 
+              deparrComboBoxC2.value.value = deparrComboBoxC1.value.value
+              deparrComboBoxC1.value.value 
+            else if c == 1 then
+              deparrComboBoxC1.value.value = deparrComboBoxC2.value.value
+              deparrComboBoxC2.value.value 
+            else
+              deparrComboBoxC1.value.value
           var selectedDatasetC = datasetComboBoxC.value.value
-          var selectedView = viewComboBox.value.value
           var selectedGraph = graphComboBox.value.value
           
-          if loaded == 0 then
+          if loaded == 1 then // Change the condition to check if the file is loaded
             depArrData = selectedDepArrC match 
-              case "All" => getAllFlightData()
+              case "All" => getLoadedFlightData(fileContent) // Retrieve data from loaded file
+              case "Departing" => getLoadedFlightData(fileContent)
+              case "Arriving" => getLoadedFlightData(fileContent)
+              case "Separate" => getLoadedFlightData(fileContent)
+          else 
+            depArrData = selectedDepArrC match
+              case "All" => getAllFlightData() // Retrieve data from default methods
               case "Departing" => getDepFlightData()
               case "Arriving" => getArrFlightData()
-
+              case _ => getAllFlightData()
           val newChart = 
+            if selectedDepArrC == "Separate" then
+              if selectedDatasetC != "Time" || selectedGraph == "Pie" then
+                new VBox(makeChart(selectedGraph, getChartData(selectedDatasetC, depArrData)._1, 
+                                getChartData(selectedDatasetC, depArrData)._2,
+                                getChartData(selectedDatasetC, depArrData)._3,
+                                getChartData(selectedDatasetC, depArrData)._4))              
+              else 
+                new VBox(makeDualChart(selectedGraph, graphData.flightPerHourDepArr(getSepFlightData()._1, getSepFlightData()._2), "Time", "Airplane Flown", "Departures", "Arrivals"))
+
+            else 
               new VBox(makeChart(selectedGraph, getChartData(selectedDatasetC, depArrData)._1, 
                 getChartData(selectedDatasetC, depArrData)._2,
                 getChartData(selectedDatasetC, depArrData)._3,
                 getChartData(selectedDatasetC, depArrData)._4))
-  
+    
           newCBoxes.children.clear()
-          newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC)
+          if selectedDatasetC != "Time" || selectedGraph == "Pie" then
+            c = 1
+            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC2)
+          else 
+            c = 0
+            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC1)
           visible = newChart
-  
           border.center = newCBoxes
           border.right = viewBoxHBox
           border.bottom = visible
@@ -271,57 +327,60 @@ object Dashboard extends JFXApp3:
       def updateMetrics(): Unit =
             
           var selectedDatasetM = datasetComboBoxM.value.value
-          var selectedDepArrM = deparrComboBoxC.value.value
-          var selectedView = viewComboBox.value.value
+          var selectedDepArrM = deparrComboBoxM.value.value
+          val selectedColor = colorComboBox.value.value
 
-          if loaded == 0 then
+          if loaded == 1 then // Change the condition to check if the file is loaded
             depArrData = selectedDepArrM match 
-              case "All" => getAllFlightData()
+              case "All" => getLoadedFlightData(fileContent) // Retrieve data from loaded file
+              case "Departing" => getLoadedFlightData(fileContent)
+              case "Arriving" => getLoadedFlightData(fileContent)
+          else 
+            depArrData = selectedDepArrM match
+              case "All" => getAllFlightData() // Retrieve data from default methods
               case "Departing" => getDepFlightData()
               case "Arriving" => getArrFlightData()
-          val newestMetric = metric.makeMetric(getMetricData(selectedDatasetM, depArrData)._2, getMetricData(selectedDatasetM, depArrData)._1)
+
+
+
+          val newestMetric = metric.makeMetric(getMetricData(selectedDatasetM, depArrData)._2, getMetricData(selectedDatasetM, depArrData)._1, selectedColor)
 
           val newMetric =
-            if changeInfo == 0 then
-                if removeAdd == 1 then 
-                  new VBox(addMetric(newestMetric))
-                else
-                  new VBox(removeMetric())
-            else
+              if removeAdd == 0 then 
+                removeAdd = 1
+                new VBox(removeMetric())
+              else
                 new VBox(addMetric(newestMetric))
-          
 
-          changeInfo = 0
           newCBoxes.children.clear()
-          newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM, removeButton, addButton)
+          newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM, colorComboBox, removeButton, addButton)
           visible = newMetric
-
           border.center = newCBoxes
           border.right = viewBoxHBox
           border.bottom = visible
 
-
+  
       
       graphComboBox.onAction = () => updateChart()
       datasetComboBoxC.onAction = () => updateChart()
-      datasetComboBoxM.onAction = () => 
-        changeInfo = 1
-        updateMetrics()
-      deparrComboBoxC.onAction = () => updateChart()
-      deparrComboBoxM.onAction = () => 
-        changeInfo = 1
-        updateMetrics()
+      datasetComboBoxM.onAction = () => updateMetrics()
+      deparrComboBoxM.onAction = () => updateMetrics()
+      colorComboBox.onAction = () => updateMetrics()
+      deparrComboBoxC1.onAction = () => 
+        c = 0
+        updateChart()
+      deparrComboBoxC2.onAction = () => 
+        c = 1
+        updateChart()
       viewComboBox.onAction = () => 
         if (viewComboBox.value.value == "Graph View") then updateChart()
         else updateMetrics()
       removeButton.onAction = (e: ActionEvent) => {
         removeAdd = 0
         updateMetrics()
+        
       }
-
       addButton.onAction = (e: ActionEvent) => {
-        println("dke")
-        removeAdd = 1
         updateMetrics()
       }
       hideButton.onAction = () => {
@@ -342,18 +401,23 @@ object Dashboard extends JFXApp3:
         val selectedFile = fileChooser.showOpenDialog(stage)
         if (selectedFile != null) {
           try {
-            val fileContent = scala.io.Source.fromFile(selectedFile).mkString
-            depArrData = getLoadedFlightData("all", fileContent)
-            loaded = 1
-            updateChart()
+            fileContent = scala.io.Source.fromFile(selectedFile).mkString
+            depArrData = getLoadedFlightData(fileContent)
+            loaded = 1 // Update the loaded variable
+            initialize() // Call updateChart to update the visualization
           } catch {
             case ex: Exception => ex.printStackTrace() 
           }
         } 
       }
+      liveItem.onAction = (e: ActionEvent) => {
+        loaded = 0
+        initialize()
+      }
+      
       if loaded == 0 then
         val timer = new Timer(true)
-        val interval = 1.minute.toMillis
+        val interval = 5.minute.toMillis
 
         timer.scheduleAtFixedRate(new TimerTask {
           def run(): Unit = {
@@ -362,37 +426,68 @@ object Dashboard extends JFXApp3:
               else updateMetrics())
           }
         }, 0, interval)
+      else updateChart()
         border.center = newCBoxes
         border.right = viewBoxHBox
         border.bottom = visible
         
-
       new VBox(border)
-
     }
       
+    def initialize() = 
+      val VBox1 = initializeGraph()
+      val VBox2 = initializeGraph()
+      val VBox3 = initializeGraph()
+      val VBox4 = initializeGraph()
 
-    val VBox1 = initializeGraph()
-    val VBox2 = initializeGraph()
-    val VBox3 = initializeGraph()
-    val VBox4 = initializeGraph()
+      if loaded == 0 then
+        allTab.content = tables.createFlightTableAll()
+        depTab.content = tables.createFlightTableDep()
+        arrTab.content = tables.createFlightTableArr()
+      else 
+        allTab.content = createLoadedFlightTableAll()
+        depTab.content = createLoadedFlightTableDep()
+        arrTab.content = createLoadedFlightTableArr()
+  
+      
+      
 
-    val split = new SplitPane
-    split.orientation = Orientation.Horizontal
+      val split = new SplitPane
+      split.orientation = Orientation.Horizontal
 
-    val split1 = new SplitPane
-    split1.orientation = Orientation.Vertical
-    split1.items.addAll(VBox1, VBox3)
+      val split1 = new SplitPane
+      split1.orientation = Orientation.Vertical
+      split1.items.addAll(VBox1, VBox3)
 
-    val split2 = new SplitPane
-    split2.orientation = Orientation.Vertical
-    split2.items.addAll(VBox2, VBox4)
-    split.items.addAll(split1, split2)
+      val split2 = new SplitPane
+      split2.orientation = Orientation.Vertical
+      split2.items.addAll(VBox2, VBox4)
 
-    homeTab.content = split
-    dataTab.content = tabPane1
+      split.items.addAll(split1, split2)
 
-    root.children += (menuBar, tabPane)
+      homeTab.content = split
+      dataTab.content = tabPane1
+      var isLightMode = true
+
+      themeItem.onAction = (e: ActionEvent) => toggleTheme()
+
+      def toggleTheme(): Unit = {
+      if (isLightMode) {
+        split1.background = darkBackgroundColor
+        split2.background = darkBackgroundColor
+        split.background = darkBackgroundColor
+      } else {
+        split1.background = lightBackgroundColor
+        split2.background = lightBackgroundColor
+        split.background = lightBackgroundColor 
+      }
+      isLightMode = !isLightMode
+
+    }
+
+
+      root.children += (menuBar, tabPane)
+    initialize()
 
   end start
 

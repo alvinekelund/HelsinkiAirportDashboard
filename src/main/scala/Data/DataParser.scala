@@ -20,7 +20,6 @@ object DataParser {
 
   def xmlFlightData(): String = 
     apiCallCounter()
-    var result = ""
     var request =
       basicRequest
         .get(uri"https://api.finavia.fi/flights/public/v0/flights/all/all")
@@ -32,7 +31,9 @@ object DataParser {
     var response = request.send(backend)
     response.toString
     var xmlContent = response.body.getOrElse("")
-    result += "xxxxx\n" + xmlContent.toString
+    
+    xmlContent
+   /* result += "xxxxx\n" + xmlContent.toString
     request =
       basicRequest
         .get(uri"https://api.finavia.fi/flights/public/v0/flights/dep/all")
@@ -56,11 +57,24 @@ object DataParser {
     response = request.send(backend)
     xmlContent = response.body.getOrElse("")
     result += "yyyyy\nzzzzz\n" + xmlContent.toString + "\nzzzzz"
-    result
+    result*/
 
 
-  def getLoadedFlightData(set: String, loadedData: String): ObservableBuffer[Flight] = 
-    var matches: String = ""
+  def getLoadedFlightData(loadedData: String): ObservableBuffer[Flight] = 
+    val xmlReader = new StringReader(loadedData)
+    val xmlElem: Elem = XML.load(xmlReader)
+    val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
+    (xmlElem \\ "flight").foreach { flightElem =>
+      val flight = Flight.fromXml(flightElem)
+        if (isFlightToOrFromHEL(flight)) {
+          flights.add(flight)
+        
+      }
+    }
+    flights
+
+
+    /*  var matches: String = ""
     set match {
       case "all" => 
         val regex = """xxxxx\n(.*?)\nxxxxx""".r
@@ -71,22 +85,7 @@ object DataParser {
       case "arr" => 
         val regex = """zzzzz\n(.*?)\nzzzzz""".r
         matches = regex.findAllMatchIn(loadedData).map(_.group(1)).mkString
-      case _ => throw new IllegalArgumentException("Invalid set value")
-    }
-    val xmlReader = new StringReader(matches)
-    val xmlElem: Elem = XML.load(xmlReader)
-    val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
-    (xmlElem \\ "flight").foreach { flightElem =>
-      val flight = Flight.fromXml(flightElem)
-        if (isFlightToOrFromHEL(flight) && isFlightInTheNext24h(flight)) {
-          flights.add(flight)
-        
-      }
-    }
-    flights
-
-
-    
+      case _ => throw new IllegalArgumentException("Invalid set value") */
 
 
   
@@ -142,6 +141,9 @@ object DataParser {
 
   def getArrFlightData(): ObservableBuffer[Flight] = {
     getFlightData("arr")
+  }
+  def getSepFlightData(): (ObservableBuffer[Flight], ObservableBuffer[Flight]) = {
+    (getFlightData("dep"), getFlightData("arr"))
   }
     
 

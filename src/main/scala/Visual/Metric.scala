@@ -29,20 +29,20 @@ class Metric {
   var selectedCard: Option[StackPane] = None
 
 
-  def makeMetric(name: String, initialValue: String): StackPane =
+  def makeMetric(name: String, initialValue: String, color: Color): StackPane =
       val nameLabel = new Label(name)
       val valueLabel = new Label(initialValue)
 
       val rect = new Rectangle {
         width = 300
         height = 200
-        fill = LightBlue
+        fill = color
         arcWidth = 50
         arcHeight = 50
       }
 
       nameLabel.style = "-fx-font-weight: bold; -fx-font-size: 40px"
-      valueLabel.style = "-fx-font-size: 100px"
+      valueLabel.style = "-fx-font-size: 60px"
 
       nameLabel.alignmentInParent = Pos.Center
       valueLabel.alignmentInParent = Pos.Center
@@ -84,9 +84,8 @@ class Metric {
       val pointNode: scalafx.scene.Node = card
       val pointValue = name
       val pointTime = initialValue
-      val roundedValue = BigDecimal(pointTime).setScale(0, BigDecimal.RoundingMode.HALF_UP)
       val tooltip = new Tooltip()
-      tooltip.setText(pointValue + "\n" + roundedValue.toString)
+      tooltip.setText(pointValue + "\n" + pointTime.toString)
       tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
       Tooltip.install(pointNode, tooltip)
 

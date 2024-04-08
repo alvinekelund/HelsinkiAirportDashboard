@@ -33,16 +33,15 @@ class ColumnChart {
         series.setName(label)
         series.data = dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2))
         
-
-        val b = new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+        val b= new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series)) 
         b.getData.foreach { series =>
             series.getData.foreach { d =>
                 val pointNode: scalafx.scene.Node = d.getNode
-                val pointValue = d.getYValue.toString
+                val pointValueInt = d.getYValue.toString.toInt // Convert to integer
+                val pointValue = pointValueInt.toString // Convert back to string for tooltip display
                 val pointTime = d.getXValue.toString
-                val roundedValue = BigDecimal(pointValue).setScale(1, BigDecimal.RoundingMode.HALF_UP)
                 val tooltip = new Tooltip()
-                tooltip.setText(pointTime  + "\n"  + roundedValue.toString)
+                tooltip.setText(pointTime  + "\n"  + pointValue)
                 tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
                 Tooltip.install(pointNode, tooltip)
             }
@@ -51,7 +50,43 @@ class ColumnChart {
 
     end createColumnChart
 
-    
+    def createColumnChartTwoSeries(dataSet: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): BarChart[String, Number]  = 
+        val xAxis = new CategoryAxis()
+        val yAxis = new NumberAxis()
+        xAxis.label = x
+        yAxis.label = y
+        
+        val series1 = new XYChart.Series[String, Number]()
+        series1.setName(label1)
+        series1.data = ObservableBuffer(dataSet.map(data => XYChart.Data[String, Number](data._1, data._2)): _*)
+        
+        val series2 = new XYChart.Series[String, Number]()
+        series2.setName(label2)
+        series2.data = ObservableBuffer(dataSet.map(data => XYChart.Data[String, Number](data._1, data._3)): _*)
+        
+        val b = new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series1, series2))
+
+        b.getData.foreach { series =>
+        series.getData.foreach { d =>
+            val pointNode: scalafx.scene.Node = d.getNode
+            val pointTime = d.getXValue.toString
+            val depCount = d.getYValue.toString.toInt // Departure count
+
+            // Find the corresponding arrival count for the same time
+            val arrCount = series match {
+                case `series1` => dataSet.find(_._1 == pointTime).map(_._3).getOrElse(0)
+                case `series2` => dataSet.find(_._1 == pointTime).map(_._2).getOrElse(0)
+                case _ => 0
+            }
+            val tooltip = new Tooltip()
+            tooltip.setText(s"$pointTime\nDepartures: $depCount\nArrivals: $arrCount")
+            tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
+            Tooltip.install(pointNode, tooltip)
+        }
+        }
+        b
+
+    end createColumnChartTwoSeries
 }
 
 end ColumnChart

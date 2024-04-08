@@ -31,7 +31,7 @@ class Tables {
         tableView.minHeight = 850
         val col1 = new TableColumn[Flight, String]("Flight Number")
         col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
-        val col2 = new TableColumn[Flight, String]("Departure Time")
+        val col2 = new TableColumn[Flight, String]("Time of dep/arr (GMT):")
         col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
         val col3 = new TableColumn[Flight, String]("Date")    
         col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
@@ -65,4 +65,35 @@ class Tables {
     def createFlightTableArr(): TableView[Flight] = {
         createFlightTable("arr")
     }
+
+    def createLoadedFlightTable(loadedData: String): TableView[Flight] = {
+        val tableView = new TableView(getLoadedFlightData(loadedData))
+        tableView.minHeight = 850
+        val col1 = new TableColumn[Flight, String]("Flight Number")
+        col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)
+        val col2 = new TableColumn[Flight, String]("Departure Time")
+        col2.cellValueFactory = cdf => StringProperty(cdf.value.sdt)
+        val col3 = new TableColumn[Flight, String]("Date")    
+        col3.cellValueFactory = cdf => StringProperty(cdf.value.sdate)
+        val col4 = new TableColumn[Flight, String]("Route")
+        col4.cellValueFactory = cdf => StringProperty(cdf.value.route_1)
+        val col5 = new TableColumn[Flight, String]("Route")
+        col5.cellValueFactory = cdf => StringProperty(cdf.value.route_n_1)
+        val col6 = new TableColumn[Flight, String]("Aircraft Registration")
+        col6.cellValueFactory = cdf => StringProperty(cdf.value.acreg)
+        val col7 = new TableColumn[Flight, String]("Aircraft Type")
+        col7.cellValueFactory = cdf => StringProperty(cdf.value.actype)
+        val col8 = new TableColumn[Flight, String]("Home Airport")
+        col8.cellValueFactory = cdf => StringProperty(cdf.value.h_apt)
+        val col9 = new TableColumn[Flight, String]("Callsign")
+        col9.cellValueFactory = cdf => StringProperty(cdf.value.callsign)
+        val col10 = new TableColumn[Flight, String]("Blt Area")
+        col10.cellValueFactory = cdf => StringProperty(cdf.value.bltarea)
+        
+
+        tableView.columns ++= List(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10)
+
+        tableView
+    }
+    
 }
