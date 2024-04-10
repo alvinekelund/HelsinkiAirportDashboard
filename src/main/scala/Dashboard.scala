@@ -62,9 +62,8 @@ import cats.conversions.variance.autoWidenFunctor
   def start() =
 
     
-
     stage = new JFXApp3.PrimaryStage:
-      title = "Helsinki Airport Dashboard"
+      title = ""
       width = 1500
       height = 970
       initStyle(StageStyle.DECORATED)
@@ -73,8 +72,9 @@ import cats.conversions.variance.autoWidenFunctor
     val lightBackgroundColor = new Background(Array(new BackgroundFill(Color.rgb(240, 240, 240), null, null)))
 
     val root = new Pane 
-      
+    val rectangleTool = new RectangleTool
     val scene = Scene(parent = root)
+
     stage.scene = scene
 
     val menuBar = new MenuBar
@@ -126,15 +126,7 @@ import cats.conversions.variance.autoWidenFunctor
 
     
 // general methods used in initializegraph
-    def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String): BarChart[String, Number] =
-      val columnChart = new ColumnChart()
-      val chart = columnChart.createColumnChart(graphDataType, x, y, label)
-      chart
-    
-    def makeScatterChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): ScatterChart[String, Number] = 
-      val scatterChart = new ScatterPlot()
-      val chart = scatterChart.createScatterChart(graphDataType, x, y, label)
-      chart
+   
 
     def makeTwoSeriesScatterChart(graphDataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): ScatterChart[String, Number] =
       val scatterChart = new ScatterPlot()
@@ -151,22 +143,32 @@ import cats.conversions.variance.autoWidenFunctor
       val chart = lineChart.createLineChartTwoSeries(graphDataType, x, y, label1, label2)
       chart
 
-    def makeLineChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): LineChart[String, Number] = 
+    def makeColumnGraph(graphDataType: Array[(String, Int)], x: String, y: String, label: String, color: String): BarChart[String, Number] =
+      val columnChart = new ColumnChart()
+      val chart = columnChart.createColumnChart(graphDataType, x, y, label, color)
+      chart
+    
+    def makeScatterChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String, color: String): ScatterChart[String, Number] = 
+      val scatterChart = new ScatterPlot()
+      val chart = scatterChart.createScatterChart(graphDataType, x, y, label, color)
+      chart
+
+    def makeLineChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String, color: String): LineChart[String, Number] = 
       val lineChart = new LinePlot()
-      val chart = lineChart.createLineChart(graphDataType, x, y, label)
+      val chart = lineChart.createLineChart(graphDataType, x, y, label, color)
       chart
 
-    def makePieChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String): PieChart = 
+    def makePieChart(graphDataType: Array[(String, Int)], x: String, y: String, label: String, color: String): PieChart = 
       val pieChart = new PieGraph()
-      val chart = pieChart.createPieChart(graphDataType, x, y, label)
+      val chart = pieChart.createPieChart(graphDataType, x, y, label, color)
       chart
 
-    def makeChart(graphType: String, dataType: Array[(String, Int)], x: String, y: String, label: String) = 
+    def makeChart(graphType: String, dataType: Array[(String, Int)], x: String, y: String, label: String, color: String) = 
       graphType match
-        case "Column" => makeColumnGraph(dataType, x, y, label)
-        case "Scatter" => makeScatterChart(dataType, x, y, label)
-        case "Line" => makeLineChart(dataType, x, y, label)
-        case "Pie" => makePieChart(dataType, x, y, label)
+        case "Column" => makeColumnGraph(dataType, x, y, label, color)
+        case "Scatter" => makeScatterChart(dataType, x, y, label, color)
+        case "Line" => makeLineChart(dataType, x, y, label, color)
+        case "Pie" => makePieChart(dataType, x, y, label, color)
         case _ => throw new IllegalArgumentException("Invalid graph type")
     
     def makeDualChart(graphType: String, dataType: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String) = 
@@ -177,13 +179,13 @@ import cats.conversions.variance.autoWidenFunctor
         case _ => throw new IllegalArgumentException("Invalid graph type")
 
     def createLoadedFlightTableAll(): TableView[Flight] = {
-        tables.createLoadedFlightTable(fileContent)
+        tables.createLoadedFlightTable(fileContent, "all")
     }
     def createLoadedFlightTableDep(): TableView[Flight] = {
-        tables.createLoadedFlightTable(fileContent)
+        tables.createLoadedFlightTable(fileContent, "dep")
     }
     def createLoadedFlightTableArr(): TableView[Flight] = {
-        tables.createLoadedFlightTable(fileContent)
+        tables.createLoadedFlightTable(fileContent, "arr")
     }
 
     val card = new Metric
@@ -206,9 +208,10 @@ import cats.conversions.variance.autoWidenFunctor
     
 
     def initializeGraph(): VBox = {
-      val rectangleTool = new RectangleTool
-      val rectangle = rectangleTool.makeRectangle()
-      rectangleTool.parentPane.getChildren.addAll(rectangle)
+
+      val parentPane: Pane = new Pane
+
+     
       // Add the selection rectangle to the root pane
      // root.children.add(selectionRectangle)
       var removeAdd = 1
@@ -218,16 +221,15 @@ import cats.conversions.variance.autoWidenFunctor
 
 
       def addMetric(card: StackPane): Pane = {
-        rectangleTool.parentPane.getChildren().clear()
-        rectangleTool.parentPane.getChildren().addAll(card, rectangle)
-
-        rectangleTool.parentPane
+        parentPane.getChildren().clear()
+        parentPane.getChildren().addAll(card)
+        parentPane
 
       }
 
       def removeMetric(): Pane = {
-        rectangleTool.parentPane.getChildren().clear()
-        rectangleTool.parentPane
+        parentPane.getChildren().clear()
+        parentPane
       }
     
       val deparrComboBoxC1 = new ComboBox(List("All", "Departing", "Arriving", "Separate"))
@@ -247,19 +249,22 @@ import cats.conversions.variance.autoWidenFunctor
 
       val datasetComboBoxC = new ComboBox(List("Carrier", "Time"))
       datasetComboBoxC.value = "Time"
+
+      val colorComboBoxC = new ComboBox(List("Red", "Green", "Blue", "Orange", "Black"))
+      colorComboBoxC.value = "Red"
       
       val datasetComboBoxM = new ComboBox(List("Total (24h)", "Busiest Hour", "Least Busy Hour"))
       datasetComboBoxM.value = "Total (24h)"
 
-      val colorComboBox = new ComboBox(List("LightBlue", "Orange", "Green", "Yellow", "Grey"))
-      colorComboBox.value = "LightBlue"
+      val colorComboBoxM = new ComboBox(List("LightBlue", "Orange", "Green", "Yellow", "Grey"))
+      colorComboBoxM.value = "LightBlue"
 
       val removeButton = new Button("Remove")
       val addButton = new Button("Add")
       val hideButton = new ToggleButton("Hide")
       val viewBoxHBox = new HBox(10, hideButton, viewComboBox)
       // initial box, changes instantly
-      val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC1)  
+      val comboBoxHBox1 = new HBox(10, graphComboBox, datasetComboBoxC, deparrComboBoxC1, colorComboBoxC)  
       //val comboBoxHBox2 = new HBox(10, datasetComboBoxM, deparrComboBoxM, colorComboBox, removeButton, addButton)
            
       
@@ -271,6 +276,8 @@ import cats.conversions.variance.autoWidenFunctor
       border.right = viewBoxHBox
       border.bottom = visible
       def updateChart(): Unit = 
+          stage.title = "Helsinki Airport Dashboard " + timeCalled
+
           
           var selectedDepArrC = 
             if c == 0 && deparrComboBoxC1.value.value != "Separate" then 
@@ -283,13 +290,14 @@ import cats.conversions.variance.autoWidenFunctor
               deparrComboBoxC1.value.value
           var selectedDatasetC = datasetComboBoxC.value.value
           var selectedGraph = graphComboBox.value.value
+          var selectedColorC = colorComboBoxC.value.value
           
           if loaded == 1 then // Change the condition to check if the file is loaded
             depArrData = selectedDepArrC match 
-              case "All" => getLoadedFlightData(fileContent) // Retrieve data from loaded file
-              case "Departing" => getLoadedFlightData(fileContent)
-              case "Arriving" => getLoadedFlightData(fileContent)
-              case "Separate" => getLoadedFlightData(fileContent)
+              case "All" => getLoadedFlightData(fileContent, "all") // Retrieve data from loaded file
+              case "Departing" => getLoadedFlightData(fileContent, "dep")
+              case "Arriving" => getLoadedFlightData(fileContent, "arr")
+              case _ => getLoadedFlightData(fileContent, "all")
           else 
             depArrData = selectedDepArrC match
               case "All" => getAllFlightData() // Retrieve data from default methods
@@ -302,39 +310,46 @@ import cats.conversions.variance.autoWidenFunctor
                 new VBox(makeChart(selectedGraph, getChartData(selectedDatasetC, depArrData)._1, 
                                 getChartData(selectedDatasetC, depArrData)._2,
                                 getChartData(selectedDatasetC, depArrData)._3,
-                                getChartData(selectedDatasetC, depArrData)._4))              
+                                getChartData(selectedDatasetC, depArrData)._4, 
+                                selectedColorC))              
               else 
-                new VBox(makeDualChart(selectedGraph, graphData.flightPerHourDepArr(getSepFlightData()._1, getSepFlightData()._2), "Time", "Airplane Flown", "Departures", "Arrivals"))
+                if loaded == 0 then
+                  new VBox(makeDualChart(selectedGraph, graphData.flightPerHourDepArr(getSepFlightData()._1, getSepFlightData()._2), "Time", "Airplane Flown", "Departures", "Arrivals"))
+                else
+                  new VBox(makeDualChart(selectedGraph, graphData.flightPerHourDepArr(getLoadedFlightData(fileContent, "dep"), getLoadedFlightData(fileContent, "arr")), "Time", "Airplane Flown", "Departures", "Arrivals"))
 
             else 
               new VBox(makeChart(selectedGraph, getChartData(selectedDatasetC, depArrData)._1, 
                 getChartData(selectedDatasetC, depArrData)._2,
                 getChartData(selectedDatasetC, depArrData)._3,
-                getChartData(selectedDatasetC, depArrData)._4))
+                getChartData(selectedDatasetC, depArrData)._4,
+                selectedColorC))
     
           newCBoxes.children.clear()
           if selectedDatasetC != "Time" || selectedGraph == "Pie" then
             c = 1
-            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC2)
+            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC2, colorComboBoxC)
           else 
             c = 0
-            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC1)
+            newCBoxes.children.addAll(graphComboBox, datasetComboBoxC, deparrComboBoxC1, colorComboBoxC)
           visible = newChart
           border.center = newCBoxes
           border.right = viewBoxHBox
           border.bottom = visible
 
       def updateMetrics(): Unit =
+
+          stage.title = "Helsinki Airport Dashboard " + timeCalled
             
           var selectedDatasetM = datasetComboBoxM.value.value
           var selectedDepArrM = deparrComboBoxM.value.value
-          val selectedColor = colorComboBox.value.value
+          val selectedColor = colorComboBoxM.value.value
 
           if loaded == 1 then // Change the condition to check if the file is loaded
             depArrData = selectedDepArrM match 
-              case "All" => getLoadedFlightData(fileContent) // Retrieve data from loaded file
-              case "Departing" => getLoadedFlightData(fileContent)
-              case "Arriving" => getLoadedFlightData(fileContent)
+              case "All" => getLoadedFlightData(fileContent, "all") // Retrieve data from loaded file
+              case "Departing" => getLoadedFlightData(fileContent, "dep")
+              case "Arriving" => getLoadedFlightData(fileContent, "arr")
           else 
             depArrData = selectedDepArrM match
               case "All" => getAllFlightData() // Retrieve data from default methods
@@ -353,7 +368,7 @@ import cats.conversions.variance.autoWidenFunctor
                 new VBox(addMetric(newestMetric))
 
           newCBoxes.children.clear()
-          newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM, colorComboBox, removeButton, addButton)
+          newCBoxes.children.addAll(datasetComboBoxM, deparrComboBoxM, colorComboBoxM, removeButton, addButton)
           visible = newMetric
           border.center = newCBoxes
           border.right = viewBoxHBox
@@ -365,7 +380,8 @@ import cats.conversions.variance.autoWidenFunctor
       datasetComboBoxC.onAction = () => updateChart()
       datasetComboBoxM.onAction = () => updateMetrics()
       deparrComboBoxM.onAction = () => updateMetrics()
-      colorComboBox.onAction = () => updateMetrics()
+      colorComboBoxM.onAction = () => updateMetrics()
+      colorComboBoxC.onAction = () => updateChart()
       deparrComboBoxC1.onAction = () => 
         c = 0
         updateChart()
@@ -402,9 +418,12 @@ import cats.conversions.variance.autoWidenFunctor
         if (selectedFile != null) {
           try {
             fileContent = scala.io.Source.fromFile(selectedFile).mkString
-            depArrData = getLoadedFlightData(fileContent)
+            depArrData = getLoadedFlightData(fileContent, "all")
+            println(getLoadedFlightData(fileContent, "all").length)
+            println(getLoadedFlightData(fileContent, "arr").length)
+            println(getLoadedFlightData(fileContent, "dep").length)
             loaded = 1 // Update the loaded variable
-            initialize() // Call updateChart to update the visualization
+            initialize() // Call initialize to update the visualization
           } catch {
             case ex: Exception => ex.printStackTrace() 
           }
@@ -448,9 +467,8 @@ import cats.conversions.variance.autoWidenFunctor
         allTab.content = createLoadedFlightTableAll()
         depTab.content = createLoadedFlightTableDep()
         arrTab.content = createLoadedFlightTableArr()
-  
-      
-      
+      stage.title = "Helsinki Airport Dashboard " + timeCalled
+
 
       val split = new SplitPane
       split.orientation = Orientation.Horizontal
@@ -463,7 +481,7 @@ import cats.conversions.variance.autoWidenFunctor
       split2.orientation = Orientation.Vertical
       split2.items.addAll(VBox2, VBox4)
 
-      split.items.addAll(split1, split2)
+      split.items.addAll(split1, split2, rectangleTool.makeRectangle(split))
 
       homeTab.content = split
       dataTab.content = tabPane1
@@ -485,9 +503,9 @@ import cats.conversions.variance.autoWidenFunctor
 
     }
 
-
       root.children += (menuBar, tabPane)
     initialize()
+
 
   end start
 

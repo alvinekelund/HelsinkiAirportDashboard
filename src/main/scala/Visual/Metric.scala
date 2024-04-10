@@ -64,22 +64,47 @@ class Metric {
           }
       var orgSceneX, orgSceneY = 0.0
       var offsetX, offsetY = 0.0
+      var middleX = 0.0
+      var middleY = 0.0
+      var oldMiddleX = 0.0
+      var oldMiddleY = 0.0
 
-      card.onMousePressed = (event: MouseEvent) => {
-        orgSceneX = event.sceneX
-        orgSceneY = event.sceneY
-        offsetX = event.sceneX - card.translateX()
-        offsetY = event.sceneY - card.translateY()
+      /*card.onMousePressed = (event: MouseEvent) => {
+        orgScreenX = event.screenX
+        orgScreenY = event.screenY
       }
 
       card.onMouseDragged = (event: MouseEvent) => {
-        offsetX = event.sceneX - orgSceneX
-        offsetY = event.sceneY - orgSceneY
-        val newTranslateX = offsetX + card.translateX()
-        val newTranslateY = offsetY + card.translateY()
-        card.translateX = newTranslateX * 0.4
-        card.translateY = newTranslateY * 0.4
-      }
+        offsetX = event.screenX  *0.3
+        offsetY = event.screenY *0.3
+        card.translateX = offsetX
+        card.translateY = offsetY
+    } */
+
+      card.onMousePressed = (event: MouseEvent) => {
+          orgSceneX = event.sceneX
+          orgSceneY = event.sceneY
+          oldMiddleX = middleX
+          oldMiddleY = middleY
+        }
+
+        card.onMouseDragged = (event: MouseEvent) => {
+          offsetX = event.sceneX - orgSceneX
+          //println("offsetY:" + offsetX) 
+          offsetY = event.sceneY - orgSceneY
+          //println("offsetY:" + offsetY) 
+          
+          val newTranslateX = offsetX + card.translateX() + oldMiddleX
+          val newTranslateY = offsetY + card.translateY() + oldMiddleY
+          //println("newtranslatex:" + newTranslateX)
+          //println("newtranslatey" + newTranslateX)
+          card.setLayoutX(newTranslateX) 
+          card.setLayoutY(newTranslateY) 
+          middleX = newTranslateY
+          middleY = newTranslateY
+        }
+
+
 
       val pointNode: scalafx.scene.Node = card
       val pointValue = name

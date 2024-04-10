@@ -66,8 +66,8 @@ class Tables {
         createFlightTable("arr")
     }
 
-    def createLoadedFlightTable(loadedData: String): TableView[Flight] = {
-        val tableView = new TableView(getLoadedFlightData(loadedData))
+    def createLoadedFlightTable(loadedData: String, set: String): TableView[Flight] = {
+        val tableView = new TableView(getLoadedFlightData(loadedData, set))
         tableView.minHeight = 850
         val col1 = new TableColumn[Flight, String]("Flight Number")
         col1.cellValueFactory = cdf => StringProperty(cdf.value.fltnr)

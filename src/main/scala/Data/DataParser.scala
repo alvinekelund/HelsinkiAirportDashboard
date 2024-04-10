@@ -14,10 +14,44 @@ import scala.collection.mutable.Map
 import java.time.format.DateTimeFormatter
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
+import java.time.ZoneId
 
 object DataParser {
 
+  var timeCalled = ""
+  def getTimestamp(xmlData: String): String = {
+    val xmlElem: Elem = XML.loadString(xmlData)
+    val timestampStr = (xmlElem \\ "header" \ "timestamp").headOption.map(_.text).getOrElse("")
+    
+    if (timestampStr.nonEmpty) {
+      // Parse the timestamp string into LocalDateTime
+      var timestamp = LocalDateTime.parse(timestampStr, DateTimeFormatter.ISO_DATE_TIME)
+      
+      // Add three hours to the timestamp to account for the time difference to Finland
+      timestamp = timestamp.plusHours(3)
+      
+      // Format the timestamp into desired format
+      val formattedTimestamp = timestamp.format(DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy"))
+      
+      formattedTimestamp
+    } else {
+      "Timestamp not found"
+    }
+  }
+  def getLiveTime(): String = {
+      // Get the current time in UTC
+      val currentTimeUTC = LocalDateTime.now(ZoneId.of("UTC"))
+      
+      // Add three hours to adjust for the time difference to Finland
+      val finlandTime = currentTimeUTC.plusHours(3)
+      
+      // Format the time into the desired format
+      val formattedTime = finlandTime.format(DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy"))
+      
+      formattedTime
+  }
 
+  
   def xmlFlightData(): String = 
     apiCallCounter()
     var request =
@@ -33,35 +67,32 @@ object DataParser {
     var xmlContent = response.body.getOrElse("")
     
     xmlContent
-   /* result += "xxxxx\n" + xmlContent.toString
-    request =
-      basicRequest
-        .get(uri"https://api.finavia.fi/flights/public/v0/flights/dep/all")
-        .header("Accept", "application/xml")
-        .header("app_id", "0f1e817b")
-        .header("app_key", "8a61352ed66585e182e53a3107b4ab4c")
 
-    backend = HttpURLConnectionBackend()
-    response = request.send(backend)
-    xmlContent = response.body.getOrElse("")
-    result += "xxxxx\nyyyyy\n" + xmlContent.toString
+  def separateXmlData(xmlData: String): (String, String) = {
+  val depStartIndex = xmlData.indexOf("<dep>")
+  val depEndIndex = xmlData.indexOf("</dep>", depStartIndex)
+  val arrStartIndex = xmlData.indexOf("<arr>")
+  val arrEndIndex = xmlData.indexOf("</arr>", arrStartIndex)
 
-    request =
-      basicRequest
-        .get(uri"https://api.finavia.fi/flights/public/v0/flights/arr/all")
-        .header("Accept", "application/xml")
-        .header("app_id", "0f1e817b")
-        .header("app_key", "8a61352ed66585e182e53a3107b4ab4c")
-
-    backend = HttpURLConnectionBackend()
-    response = request.send(backend)
-    xmlContent = response.body.getOrElse("")
-    result += "yyyyy\nzzzzz\n" + xmlContent.toString + "\nzzzzz"
-    result*/
+  if (depStartIndex != -1 && depEndIndex != -1 && arrStartIndex != -1 && arrEndIndex != -1) {
+    val departureXml = xmlData.substring(depStartIndex, depEndIndex + "</dep>".length)
+    val arrivalXml = xmlData.substring(arrStartIndex, arrEndIndex + "</arr>".length)
+    (departureXml, arrivalXml)
+  } else {
+    throw new IllegalArgumentException("Invalid XML format: Departure and/or arrival data not found")
+  }
+}
 
 
-  def getLoadedFlightData(loadedData: String): ObservableBuffer[Flight] = 
-    val xmlReader = new StringReader(loadedData)
+  def getLoadedFlightData(loadedData: String, set: String): ObservableBuffer[Flight] = 
+    timeCalled = getTimestamp(loadedData)
+    val xmlReader = 
+      if set == "all" then
+        new StringReader(loadedData)
+      else if set == "dep" then 
+        new StringReader(separateXmlData(loadedData)._1)
+      else
+        new StringReader(separateXmlData(loadedData)._2)
     val xmlElem: Elem = XML.load(xmlReader)
     val flights: ObservableBuffer[Flight] = ObservableBuffer.empty[Flight] 
     (xmlElem \\ "flight").foreach { flightElem =>
@@ -73,19 +104,6 @@ object DataParser {
     }
     flights
 
-
-    /*  var matches: String = ""
-    set match {
-      case "all" => 
-        val regex = """xxxxx\n(.*?)\nxxxxx""".r
-        matches = regex.findAllMatchIn(loadedData).map(_.group(1)).mkString
-      case "dep" => 
-        val regex = """yyyyy\n(.*?)\nyyyyy""".r
-        matches = regex.findAllMatchIn(loadedData).map(_.group(1)).mkString
-      case "arr" => 
-        val regex = """zzzzz\n(.*?)\nzzzzz""".r
-        matches = regex.findAllMatchIn(loadedData).map(_.group(1)).mkString
-      case _ => throw new IllegalArgumentException("Invalid set value") */
 
 
   
@@ -102,7 +120,7 @@ object DataParser {
     val response = request.send(backend)
     response.toString
     val xmlContent = response.body.getOrElse("")
-
+    timeCalled = getLiveTime()
     val xmlReader = new StringReader(xmlContent)
     val xmlElem: Elem = XML.load(xmlReader)
 
@@ -145,6 +163,5 @@ object DataParser {
   def getSepFlightData(): (ObservableBuffer[Flight], ObservableBuffer[Flight]) = {
     (getFlightData("dep"), getFlightData("arr"))
   }
-    
 
 }

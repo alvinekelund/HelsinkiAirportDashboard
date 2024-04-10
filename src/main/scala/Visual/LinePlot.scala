@@ -19,11 +19,16 @@ import scalafx.beans.property.{StringProperty}
 import Data.Flight
 import cats.instances.double
 import javafx.scene.chart.{CategoryAxis, NumberAxis, XYChart, BarChart, LineChart}
+import scalafx.scene.paint.Color
+import scalafx.scene.input.MouseEvent
+import scalafx.stage.Stage
+import scalafx.scene.layout.BorderPane
+import scalafx.stage.Modality
 
 
 class LinePlot {
 
-    def createLineChart(dataSet: Array[(String, Int)], x: String, y: String, label: String): LineChart[String, Number]  = {
+    def createLineChart(dataSet: Array[(String, Int)], x: String, y: String, label: String, color: String): LineChart[String, Number]  = {
         val xAxis = new CategoryAxis()
         val yAxis = new NumberAxis()
         xAxis.label = x
@@ -33,8 +38,11 @@ class LinePlot {
         series.setName(label)
 
         series.data = ObservableBuffer(dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2)): _*)
-
         val b = new LineChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+        series.getData.forEach { data =>
+            val node = data.getNode // Access the node of the bar
+            node.setStyle("-fx-bar-fill: " + color.toString + "; ") // Set the fill color of the bar
+        }
 
         b.getData.foreach { series =>
             series.getData.foreach { d =>
@@ -46,10 +54,23 @@ class LinePlot {
                 tooltip.setText(pointTime  + "\n"  + pointValue)
                 tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
                 Tooltip.install(pointNode, tooltip)
+                pointNode.setOnMouseClicked((event: MouseEvent) => {
+                val dialog: Stage = new Stage {
+                    initModality(Modality.ApplicationModal)
+                    title = "Data Point Info"
+                    scene = new Scene {
+                    content = new BorderPane {
+                        center = new Label(s"$pointTime\n$pointValue")
+                    }
+                    }
+                }
+                dialog.showAndWait()
+                })
             }
             }
-        b
-    }
+            b
+        }
+
 
     def createLineChartTwoSeries(dataSet: Array[(String, Int, Int)], x: String, y: String, label1: String, label2: String): LineChart[String, Number]  = 
         val xAxis = new CategoryAxis()
@@ -83,6 +104,18 @@ class LinePlot {
             tooltip.setText(s"$pointTime\nDepartures: $depCount\nArrivals: $arrCount")
             tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
             Tooltip.install(pointNode, tooltip)
+            pointNode.setOnMouseClicked((event: MouseEvent) => {
+                val dialog: Stage = new Stage {
+                    initModality(Modality.ApplicationModal)
+                    title = "Data Point Info"
+                    scene = new Scene {
+                    content = new BorderPane {
+                        center = new Label(s"$pointTime\nDepartures: $depCount\nArrivals: $arrCount")
+                    }
+                    }
+                }
+                dialog.showAndWait()
+            })
         }
         }
         b
