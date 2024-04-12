@@ -38,13 +38,13 @@ class LinePlot {
         series.setName(label)
 
         series.data = ObservableBuffer(dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2)): _*)
-        val b = new LineChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
+        val chart = new LineChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
         series.getData.forEach { data =>
-            val node = data.getNode // Access the node of the bar
-            node.setStyle("-fx-bar-fill: " + color.toString + "; ") // Set the fill color of the bar
+            val node = data.getNode
+            node.setStyle("-fx-background-color: " + color.toString + "; ")
         }
 
-        b.getData.foreach { series =>
+        chart.getData.foreach { series =>
             series.getData.foreach { d =>
                 val pointNode: scalafx.scene.Node = d.getNode
                 val pointValueInt = d.getYValue.toString.toInt // Convert to integer
@@ -68,7 +68,7 @@ class LinePlot {
                 })
             }
             }
-            b
+            chart
         }
 
 

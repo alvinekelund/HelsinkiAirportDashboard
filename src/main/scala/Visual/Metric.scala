@@ -27,22 +27,24 @@ class Metric {
   private val maxMetrics = 4
   var metrics: List[StackPane] = Nil
   var selectedCard: Option[StackPane] = None
-
+  var cards: Option[StackPane] = None
+  var occupied = false
+  var counter = 0
 
   def makeMetric(name: String, initialValue: String, color: Color): StackPane =
       val nameLabel = new Label(name)
       val valueLabel = new Label(initialValue)
 
       val rect = new Rectangle {
-        width = 300
-        height = 200
+        width = 330
+        height = 220
         fill = color
         arcWidth = 50
         arcHeight = 50
       }
 
-      nameLabel.style = "-fx-font-weight: bold; -fx-font-size: 40px"
-      valueLabel.style = "-fx-font-size: 60px"
+      nameLabel.style = "-fx-font-weight: bold; -fx-font-size: 35px"
+      valueLabel.style = "-fx-font-size: 55px"
 
       nameLabel.alignmentInParent = Pos.Center
       valueLabel.alignmentInParent = Pos.Center
@@ -53,15 +55,7 @@ class Metric {
       val card = new StackPane
       card.children.addAll(rect, vbox)
 
-      card.onMouseClicked = (event: MouseEvent) => {
-            if (selectedCard.contains(card)) {
-              rect.stroke = Color.Black
-              selectedCard = None
-            } else {
-              rect.stroke = Color.Transparent
-              selectedCard = Some(card)
-            }
-          }
+         
       var orgSceneX, orgSceneY = 0.0
       var offsetX, offsetY = 0.0
       var middleX = 0.0
@@ -69,42 +63,32 @@ class Metric {
       var oldMiddleX = 0.0
       var oldMiddleY = 0.0
 
-      /*card.onMousePressed = (event: MouseEvent) => {
-        orgScreenX = event.screenX
-        orgScreenY = event.screenY
-      }
+      card.onMousePressed = (event: MouseEvent) => 
+        if selectedCard == None then
+          rect.stroke = Color.Black
+          selectedCard = Some(card) 
+        else
+          rect.stroke = Color.Transparent
+          selectedCard = None
+        orgSceneX = event.sceneX
+        orgSceneY = event.sceneY
+        oldMiddleX = middleX
+        oldMiddleY = middleY
+            
+        event.consume()        
 
-      card.onMouseDragged = (event: MouseEvent) => {
-        offsetX = event.screenX  *0.3
-        offsetY = event.screenY *0.3
-        card.translateX = offsetX
-        card.translateY = offsetY
-    } */
+      card.onMouseDragged = (event: MouseEvent) => 
+          rect.stroke = Color.Black
 
-      card.onMousePressed = (event: MouseEvent) => {
-          orgSceneX = event.sceneX
-          orgSceneY = event.sceneY
-          oldMiddleX = middleX
-          oldMiddleY = middleY
-        }
-
-        card.onMouseDragged = (event: MouseEvent) => {
           offsetX = event.sceneX - orgSceneX
-          //println("offsetY:" + offsetX) 
           offsetY = event.sceneY - orgSceneY
-          //println("offsetY:" + offsetY) 
-          
+            
           val newTranslateX = offsetX + card.translateX() + oldMiddleX
           val newTranslateY = offsetY + card.translateY() + oldMiddleY
-          //println("newtranslatex:" + newTranslateX)
-          //println("newtranslatey" + newTranslateX)
           card.setLayoutX(newTranslateX) 
           card.setLayoutY(newTranslateY) 
           middleX = newTranslateY
           middleY = newTranslateY
-        }
-
-
 
       val pointNode: scalafx.scene.Node = card
       val pointValue = name
@@ -114,6 +98,7 @@ class Metric {
       tooltip.setStyle("-fx-background-color: lightgrey; " + "-fx-text-fill: black; ")
       Tooltip.install(pointNode, tooltip)
 
+      cards = Some(card)
       card
 
   

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="root [file:/Users/alvin/IdeaProjects/OS2Projekti/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="root [file:/Users/alvin/VScode/OS2Projekti/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
     <output url="file://$MODULE_DIR$/../../target/scala-3.3.0/classes" />
     <output-test url="file://$MODULE_DIR$/../../target/scala-3.3.0/test-classes" />
@@ -12,6 +12,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: scala-sdk-3.3.0" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.client3:circe_3:3.3.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.client3:core_3:3.3.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.client3:json-common_3:3.3.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.model:core_3:1.4.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.shared:core_3:1.2.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.shared:ws_3:1.2.5:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-http-core_3:10.5.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-http_3:10.5.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-parsing_3:10.5.3:jar" level="project" />
@@ -21,19 +27,20 @@
     <orderEntry type="library" name="sbt: io.circe:circe-numbers_3:0.14.2:jar" level="project" />
     <orderEntry type="library" name="sbt: io.circe:circe-parser_3:0.14.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-base:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-base:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-base:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-controls:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-controls:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-controls:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-fxml:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-fxml:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-fxml:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-graphics:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-graphics:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-graphics:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-media:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-media:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-media:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-swing:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-swing:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-swing:20:mac:jar" level="project" />
     <orderEntry type="library" name="sbt: org.openjfx:javafx-web:20:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.openjfx:javafx-web:20:mac-aarch64:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.openjfx:javafx-web:20:mac:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_3:2.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.10:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala3-library_3:3.3.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scalafx:scalafx_3:20.0.0-R31:jar" level="project" />

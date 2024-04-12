@@ -28,10 +28,11 @@ import scalafx.scene.layout.HBox
 import scalafx.stage.Popup
 import scalafx.stage.Stage
 import scalafx.stage.Modality
+import Data.GraphData
 
 
 class ScatterPlot {
-    def createScatterChart(dataSet: Array[(String, Int)], x: String, y: String, label: String, color: Color): ScatterChart[String, Number]  = 
+    def createScatterChart(dataSet: Array[(String, Int)], x: String, y: String, label: String, color: String): ScatterChart[String, Number]  = 
         val graphData = new GraphData()
         val xAxis = new CategoryAxis()
         val yAxis = new NumberAxis()
@@ -47,13 +48,14 @@ class ScatterPlot {
         val roundedValue = BigDecimal(pointValue).setScale(1, BigDecimal.RoundingMode.HALF_UP)
         val tooltip = new Tooltip()
         tooltip.setText(pointTime + ": " + "$" + roundedValue.toString)
-        tooltip.setStyle("-fx-background-color: yellow; " + "-fx-text-fill: black; ")
+        tooltip.setStyle("-fx-scatter-color: yellow; " + "-fx-text-fill: black; ")
         Tooltip.install(pointNode, tooltip)
         })
         val b= new ScatterChart[String, Number](xAxis, yAxis, ObservableBuffer(series))
         series.getData.forEach { data =>
             val node = data.getNode // Access the node of the bar
-            node.setStyle("-fx-bar-fill: " + color.toString + "; ") // Set the fill color of the bar
+            node.setStyle("-fx-background-color: " + color.toString + "; ")
+             // Set the fill color of the bar
         }
 
         b.getData.foreach { series =>

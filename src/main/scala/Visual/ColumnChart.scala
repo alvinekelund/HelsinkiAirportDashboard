@@ -38,15 +38,16 @@ class ColumnChart {
         series.setName(label)
         series.data = dataSet.map(cca => XYChart.Data[String, Number](cca._1, cca._2))
         
-        val b= new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series)) 
-        b.getData.forEach { series =>
+        val chart= new BarChart[String, Number](xAxis, yAxis, ObservableBuffer(series)) 
+        chart.getData.forEach { series =>
         series.getData.forEach { data =>
             val node = data.getNode // Access the node of the bar
             node.setStyle("-fx-bar-fill: " + color.toString + "; ") // Set the fill color of the bar
         }
-}
 
-        b.getData.foreach { series =>
+        }
+
+        chart.getData.foreach { series =>
             series.getData.foreach { d =>
                 val pointNode: scalafx.scene.Node = d.getNode
                 val pointValueInt = d.getYValue.toString.toInt // Convert to integer
@@ -71,7 +72,7 @@ class ColumnChart {
                 })
             }
             }
-        b
+        chart
 
     end createColumnChart
 
