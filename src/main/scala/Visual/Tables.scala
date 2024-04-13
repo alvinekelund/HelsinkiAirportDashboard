@@ -1,31 +1,13 @@
 package Visual
-import scalafx.scene.Scene
-import scalafx.scene.layout.Pane
-import scalafx.scene.shape.Rectangle
-import scalafx.scene.input.{KeyCodeCombination, KeyCode, KeyCombination}
-import scalafx.scene.paint.Color._
+
 import Data.DataParser.*
 import scalafx.scene.control._
-import scalafx.Includes._
-import scalafx.event.ActionEvent
-import javafx.scene.layout.VBox
-import java.awt.Graphics
-import scalafx.stage.StageStyle.Unified
-import javafx.stage.StageStyle
 import scalafx.beans.property.StringProperty
-import scalafx.collections.ObservableBuffer
-import scalafx.beans.property.{StringProperty}
 import Data.Flight
-import Data.GraphData
-import Visual.ColumnChart
-import scalafx.scene.chart._
-import java.util.Locale.Category
-import scalafx.stage.FileChooser
-import cats.conversions.all
 
 class Tables {
 
-
+// Creates the table for data tab from live call
     def createFlightTable(set: String): TableView[Flight] = {
         val tableView = new TableView(getFlightData(set))
         tableView.minHeight = 850
@@ -63,7 +45,7 @@ class Tables {
     def createFlightTableArr(): TableView[Flight] = {
         createFlightTable("arr")
     }
-
+// creates the table for data tab from loaded file.
     def createLoadedFlightTable(loadedData: String, set: String): TableView[Flight] = {
         val tableView = new TableView(getLoadedFlightData(loadedData, set))
         tableView.minHeight = 850

@@ -5,16 +5,15 @@ import scalafx.scene.paint.Color
 import scalafx.scene.layout.Pane
 import javafx.scene.input.MouseEvent
 import scalafx.Includes.jfxMouseEvent2sfx
-import scalafx.scene.Scene
-import scalafx.scene.control.SplitPane
+
 
 class RectangleTool {
+    // offset depending on i which pane its created
     var offsetX = 0.0
     var offsetY = 0.0
-    var backgroundClicked: Boolean = false 
-    var parentPane: Option[Pane] = None 
-    val metric = new Metric
-    def makeRectangle(x: Pane): Rectangle = {
+    var backgroundClicked: Boolean = false
+    var parentPane: Option[Pane] = None
+    def makeRectangle(x: Pane): Rectangle = 
         parentPane = Some(x)
         val selectionRectangle = new Rectangle {
             stroke = Color.Blue
@@ -24,7 +23,9 @@ class RectangleTool {
         }
         var startX = 0.0
         var startY = 0.0
-        x.onMousePressed = (event: MouseEvent) => {
+
+// logic for the drawing and visibility state of the rectangle
+        x.onMousePressed = (event: MouseEvent) => 
             backgroundClicked = true
             startX = event.sceneX - offsetX
             startY = event.sceneY - offsetY
@@ -34,11 +35,9 @@ class RectangleTool {
             selectionRectangle.height = 1.0
             selectionRectangle.visible = true
             event.consume()
-            }
             
-    
 
-        x.onMouseDragged = (event: MouseEvent) => {
+        x.onMouseDragged = (event: MouseEvent) => 
             backgroundClicked = true
             val endX = event.sceneX - offsetX
             val endY = event.sceneY - offsetY
@@ -47,17 +46,12 @@ class RectangleTool {
             selectionRectangle.x = math.min(startX, endX)
             selectionRectangle.y = math.min(startY, endY)
             event.consume()
-        }
-
-        x.onMouseReleased = (event: MouseEvent) => {
-            selectionRectangle.visible = false
-        } 
-
         
+
+        x.onMouseReleased = (event: MouseEvent) => 
+            selectionRectangle.visible = false
         
         selectionRectangle
-    
-    }
+}
     
             
-}

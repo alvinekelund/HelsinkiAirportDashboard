@@ -1,22 +1,7 @@
 package Visual
 
-import scalafx.application.JFXApp3
 import scalafx.scene.Scene
-import scalafx.scene.layout.Pane
-import scalafx.scene.shape.Rectangle
-import scalafx.scene.paint.Color._
-import Data.DataParser.*
 import scalafx.Includes._
-import scalafx.event.ActionEvent
-import java.awt.Graphics
-import scalafx.stage.StageStyle.Unified
-import javafx.stage.StageStyle
-import scalafx.beans.property.StringProperty
-import scalafx.collections.ObservableBuffer
-import scalafx.beans.property.{StringProperty}
-import Data.Flight
-import cats.instances.double
-import javafx.scene.chart.{CategoryAxis, NumberAxis, XYChart, BarChart}
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.chart.PieChart
 import scalafx.scene.paint.Color
@@ -40,11 +25,11 @@ class PieGraph {
       title = label
       data = buffer
     }
-    
-    val b = pieChart
-
-    val total = b.getData.foldLeft(0.0) {(x, y) => x + y.getPieValue}    
-    b.getData.foreach { d =>
+    //create new piechart
+    val chart = pieChart
+// the tooltip logic
+    val total = chart.getData.foldLeft(0.0) {(x, y) => x + y.getPieValue}    
+    chart.getData.foreach { d =>
       val sliceNode = d.getNode
       val pieValue = d.getPieValue
       val percent = (pieValue / total) * 100
@@ -53,7 +38,7 @@ class PieGraph {
       tt.setText("%s: %.0f (%.2f%%)".format(d.getName, pieValue, percent))
       tt.setStyle("-fx-background-color: lightgrey; -fx-text-fill: black; ")
       Tooltip.install(sliceNode, tt)
-
+// popup box
       sliceNode.setOnMouseClicked((event: MouseEvent) => {
         val dialog = new Stage {
           initModality(Modality.ApplicationModal)
@@ -68,6 +53,6 @@ class PieGraph {
       })
     
     }
-    b
+    chart
   }
 }
