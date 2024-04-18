@@ -15,8 +15,8 @@ object DataParser {
   var timeCalled = ""
 
   private var callTimes = 0
-  
-  //checking for accidental recursion
+
+  //checking for accidental repeated recursion
   def apiCallCounter() =
     callTimes += 1
     if callTimes > 1000 then
